@@ -19,7 +19,7 @@ public class ShipMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.transform.tag == "Boundary")
+        if (collision.gameObject.tag == "Boundary")
         {
             transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
             moveSpeed *= -1; 
