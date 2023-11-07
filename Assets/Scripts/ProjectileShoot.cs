@@ -5,9 +5,9 @@ using UnityEngine;
 public class ProjectileShoot : MonoBehaviour
 {
     public GameObject projectilePrefab;
-
+    public GameObject soundPrefab;
     [SerializeField] private AudioSource shootSoundEffect;
-    void Start()
+        void Start()
     {
         
     }
@@ -19,6 +19,7 @@ public class ProjectileShoot : MonoBehaviour
         {
             shootSoundEffect.Play();
             Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(soundPrefab, transform.position, Quaternion.identity);
         }
     }
 }

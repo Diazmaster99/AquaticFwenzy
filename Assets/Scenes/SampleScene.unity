@@ -600,7 +600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -24, y: -16.75058}
+  m_AnchoredPosition: {x: -24, y: -16.75061}
   m_SizeDelta: {x: 114.49878, y: 114.49878}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &326967053
@@ -1146,6 +1146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3452663278403150975, guid: 37da1a540f332fb4194a27498f9b6e31, type: 3}
+  soundPrefab: {fileID: 6118521168680294, guid: ca0ca3a064cf9944ea8b569597a95223, type: 3}
   shootSoundEffect: {fileID: 828182191}
 --- !u!82 &828182191
 AudioSource:
@@ -1471,7 +1472,7 @@ GameObject:
   - component: {fileID: 992067315}
   m_Layer: 0
   m_Name: Enemies
-  m_TagString: Untagged
+  m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
