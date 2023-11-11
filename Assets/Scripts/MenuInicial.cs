@@ -6,13 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuInicial : MonoBehaviour
 {
-    public void CargarEscena(int index)
+    public void CargarEscena()
     {
-        SceneManager.LoadScene(index);
-    }
-
-    public void CargarEscena(string nombre)
-    {
-        SceneManager.LoadScene(nombre);
+        SceneManager.LoadScene("SampleScene");
     }
 }

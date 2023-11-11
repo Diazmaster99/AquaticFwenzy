@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private AudioSource killEnemySoundEffect;
     public float moveSpeed;
-        void Start()
+    void Start()
     {
-       
+
     }
 
     void Update()
@@ -20,19 +21,21 @@ public class Projectile : MonoBehaviour
 
         if (collision.gameObject.tag != "Enemies")
         {
-           
             if (collision.gameObject.tag == "Enemy")
             {
+                gameObject.GetComponent<Renderer>().enabled = false;
+                killEnemySoundEffect.Play();
                 Destroy(collision.gameObject);
-                Destroy(gameObject);
+                Destroy(gameObject, 2);
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
         }
 
         if (collision.gameObject.tag == "Boundary")
-         {
-             Destroy(gameObject);
-         }
-         
-        
+        {
+            Destroy(gameObject);
+        }
+
+
     }
 }
