@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 828182191}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1147,7 +1147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3452663278403150975, guid: 37da1a540f332fb4194a27498f9b6e31, type: 3}
-  soundPrefab: {fileID: 6118521168680294, guid: ca0ca3a064cf9944ea8b569597a95223, type: 3}
   shootSoundEffect: {fileID: 828182191}
 --- !u!82 &828182191
 AudioSource:
