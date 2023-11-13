@@ -678,8 +678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111b5e4ceebbca446a7765339bc17051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  botonPausa: {fileID: 0}
-  menuPausa: {fileID: 0}
+  botonPausa: {fileID: 326967051}
+  menuPausa: {fileID: 994231879}
 --- !u!114 &326967054
 MonoBehaviour:
   m_ObjectHideFlags: 0
