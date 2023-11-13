@@ -24,13 +24,14 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        
-        if (col.gameObject.tag == "Enemy")
+ 
+        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE")
         {
             botonGameOver.SetActive(true);
             Time.timeScale = 0f;
             Destroy(this.gameObject);
             //jugador.drag = 20;
         }
+
     }
 }
