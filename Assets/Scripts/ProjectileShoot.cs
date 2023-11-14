@@ -5,6 +5,8 @@ using UnityEngine;
 public class ProjectileShoot : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public float canFire = 0.0f;
+    public float fireRate = 0.35f;
     [SerializeField] private AudioSource shootSoundEffect;
         void Start()
     {
@@ -14,10 +16,24 @@ public class ProjectileShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1")) 
+        if(Input.GetButton("Fire1")) 
         {
-            shootSoundEffect.Play();
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            if (Time.time > canFire)
+            {
+                shootSoundEffect.Play();
+                Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                canFire = Time.time + fireRate;    
+            }
         }
     }
+
+    public void FastShootOn()
+    {
+        fireRate = 0.1f;
+    }
+    public void FastShootOff()
+    {
+        fireRate = 0.35f;
+    }
+
 }

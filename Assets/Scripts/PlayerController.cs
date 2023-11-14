@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5;
     public float hInput;
+    public bool fastShoot = false;
     [SerializeField] private GameObject botonGameOver;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,15 @@ public class PlayerController : MonoBehaviour
     {
         hInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
+        if (fastShoot)
+        {
+            ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
+            projectileShoot.FastShootOn();
+        }
+        else 
+        {
+
+        }
     }
 
 
@@ -33,5 +43,17 @@ public class PlayerController : MonoBehaviour
             //jugador.drag = 20;
         }
 
+    }
+
+    
+    public void CanFastShoot()
+    {
+        fastShoot = true;
+    }
+
+    public IEnumerator FastShootDownRoutine() 
+    {
+        yield return new WaitForSeconds(3f);
+        fastShoot = false;
     }
 }
