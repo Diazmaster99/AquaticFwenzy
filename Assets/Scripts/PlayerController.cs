@@ -19,14 +19,14 @@ public class PlayerController : MonoBehaviour
     {
         hInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
-        if (fastShoot)
-        {
-            ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
+        ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
+        if (fastShoot==true)
+        {       
             projectileShoot.FastShootOn();
         }
         else 
         {
-
+            projectileShoot.FastShootOff();
         }
     }
 
@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     public void CanFastShoot()
     {
         fastShoot = true;
+        StartCoroutine (FastShootDownRoutine());
     }
 
     public IEnumerator FastShootDownRoutine() 

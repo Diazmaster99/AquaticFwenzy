@@ -222,4 +222,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killPlayerSoundEffect: {fileID: 3482778135550719461}
-  moveSpeed: 3
+  moveSpeed: 4

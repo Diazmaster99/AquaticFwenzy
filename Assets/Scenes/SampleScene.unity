@@ -1960,6 +1960,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1957251805780405308, guid: 443a8dac73647ea4ebcf01804fc973f0, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7362320054972240909, guid: 443a8dac73647ea4ebcf01804fc973f0, type: 3}
       propertyPath: m_Name
       value: fireratepowerup
@@ -1969,12 +1973,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7463955581120876556, guid: 443a8dac73647ea4ebcf01804fc973f0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07866431
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463955581120876556, guid: 443a8dac73647ea4ebcf01804fc973f0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07866431
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463955581120876556, guid: 443a8dac73647ea4ebcf01804fc973f0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07866431
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463955581120876556, guid: 443a8dac73647ea4ebcf01804fc973f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.96
+      value: -8.2258
       objectReference: {fileID: 0}
     - target: {fileID: 7463955581120876556, guid: 443a8dac73647ea4ebcf01804fc973f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.52
+      value: 3.7858
       objectReference: {fileID: 0}
     - target: {fileID: 7463955581120876556, guid: 443a8dac73647ea4ebcf01804fc973f0, type: 3}
       propertyPath: m_LocalPosition.z
