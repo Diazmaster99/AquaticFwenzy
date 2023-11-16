@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5;
     public float hInput;
     public bool fastShoot = false;
+    public bool shieldActive = false;
+    public bool grenadeLauncher = false;
+    public GameObject shield;
     [SerializeField] private GameObject botonGameOver;
     // Start is called before the first frame update
     void Start()
@@ -52,9 +55,23 @@ public class PlayerController : MonoBehaviour
         StartCoroutine (FastShootDownRoutine());
     }
 
+    public void ShieldPowerUpOn() 
+    {
+        shieldActive = true;
+        shield.SetActive(true);
+        StartCoroutine (ShieldDownRoutine());
+    }
     public IEnumerator FastShootDownRoutine() 
     {
         yield return new WaitForSeconds(3f);
         fastShoot = false;
+    }
+
+    public IEnumerator ShieldDownRoutine() 
+    {
+        yield return new WaitForSeconds(7f);
+        shield.SetActive(true);
+        shieldActive = false;
+
     }
 }

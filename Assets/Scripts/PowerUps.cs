@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerUps : MonoBehaviour
 {
     public float moveSpeed = 3.0f;
+    public int powerUpID;
     [SerializeField] private AudioSource powerUpSoundEffect;
     // Start is called before the first frame update
     void Start()
@@ -26,12 +27,19 @@ public class PowerUps : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
             powerUpSoundEffect.Play();
             PlayerController player = collision.GetComponent<PlayerController>();
-            player.CanFastShoot();
+            if(powerUpID == 1)
+            {
+                player.CanFastShoot();
+            }
+            if (powerUpID == 2)
+            {
+                player.ShieldPowerUpOn();
+            }
             Destroy(gameObject, 2);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 
-        if (collision.gameObject.tag == "Boundary")
+        if (collision.gameObject.tag == "DestroyBoundary")
         {
             Destroy(gameObject);
         }

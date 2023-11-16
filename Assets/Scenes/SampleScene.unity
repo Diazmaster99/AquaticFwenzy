@@ -1331,6 +1331,9 @@ MonoBehaviour:
   moveSpeed: 5
   hInput: 0
   fastShoot: 0
+  shieldActive: 0
+  grenadeLauncher: 0
+  shield: {fileID: 0}
   botonGameOver: {fileID: 1052302376}
 --- !u!212 &828182186
 SpriteRenderer:
@@ -2955,7 +2958,7 @@ GameObject:
   - component: {fileID: 1545416947}
   m_Layer: 0
   m_Name: OutsideBoundary2
-  m_TagString: Boundary
+  m_TagString: DestroyBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3035,7 +3038,7 @@ GameObject:
   - component: {fileID: 1554926323}
   m_Layer: 0
   m_Name: OutsideBoundary
-  m_TagString: Boundary
+  m_TagString: ProjectileBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
