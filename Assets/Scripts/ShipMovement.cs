@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShipMovement : MonoBehaviour
 {
+    //Script para poner a los enemigos/grupos de enemigos que van de lado a lado en pantalla 
     public float moveSpeed;
     // Start is called before the first frame update
     void Start()

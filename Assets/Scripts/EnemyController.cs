@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 
-        if (collision.gameObject.tag == "Boundary")
+        if (collision.gameObject.tag == "DestroyBoundary")
         {
             Destroy(gameObject);
         }

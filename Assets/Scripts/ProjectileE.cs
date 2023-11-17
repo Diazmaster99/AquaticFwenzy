@@ -28,6 +28,14 @@ public class ProjectileE : MonoBehaviour
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 
+        if (collision.gameObject.tag == "Shield")
+        {
+            gameObject.GetComponent<Renderer>().enabled = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject, 2);
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
+
         if (collision.gameObject.tag == "Boundary")
         {
             Destroy(gameObject);

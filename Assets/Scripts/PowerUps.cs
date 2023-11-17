@@ -6,6 +6,7 @@ public class PowerUps : MonoBehaviour
 {
     public float moveSpeed = 3.0f;
     public int powerUpID;
+
     [SerializeField] private AudioSource powerUpSoundEffect;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class PowerUps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+        transform.Translate(moveSpeed * Time.deltaTime * Vector2.down);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
