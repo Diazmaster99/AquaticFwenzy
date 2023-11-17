@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool grenadeLauncher = false;
     public GameObject shield;
     [SerializeField] private GameObject botonGameOver;
+    [SerializeField] private GameObject botonMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
  
         if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE")
         {
+            botonMenu.SetActive(false);
             botonGameOver.SetActive(true);
             Time.timeScale = 0f;
             Destroy(this.gameObject);
