@@ -24,7 +24,15 @@ public class ProjectileE : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
             killPlayerSoundEffect.Play();
             Destroy(collision.gameObject);
-            Destroy(gameObject, 2);
+            Destroy(gameObject, 1.1f);
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
+
+        if (collision.gameObject.tag == "Shield")
+        {
+            gameObject.GetComponent<Renderer>().enabled = false;
+            Destroy(collision.gameObject);
+            Destroy(gameObject, 1.1f);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 

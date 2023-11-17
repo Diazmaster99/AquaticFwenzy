@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public bool fastShoot = false;
     public bool shieldActive = false;
     public bool grenadeLauncher = false;
-    public GameObject shield;
+    public GameObject shieldPrefab;
     [SerializeField] private GameObject botonGameOver;
     [SerializeField] private GameObject botonMenu;
     // Start is called before the first frame update
@@ -60,7 +60,8 @@ public class PlayerController : MonoBehaviour
     public void ShieldPowerUpOn() 
     {
         shieldActive = true;
-        shield.SetActive(true);
+        shieldPrefab.SetActive(true);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         StartCoroutine (ShieldDownRoutine());
     }
     public IEnumerator FastShootDownRoutine() 
@@ -71,8 +72,9 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator ShieldDownRoutine() 
     {
-        yield return new WaitForSeconds(7f);
-        shield.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        shieldPrefab.SetActive(false);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
         shieldActive = false;
 
     }
