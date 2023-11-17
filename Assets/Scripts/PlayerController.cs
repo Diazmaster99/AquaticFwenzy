@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         shieldActive = true;
         shield.SetActive(true);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         StartCoroutine (ShieldDownRoutine());
     }
     public IEnumerator FastShootDownRoutine() 
@@ -69,8 +70,9 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator ShieldDownRoutine() 
     {
-        yield return new WaitForSeconds(7f);
-        shield.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        shield.SetActive(false);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
         shieldActive = false;
 
     }
