@@ -23,15 +23,6 @@ public class PlayerController : MonoBehaviour
     {
         hInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
-        ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
-        if (fastShoot==true)
-        {       
-            projectileShoot.FastShootOn();
-        }
-        else 
-        {
-            projectileShoot.FastShootOff();
-        }
     }
 
 
@@ -53,7 +44,9 @@ public class PlayerController : MonoBehaviour
     
     public void CanFastShoot()
     {
-        fastShoot = true;
+        //fastShoot = true;
+        ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
+        projectileShoot.FastShootOn();
         StartCoroutine (FastShootDownRoutine());
     }
 
@@ -63,10 +56,18 @@ public class PlayerController : MonoBehaviour
         shieldPrefab.SetActive(true);
         StartCoroutine (ShieldDownRoutine());
     }
+
+    public void CanGrenadeLauncher()
+    {
+        grenadeLauncher = true;
+        StartCoroutine(GrenadeLauncherDownRoutine());
+    }
     public IEnumerator FastShootDownRoutine() 
     {
         yield return new WaitForSeconds(3f);
-        fastShoot = false;
+        ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
+        projectileShoot.FastShootOff();
+        //fastShoot = false;
     }
 
     public IEnumerator ShieldDownRoutine() 
@@ -74,6 +75,10 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         shieldPrefab.SetActive(false);
         shieldActive = false;
-
+    }
+    public IEnumerator GrenadeLauncherDownRoutine()
+    {
+        yield return new WaitForSeconds(3f);
+        grenadeLauncher = false;
     }
 }
