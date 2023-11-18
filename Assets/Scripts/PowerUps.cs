@@ -36,7 +36,7 @@ public class PowerUps : MonoBehaviour
             {
                 player.ShieldPowerUpOn();
             }
-            Destroy(gameObject, 1.1f);
+            Destroy(gameObject, 0.9f);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 

@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
  
-        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE")
+        if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && shieldActive==false )
         {
             botonMenu.SetActive(false);
             botonGameOver.SetActive(true);
@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
     {
         shieldActive = true;
         shieldPrefab.SetActive(true);
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         StartCoroutine (ShieldDownRoutine());
     }
     public IEnumerator FastShootDownRoutine() 
@@ -74,7 +73,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         shieldPrefab.SetActive(false);
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
         shieldActive = false;
 
     }
