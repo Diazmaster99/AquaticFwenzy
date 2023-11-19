@@ -20,6 +20,7 @@ public class ProjectileShoot : MonoBehaviour
         {
             if (Time.time > canFire)
             {
+
                 shootSoundEffect.Play();
                 Instantiate(projectilePrefab, transform.position, Quaternion.identity);
                 canFire = Time.time + fireRate;    

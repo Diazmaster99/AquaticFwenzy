@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject shieldPrefab;
     [SerializeField] private GameObject botonGameOver;
     [SerializeField] private GameObject botonMenu;
+    [SerializeField] private AudioSource shieldDown;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +74,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator ShieldDownRoutine() 
     {
         yield return new WaitForSeconds(3f);
+        shieldDown.Play();
         shieldPrefab.SetActive(false);
         shieldActive = false;
     }
