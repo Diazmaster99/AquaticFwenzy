@@ -5,8 +5,10 @@ using UnityEngine;
 public class ProjectileShoot : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public GameObject grenadePrefab;
     public float canFire = 0.0f;
     public float fireRate = 0.35f;
+    public bool grenadeLauncherOn=false;
     [SerializeField] private AudioSource shootSoundEffect;
         void Start()
     {
@@ -20,9 +22,16 @@ public class ProjectileShoot : MonoBehaviour
         {
             if (Time.time > canFire)
             {
-
-                shootSoundEffect.Play();
-                Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                if (grenadeLauncherOn) 
+                {
+                    shootSoundEffect.Play();
+                    Instantiate(grenadePrefab, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    shootSoundEffect.Play();
+                    Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                }        
                 canFire = Time.time + fireRate;    
             }
         }
@@ -35,10 +44,12 @@ public class ProjectileShoot : MonoBehaviour
     public void FastShootOff()
     {
         fireRate = 0.35f;
+        grenadeLauncherOn = false;
     }
 
     public void GrenadeLauncherOn()
     {
         fireRate = 0.8f;
+        grenadeLauncherOn = true;
     }
 }
