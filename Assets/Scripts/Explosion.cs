@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Grenade : MonoBehaviour
+public class Explosion : MonoBehaviour
 {
     public GameObject explosion;
     [SerializeField] private AudioSource killEnemySoundEffect;
     public float radius = 5;
-    public float moveSpeed;
+
     void Start()
     {
 
@@ -16,7 +16,13 @@ public class Grenade : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+        Collider2D[] enemyHit = Physics2D.OverlapCircleAll(transform.position, radius);
+
+        foreach (Collider2D col in enemyHit)
+        {
+            OnTriggerEnter2D(col);
+        }
+        StartCoroutine(Explode(1));
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,10 +31,9 @@ public class Grenade : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy")
             {
-                gameObject.GetComponent<Renderer>().enabled = false;          
                 Destroy(collision.gameObject);
                 killEnemySoundEffect.Play();
-                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                StartCoroutine(Explode(0));
             }
         }
 
@@ -40,4 +45,17 @@ public class Grenade : MonoBehaviour
 
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawSphere(transform.position, radius);
+    }
+
+    IEnumerator Explode(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+
+    }
 }

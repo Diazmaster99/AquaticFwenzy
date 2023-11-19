@@ -221,5 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831586987b1d53943a516926c1e60282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 8589840472085786145, guid: ed7fd0c4924e76946ae88528d971149d, type: 3}
   killEnemySoundEffect: {fileID: 3482778135550719461}
+  radius: 0.1
   moveSpeed: 6
