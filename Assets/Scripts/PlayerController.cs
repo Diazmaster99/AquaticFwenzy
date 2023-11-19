@@ -60,7 +60,9 @@ public class PlayerController : MonoBehaviour
 
     public void CanGrenadeLauncher()
     {
-        grenadeLauncher = true;
+        grenadeLauncher = true; 
+        ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
+        projectileShoot.GrenadeLauncherOn();
         StartCoroutine(GrenadeLauncherDownRoutine());
     }
     public IEnumerator FastShootDownRoutine() 
@@ -80,7 +82,9 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator GrenadeLauncherDownRoutine()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
+        ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
+        projectileShoot.FastShootOff();
         grenadeLauncher = false;
     }
 }

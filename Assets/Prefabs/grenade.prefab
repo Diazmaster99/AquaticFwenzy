@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3452663278403150974}
   - component: {fileID: -437486069094577663}
   - component: {fileID: 3482778135550719461}
-  - component: {fileID: -7050260566052540987}
+  - component: {fileID: -4350049155909069222}
   m_Layer: 0
   m_Name: grenade
   m_TagString: ProjectileE
@@ -209,7 +209,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-7050260566052540987
+--- !u!114 &-4350049155909069222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3452663278403150975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dad65679148753246a7b29cac5afb12d, type: 3}
+  m_Script: {fileID: 11500000, guid: 831586987b1d53943a516926c1e60282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   killEnemySoundEffect: {fileID: 3482778135550719461}

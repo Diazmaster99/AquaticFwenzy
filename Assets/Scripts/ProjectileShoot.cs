@@ -37,4 +37,8 @@ public class ProjectileShoot : MonoBehaviour
         fireRate = 0.35f;
     }
 
+    public void GrenadeLauncherOn()
+    {
+        fireRate = 0.8f;
+    }
 }
