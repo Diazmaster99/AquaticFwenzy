@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public GameObject shieldPrefab;
     [SerializeField] private GameObject botonGameOver;
     [SerializeField] private GameObject botonMenu;
+    [SerializeField] private GameObject botonOpciones;
+    [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,15 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0f;
             Destroy(this.gameObject);
             //jugador.drag = 20;
+        }
+
+        else
+        {
+            botonMenu.SetActive(false);
+            MenuWin.SetActive(true);
+            Time.timeScale = 0f;
+            botonOpciones.SetActive(true);
+            
         }
 
     }
