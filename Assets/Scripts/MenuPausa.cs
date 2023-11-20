@@ -9,7 +9,7 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private GameObject menuPausa;
 
-    private bool juegoPausado = false;
+    public bool juegoPausado = false;
 
     public void Update()
     {

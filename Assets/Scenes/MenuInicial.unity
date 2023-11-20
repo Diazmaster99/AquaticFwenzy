@@ -666,7 +666,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0a5d9ac04d268254eafdf4d013d53c45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2d88bef399e649409092176d8f904c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -696,6 +696,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 362227287748111093, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f316a451f01a5441855ec3520dd64ed, type: 3}
+    - target: {fileID: 362227289420903298, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
+      propertyPath: timeTransition
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 362227289420903326, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_Name
       value: LoaderSwipe
