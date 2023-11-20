@@ -9,6 +9,9 @@ TagManager:
   - Projectile
   - Enemies
   - ProjectileE
+  - DestroyBoundary
+  - ProjectileBoundary
+  - Shield
   layers:
   - Default
   - TransparentFX

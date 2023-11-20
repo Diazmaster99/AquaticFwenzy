@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Grenade : MonoBehaviour
 {
+    public GameObject explosion;
     [SerializeField] private AudioSource killEnemySoundEffect;
+    public float radius = 5;
     public float moveSpeed;
     void Start()
     {
@@ -23,10 +25,9 @@ public class Projectile : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy")
             {
-                gameObject.GetComponent<Renderer>().enabled = false;
-                killEnemySoundEffect.Play();
+                gameObject.GetComponent<Renderer>().enabled = false;          
                 Destroy(collision.gameObject);
-                Destroy(gameObject, 1.1f);
+                killEnemySoundEffect.Play();
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
         }
@@ -38,4 +39,5 @@ public class Projectile : MonoBehaviour
 
 
     }
+
 }

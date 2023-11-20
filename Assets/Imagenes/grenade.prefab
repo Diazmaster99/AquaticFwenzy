@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3452663278403150974}
   - component: {fileID: -437486069094577663}
   - component: {fileID: 3482778135550719461}
-  - component: {fileID: 5052713175857582105}
+  - component: {fileID: -4350049155909069222}
   m_Layer: 0
-  m_Name: bulletE
-  m_TagString: ProjectileE
+  m_Name: grenade
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 596ae1f8ae975c145a28e036ee89948b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.20616484, a: 1}
+  m_Color: {r: 0.05048989, g: 0, b: 0.6415094, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,9 +123,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 64392bc68f545224d8663c85b839727d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f228723933f88c841980acead8615311, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.701
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -209,7 +209,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5052713175857582105
+--- !u!114 &-4350049155909069222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,8 +218,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3452663278403150975}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765d89f7066732e4fb9b89b7ab704775, type: 3}
+  m_Script: {fileID: 11500000, guid: 831586987b1d53943a516926c1e60282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killPlayerSoundEffect: {fileID: 3482778135550719461}
-  moveSpeed: 4
+  explosion: {fileID: 8589840472085786145, guid: ed7fd0c4924e76946ae88528d971149d, type: 3}
+  killEnemySoundEffect: {fileID: 3482778135550719461}
+  radius: 0.1
+  moveSpeed: 6

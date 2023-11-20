@@ -38,19 +38,22 @@ public class MenuPausa : MonoBehaviour
     {
         juegoPausado=false;
         Time.timeScale = 1f;
-        botonPausa.SetActive(true);
+        botonPausa.SetActive(false);
         menuPausa.SetActive(false);
     }
 
     public void Reiniciar ()
     {
         juegoPausado=true;
+        botonPausa.SetActive(false); 
+        menuPausa.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void VolverMenuInicial()
     {
+        botonPausa.SetActive(false);
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name); //descarga de memoria la escena actual
      
         SceneManager.LoadScene("MenuInicial");//carga el menu inicial
