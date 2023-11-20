@@ -21,15 +21,20 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         spawnTimer -= Time.deltaTime;
-        if (spawnTimer <= 0)
-        {
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            spawnTimer = Random.Range(spawnMin, spawnMax);
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Los enemigos solo deberian disparar si entran en el rango del jugador
+        if (collision.gameObject.tag == "ProjectileBoundary")
+        {
+            if (spawnTimer <= 0)
+            {
+                Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                spawnTimer = Random.Range(spawnMin, spawnMax);
+            }
+        }
 
         if (collision.gameObject.tag == "Player")
         {
