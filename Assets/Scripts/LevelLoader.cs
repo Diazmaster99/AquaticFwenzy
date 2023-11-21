@@ -41,4 +41,11 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene(LevelIndex);
     }
 
+    IEnumerator LoadGameOver(int LevelIndex)
+    {
+        transition.SetTrigger("Game Over");
+        yield return new WaitForSeconds(timeTransition);
+        SceneManager.LoadScene(LevelIndex);
+    }
+
 }
