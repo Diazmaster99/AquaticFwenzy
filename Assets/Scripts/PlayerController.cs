@@ -41,19 +41,8 @@ public class PlayerController : MonoBehaviour
             Destroy(this.gameObject);
             //jugador.drag = 20;
         }
-
-        else
-        {
-            botonMenu.SetActive(false);
-            MenuWin.SetActive(true);
-            Time.timeScale = 0f;
-            botonOpciones.SetActive(true);
-            
-        }
-
     }
 
-    
     public void CanFastShoot()
     {
         //fastShoot = true;

@@ -44,12 +44,17 @@ public class MenuWin : MonoBehaviour
 
     public void MenuInicial(string nombre)
     {
-        SceneManager.LoadScene(nombre + 1);
+        SceneManager.LoadScene(nombre);
     }
 
     public void Salir()
     {
         //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+    }
+
+    public void MostrarMenuWin()
+    {
+        FindObjectOfType<MenuWin>().MostrarMenuWin();
     }
 }

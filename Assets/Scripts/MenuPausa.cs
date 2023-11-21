@@ -9,6 +9,8 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private GameObject menuPausa;
 
+    [SerializeField] private GameObject menuWin;
+
     public bool juegoPausado = false;
 
     public void Update()
@@ -58,5 +60,13 @@ public class MenuPausa : MonoBehaviour
      
         SceneManager.LoadScene("MenuInicial");//carga el menu inicial
     }
-    
+
+    public void MenuWin()
+    {
+        menuWin.SetActive(true);
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+        FindObjectOfType<MenuWin>().MostrarMenuWin();
+        SceneManager.LoadScene("MenuWin");
+    }
+
 }
