@@ -55,6 +55,16 @@ public class MenuWin : MonoBehaviour
 
     public void MostrarMenuWin()
     {
-        FindObjectOfType<MenuWin>().MostrarMenuWin();
+        if (menuWin != null)
+        {
+            menuWin.SetActive(true);
+        }
+
+        else
+        {
+            menuWin.SetActive(false);
+        }
+
+        //FindObjectOfType<MenuWin>().MostrarMenuWin();
     }
 }

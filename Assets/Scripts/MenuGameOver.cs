@@ -8,6 +8,10 @@ public class MenuGameOver : MonoBehaviour
 {
     [SerializeField] private GameObject menuGameOver;
 
+    public void GameOver()
+    {
+        menuGameOver.SetActive(true);
+    }
     public void CargarEscena(int index)
     {
         SceneManager.LoadScene(index);
@@ -24,11 +28,13 @@ public class MenuGameOver : MonoBehaviour
     public void Reiniciar()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
 
-    public void Menuinicial(string Menuinicial)
+    public void MenuInicial(string Menuinicial)
     {
-        SceneManager.LoadScene(Menuinicial);
+        SceneManager.LoadScene("Menuinicial");
+        Time.timeScale = 1f;
     }
 
     public void Salir()
