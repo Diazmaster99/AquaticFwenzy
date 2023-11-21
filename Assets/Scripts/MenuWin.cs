@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,16 +24,35 @@ public class MenuWin : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+
+        if (collision.gameObject.tag == "DestroyBoundary")
         {
-            if (juegoPausado)
-            {
-                Cerrar();
-            }
-            else
-            {
-                Salir();
-            }
+            menuWin.SetActive(true);
+        }
+
+        else
+        {
+            menuWin.SetActive(false);
+        }
+
+        if (collision.gameObject.tag == "Projectile")
+        {
+            menuWin.SetActive(true);
+        }
+
+        else //Como mantenerlo desactivado si esa condicion no se cumple
+        {
+            menuWin.SetActive(false);
+        }
+
+        if (collision.gameObject.tag == "ProjectileShoot")
+        {
+            menuWin.SetActive(true);
+        }
+
+        else
+        {
+            menuWin.SetActive(false);
         }
     }
 
@@ -52,19 +72,5 @@ public class MenuWin : MonoBehaviour
         //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
-
-    public void MostrarMenuWin()
-    {
-        if (menuWin != null)
-        {
-            menuWin.SetActive(true);
-        }
-
-        else
-        {
-            menuWin.SetActive(false);
-        }
-
         //FindObjectOfType<MenuWin>().MostrarMenuWin();
-    }
 }
