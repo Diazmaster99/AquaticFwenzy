@@ -618,6 +618,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   botonPausa: {fileID: 326967051}
   menuPausa: {fileID: 994231879}
+  menuWin: {fileID: 0}
+  menuGameOver: {fileID: 0}
   juegoPausado: 0
 --- !u!114 &326967054
 MonoBehaviour:
@@ -787,7 +789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903326, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903327, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_RootOrder
@@ -1264,6 +1266,8 @@ MonoBehaviour:
   shieldPrefab: {fileID: 1693642970}
   botonGameOver: {fileID: 1052302376}
   botonMenu: {fileID: 517195060}
+  botonOpciones: {fileID: 0}
+  MenuWin: {fileID: 0}
   shieldDown: {fileID: 828182192}
 --- !u!212 &828182186
 SpriteRenderer:
@@ -2698,6 +2702,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   botonPausa: {fileID: 326967051}
   menuPausa: {fileID: 994231879}
+  menuWin: {fileID: 0}
+  menuGameOver: {fileID: 0}
   juegoPausado: 0
 --- !u!114 &1376988011
 MonoBehaviour:

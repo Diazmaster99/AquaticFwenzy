@@ -634,14 +634,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 847402208}
-        m_TargetAssemblyTypeName: MenuInicial, Assembly-CSharp
-        m_MethodName: CargarEscena
+      - m_Target: {fileID: 362227288014227411}
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -754,6 +754,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
+--- !u!114 &362227288014227411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 362227289420903298, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
+  m_PrefabInstance: {fileID: 362227288014227410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b8f2c346067f443b48264d024ebffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4356483527548195996
 PrefabInstance:
   m_ObjectHideFlags: 0
