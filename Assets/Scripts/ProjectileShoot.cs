@@ -10,7 +10,10 @@ public class ProjectileShoot : MonoBehaviour
     public float fireRate = 0.35f;
     public bool grenadeLauncherOn=false;
     [SerializeField] private AudioSource shootSoundEffect;
-        void Start()
+
+    public Animator shoot;
+
+    void Start()
         {
         
         }
@@ -29,11 +32,16 @@ public class ProjectileShoot : MonoBehaviour
                 }
                 else
                 {
+                    shoot.SetInteger("Shooting",1);
                     shootSoundEffect.Play();
                     Instantiate(projectilePrefab, transform.position, Quaternion.identity);
                 }        
                 canFire = Time.time + fireRate;    
             }
+        }
+        else
+        {
+            shoot.SetInteger("Shooting", 0);
         }
     }
 

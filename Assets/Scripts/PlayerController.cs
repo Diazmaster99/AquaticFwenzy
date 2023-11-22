@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject botonOpciones;
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
+
+    public Animator transition;
+
     // Start is called before the first frame update
     void Start()
     {
