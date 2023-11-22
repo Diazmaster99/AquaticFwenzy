@@ -42,14 +42,14 @@ public class MenuPausa : MonoBehaviour
     {
         juegoPausado=false;
         Time.timeScale = 1f;
-        botonPausa.SetActive(false);
+        botonPausa.SetActive(true);
         menuPausa.SetActive(false);
     }
 
     public void Reiniciar ()
     {
-        juegoPausado=true;
-        botonPausa.SetActive(false); 
+        juegoPausado=false;
+        botonPausa.SetActive(true); 
         menuPausa.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -58,6 +58,7 @@ public class MenuPausa : MonoBehaviour
     public void VolverMenuInicial()
     {
         botonPausa.SetActive(false);
+        menuPausa.SetActive(true);
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name); //descarga de memoria la escena actual
      
         SceneManager.LoadScene("MenuInicial");//carga el menu inicial
@@ -65,16 +66,18 @@ public class MenuPausa : MonoBehaviour
 
     public void MenuWin()
     {
+        juegoPausado = true;
         menuWin.SetActive(true);
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
-        FindObjectOfType<MenuWin>().MostrarMenuWin();
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+        //FindObjectOfType<MenuWin>().MostrarMenuWin();
         SceneManager.LoadScene("MenuWin");
     }
 
     public void MenuGameOver()
     {
+        juegoPausado = true;
         menuGameOver.SetActive(true);
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene("MenuGameOver");
     }
 
