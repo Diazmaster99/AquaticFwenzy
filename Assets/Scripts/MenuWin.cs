@@ -7,12 +7,12 @@ public class MenuWin : MonoBehaviour
 {
     public void CargarEscena(int index)
     {
-        SceneManager.LoadScene(index);
+        SceneManager.LoadScene(index + 1);
     }
 
     public void CargarEscena(string nombre)
     {
-        SceneManager.LoadScene(nombre);
+        SceneManager.LoadScene(nombre + 1);
     }
 
     [SerializeField] private GameObject botonReanudar;
@@ -51,5 +51,20 @@ public class MenuWin : MonoBehaviour
     {
         //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+    }
+
+    public void MostrarMenuWin()
+    {
+        if (menuWin != null)
+        {
+            menuWin.SetActive(true);
+        }
+
+        else
+        {
+            menuWin.SetActive(false);
+        }
+
+        //FindObjectOfType<MenuWin>().MostrarMenuWin();
     }
 }

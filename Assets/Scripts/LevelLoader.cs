@@ -10,18 +10,6 @@ public class LevelLoader : MonoBehaviour
 
     public float timeTransition;
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            LoadNextLevel();
-        }
-
-    }
-
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex+1));
@@ -30,6 +18,20 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadLevel(int LevelIndex)
     {
         transition.SetTrigger("Start");
+        yield return new WaitForSeconds(timeTransition);
+        SceneManager.LoadScene(LevelIndex);
+    }
+
+    IEnumerator LoadWin(int LevelIndex)
+    {
+        transition.SetTrigger("Win");
+        yield return new WaitForSeconds(timeTransition);
+        SceneManager.LoadScene(LevelIndex);
+    }
+
+    IEnumerator LoadGameOver(int LevelIndex)
+    {
+        transition.SetTrigger("Game Over");
         yield return new WaitForSeconds(timeTransition);
         SceneManager.LoadScene(LevelIndex);
     }
