@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    public GameObject explosion;
-    [SerializeField] private AudioSource killEnemySoundEffect;
+
     public float radius = 5;
 
     void Start()
@@ -20,29 +19,15 @@ public class Explosion : MonoBehaviour
 
         foreach (Collider2D col in enemyHit)
         {
-            OnTriggerEnter2D(col);
-        }
-        StartCoroutine(Explode(1));
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
 
-        if (collision.gameObject.tag != "Enemies")
-        {
-            if (collision.gameObject.tag == "Enemy")
+            if (col.gameObject.tag != "Enemies")
             {
-                Destroy(collision.gameObject);
-                killEnemySoundEffect.Play();
-                StartCoroutine(Explode(0));
+                if (col.gameObject.tag == "Enemy")
+                {
+                    Destroy(col.gameObject);                    
+                }
             }
         }
-
-        if (collision.gameObject.tag == "ProjectileBoundary")
-        {
-            Destroy(gameObject);
-        }
-
-
     }
 
     private void OnDrawGizmosSelected()
@@ -51,11 +36,5 @@ public class Explosion : MonoBehaviour
         Gizmos.DrawSphere(transform.position, radius);
     }
 
-    IEnumerator Explode(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(gameObject);
 
-    }
 }

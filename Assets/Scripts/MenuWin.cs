@@ -24,36 +24,7 @@ public class MenuWin : MonoBehaviour
 
     public void Update()
     {
-
-        if (collision.gameObject.tag == "DestroyBoundary")
-        {
-            menuWin.SetActive(true);
-        }
-
-        else
-        {
-            menuWin.SetActive(false);
-        }
-
-        if (collision.gameObject.tag == "Projectile")
-        {
-            menuWin.SetActive(true);
-        }
-
-        else //Como mantenerlo desactivado si esa condicion no se cumple
-        {
-            menuWin.SetActive(false);
-        }
-
-        if (collision.gameObject.tag == "ProjectileShoot")
-        {
-            menuWin.SetActive(true);
-        }
-
-        else
-        {
-            menuWin.SetActive(false);
-        }
+   
     }
 
     public void Cerrar()

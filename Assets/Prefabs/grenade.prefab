@@ -125,7 +125,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f228723933f88c841980acead8615311, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.701
+  m_Volume: 0.658
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -221,7 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831586987b1d53943a516926c1e60282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 8589840472085786145, guid: ed7fd0c4924e76946ae88528d971149d, type: 3}
-  killEnemySoundEffect: {fileID: 3482778135550719461}
-  radius: 0.1
+  explosion: {fileID: 4913177365088258771, guid: 66ec5c00ac883c641aa2c65204f3001d, type: 3}
+  grenadeSoundEffect: {fileID: 3482778135550719461}
   moveSpeed: 6

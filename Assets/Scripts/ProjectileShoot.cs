@@ -11,9 +11,9 @@ public class ProjectileShoot : MonoBehaviour
     public bool grenadeLauncherOn=false;
     [SerializeField] private AudioSource shootSoundEffect;
         void Start()
-    {
+        {
         
-    }
+        }
 
     // Update is called once per frame
     void Update()
