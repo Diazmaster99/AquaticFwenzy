@@ -16,7 +16,7 @@ public class MenuWin : MonoBehaviour
         SceneManager.LoadScene(nombre + 1);
     }
 
-    [SerializeField] private GameObject botonReanudar;
+    [SerializeField] private GameObject botonPausa;
 
     [SerializeField] private GameObject menuWin;
 
@@ -27,15 +27,23 @@ public class MenuWin : MonoBehaviour
    
     }
 
-    public void Cerrar()
+    public void Ganar()
     {
-        Debug.Log("Cerrando juego");
-        Application.Quit();
+        juegoPausado = true;
+        Time.timeScale = 0f;
+        botonPausa.SetActive(false);
+        menuWin.SetActive(true);
     }
 
-    public void MenuInicial(string nombre)
+    public void MenuInicial()
     {
-        SceneManager.LoadScene(nombre);
+        SceneManager.LoadScene("MenuInicial");
+    }
+
+    public void Reiniciar()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Salir()

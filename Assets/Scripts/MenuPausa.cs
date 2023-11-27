@@ -52,7 +52,7 @@ public class MenuPausa : MonoBehaviour
         botonPausa.SetActive(true); 
         menuPausa.SetActive(false);
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //Obtener la escena activa (cualquiera que este activa) y que devuelva el nombre de la escena
     }
 
     public void VolverMenuInicial()

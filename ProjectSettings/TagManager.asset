@@ -12,6 +12,7 @@ TagManager:
   - DestroyBoundary
   - ProjectileBoundary
   - Shield
+  - CondicionVictoria
   layers:
   - Default
   - TransparentFX
