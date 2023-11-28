@@ -6,7 +6,7 @@ public class PowerUps : MonoBehaviour
 {
     public float moveSpeed = 3.0f;
     public int powerUpID;
-
+    public bool gunPowerUpOn = false;
     [SerializeField] private AudioSource powerUpSoundEffect;
     // Start is called before the first frame update
     void Start()
@@ -28,16 +28,18 @@ public class PowerUps : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
             powerUpSoundEffect.Play();
             PlayerController player = collision.GetComponent<PlayerController>();
-            if(powerUpID == 1)
+            if(powerUpID == 1 && gunPowerUpOn == false)
             {
+                gunPowerUpOn = true;
                 player.CanFastShoot();
             }
             if (powerUpID == 2)
             {
                 player.ShieldPowerUpOn();
             }
-            if(powerUpID==3) 
+            if(powerUpID==3 && gunPowerUpOn == false) 
             {
+                gunPowerUpOn = true;
                 player.CanGrenadeLauncher();
             }
             Destroy(gameObject, 0.9f);

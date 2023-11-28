@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject botonOpciones;
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
+    //public PowerUps powerUps;
 
     public Animator transition;
 
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator FastShootDownRoutine() 
     {
         yield return new WaitForSeconds(3f);
+        //powerUps.gunPowerUpOn = false;
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOff();
         //fastShoot = false;
@@ -85,7 +87,8 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator GrenadeLauncherDownRoutine()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(6f);     
+        //powerUps.gunPowerUpOn = false;
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOff();
         grenadeLauncher = false;
