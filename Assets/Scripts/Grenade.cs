@@ -6,7 +6,7 @@ using UnityEngine;
 public class Grenade : MonoBehaviour
 {
     public GameObject explosion;
-    [SerializeField] private AudioSource grenadeSoundEffect;
+    [SerializeField] private AudioSource explosionSoundEffect;
     public float moveSpeed;
     void Start()
     {
@@ -27,7 +27,12 @@ public class Grenade : MonoBehaviour
             if (collision.gameObject.tag == "Enemy")
             {     
                 StartCoroutine(Explode(0));
-                grenadeSoundEffect.Play();
+                gameObject.GetComponent<Renderer>().enabled = false;
+                explosionSoundEffect.Play();
+                Destroy(collision.gameObject);
+                Destroy(gameObject, 1.3f);
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                
             }
             
         }
@@ -44,6 +49,5 @@ public class Grenade : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Instantiate(explosion, transform.position, Quaternion.identity);    
-        Destroy(gameObject);
     }
 }

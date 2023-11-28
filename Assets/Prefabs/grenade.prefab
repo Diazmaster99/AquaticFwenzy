@@ -222,5 +222,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 3264707320610247828, guid: 4c9c2e753c540f24b8946e98ffe78509, type: 3}
-  grenadeSoundEffect: {fileID: 3482778135550719461}
+  explosionSoundEffect: {fileID: 3482778135550719461}
   moveSpeed: 6
