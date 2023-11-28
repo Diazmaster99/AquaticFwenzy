@@ -30,6 +30,10 @@ public class Explosion : MonoBehaviour
         }
     }
 
+    public void OnDestroy()
+    {
+            Destroy(gameObject);
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.black;

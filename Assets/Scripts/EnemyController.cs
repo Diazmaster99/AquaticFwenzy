@@ -49,7 +49,8 @@ public class EnemyController : MonoBehaviour
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 
-        if (collision.gameObject.tag == "DestroyBoundary")
+        if (collision.gameObject.tag == "DestroyBoundary" 
+            || collision.gameObject.tag == "Shield")
         {
             Destroy(gameObject);
         }
