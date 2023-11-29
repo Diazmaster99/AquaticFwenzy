@@ -52,6 +52,7 @@ public class ProjectileShoot : MonoBehaviour
     public void FastShootOff()
     {
         fireRate = 0.35f;
+        PowerUps.gunPowerUpOn = false;
         grenadeLauncherOn = false;
     }
 

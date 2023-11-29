@@ -6,7 +6,7 @@ public class PowerUps : MonoBehaviour
 {
     public float moveSpeed = 3.0f;
     public int powerUpID;
-    public bool gunPowerUpOn = false;
+    public static bool gunPowerUpOn = false;
     [SerializeField] private AudioSource powerUpSoundEffect;
     // Start is called before the first frame update
     void Start()

@@ -10,19 +10,19 @@ public class PlayerController : MonoBehaviour
     public bool shieldActive = false;
     public bool grenadeLauncher = false;
     public GameObject shieldPrefab;
+    public PowerUps powerUps;
     [SerializeField] private GameObject botonGameOver;
     [SerializeField] private GameObject botonMenu;
     [SerializeField] private GameObject botonOpciones;
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
-    //public PowerUps powerUps;
 
     public Animator transition;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        PowerUps.gunPowerUpOn = false;
     }
 
     // Update is called once per frame
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             botonMenu.SetActive(false);
             botonGameOver.SetActive(true);
+            PowerUps.gunPowerUpOn = false;
             Time.timeScale = 0f;
             Destroy(this.gameObject);
             //jugador.drag = 20;
@@ -72,7 +73,6 @@ public class PlayerController : MonoBehaviour
     public IEnumerator FastShootDownRoutine() 
     {
         yield return new WaitForSeconds(3f);
-        //powerUps.gunPowerUpOn = false;
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOff();
         //fastShoot = false;
@@ -88,7 +88,6 @@ public class PlayerController : MonoBehaviour
     public IEnumerator GrenadeLauncherDownRoutine()
     {
         yield return new WaitForSeconds(6f);     
-        //powerUps.gunPowerUpOn = false;
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOff();
         grenadeLauncher = false;
