@@ -7,9 +7,10 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private AudioSource killEnemySoundEffect;
     public float moveSpeed;
+    Animator muerte;
     void Start()
     {
-
+        muerte = null;
     }
 
     void Update()
@@ -25,7 +26,14 @@ public class Projectile : MonoBehaviour
             {
                 gameObject.GetComponent<Renderer>().enabled = false;
                 killEnemySoundEffect.Play();
-                Destroy(collision.gameObject);
+
+                muerte = collision.gameObject.GetComponent<Animator>();
+                if (muerte != null)
+                {
+                    muerte.SetBool("Muerte", true);
+                }
+                Destroy(collision.gameObject,1.5f);
+
                 Destroy(gameObject, 1.1f);
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
