@@ -9,10 +9,7 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private GameObject menuPausa;
 
-    [SerializeField] private GameObject menuWin;
-
-    [SerializeField] private GameObject menuGameOver;
-
+    public AudioSource sonidoBoton;
     public bool juegoPausado = false;
 
     public void Update()
@@ -32,6 +29,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Pausa()
     {
+        sonidoBoton.Play();
         juegoPausado = true;
         Time.timeScale = 0f;
         botonPausa.SetActive(false);
@@ -40,7 +38,8 @@ public class MenuPausa : MonoBehaviour
 
     public void Reanudar()
     {
-        juegoPausado=false;
+        sonidoBoton.Play();
+        juegoPausado =false;
         Time.timeScale = 1f;
         botonPausa.SetActive(true);
         menuPausa.SetActive(false);
@@ -48,7 +47,9 @@ public class MenuPausa : MonoBehaviour
 
     public void Reiniciar ()
     {
-        juegoPausado=false;
+        
+        sonidoBoton.Play();
+        juegoPausado =false;
         botonPausa.SetActive(true); 
         menuPausa.SetActive(false);
         Time.timeScale = 1f;
@@ -57,28 +58,11 @@ public class MenuPausa : MonoBehaviour
 
     public void VolverMenuInicial()
     {
+        sonidoBoton.Play();
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name); //descarga de memoria la escena actual
      
         SceneManager.LoadScene("MenuInicial");//carga el menu inicial
     }
-
-    public void MenuWin()
-    {
-        juegoPausado = true;
-        menuWin.SetActive(true);
-        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
-        //FindObjectOfType<MenuWin>().MostrarMenuWin();
-        SceneManager.LoadScene("MenuWin");
-    }
-
-    public void MenuGameOver()
-    {
-        juegoPausado = true;
-        menuGameOver.SetActive(true);
-        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene("MenuGameOver");
-    }
-
 }
