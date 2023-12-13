@@ -28,8 +28,57 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hInput = Input.GetAxisRaw("Horizontal");
-        transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
+        //hInput = Input.GetAxisRaw("Horizontal");
+        //transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
+
+        //if (Input.GetButtonDown(KeyCode.W))
+        //{
+        //    transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+        //}
+
+        //if (Input.GetButtonDown(KeyCode.A))
+        //{
+        //    transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+        //}
+
+        //if (Input.GetButtonDown(KeyCode.S))
+        //{
+        //    transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+        //}
+
+        //if (Input.GetButtonDown(KeyCode.D))
+        //{
+        //    transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+        //}
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+
+            transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
+
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+
+            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+
+            transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+
+            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+
+        }
+
     }
 
 
