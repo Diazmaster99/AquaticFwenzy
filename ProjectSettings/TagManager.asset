@@ -17,10 +17,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Boundaries
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

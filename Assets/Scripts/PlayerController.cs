@@ -97,6 +97,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnParticleCollision(GameObject col)
+    {
+        if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && shieldActive == false)
+        {
+            botonMenu.SetActive(false);
+            botonGameOver.SetActive(true);
+            PowerUps.gunPowerUpOn = false;
+            Time.timeScale = 0f;
+            Destroy(this.gameObject);
+            //jugador.drag = 20;
+        }
+    }
+
     public void CanFastShoot()
     {
         //fastShoot = true;
