@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
                 {
                     muerte.SetBool("Muerte", true);
                 }
-                Destroy(collision.gameObject,1.5f);
+                Destroy(collision.gameObject);
 
                 Destroy(gameObject, 1.1f);
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
