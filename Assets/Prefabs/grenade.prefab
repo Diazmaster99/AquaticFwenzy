@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -437486069094577663}
   - component: {fileID: 3482778135550719461}
   - component: {fileID: -4350049155909069222}
+  - component: {fileID: 3403713215125178717}
   m_Layer: 0
   m_Name: grenade
   m_TagString: Projectile
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3452663278403150975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -3.532, z: 0}
-  m_LocalScale: {x: 0.009050938, y: 0.009050938, z: 0.009050938}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 596ae1f8ae975c145a28e036ee89948b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b33a961941a5a34f880fdb7bae18133, type: 3}
   m_Color: {r: 0.05048989, g: 0, b: 0.6415094, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,18 +101,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000019073486, y: 12.644656}
+  m_Offset: {x: 0.030817032, y: 2.464104}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 400, y: 400}
+    oldSize: {x: 20.48, y: 15.36}
     newSize: {x: 37.5, y: 37.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 32.842644, y: 58.131966}
+  m_Size: {x: 0.749372, y: 2.1406255}
   m_EdgeRadius: 0
 --- !u!82 &3482778135550719461
 AudioSource:
@@ -224,3 +225,24 @@ MonoBehaviour:
   explosion: {fileID: 3264707320610247828, guid: 4c9c2e753c540f24b8946e98ffe78509, type: 3}
   explosionSoundEffect: {fileID: 3482778135550719461}
   moveSpeed: 6
+--- !u!95 &3403713215125178717
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452663278403150975}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: caa19f0ba6dd5254193aa2fe0d989535, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
