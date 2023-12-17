@@ -47,7 +47,6 @@ public class MenuPausa : MonoBehaviour
         btnOpciones.Play("BurbujaIdle", -1, 0f);
         btnReiniciar.Play("BurbujaIdle", -1, 0f);
         btnMenuPrincipal.Play("BurbujaIdle", -1, 0f);
-        //animator.Play("YourAnimationName", -1, 0f);
 
     }
 
@@ -85,7 +84,7 @@ public class MenuPausa : MonoBehaviour
         sonidoBoton.Play();
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name); //descarga de memoria la escena actual
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name); //descarga de memoria la escena actual
      
         SceneManager.LoadScene("MenuInicial");//carga el menu inicial
     }

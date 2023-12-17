@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
 
+    //[SerializeField] private AudioSource killPlayerSoundEffect;
+
     public Animator transition;
 
     // Start is called before the first frame update
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour
     {
         if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && shieldActive == false)
         {
+            //killPlayerSoundEffect.Play();
             botonMenu.SetActive(false);
             botonGameOver.SetActive(true);
             PowerUps.gunPowerUpOn = false;
