@@ -12,6 +12,14 @@ public class MenuPausa : MonoBehaviour
     public AudioSource sonidoBoton;
     public bool juegoPausado = false;
 
+    [SerializeField] private Animator btnReaundar;
+
+    [SerializeField] private Animator btnOpciones;
+
+    [SerializeField] private Animator btnReiniciar;
+
+    [SerializeField] private Animator btnMenuPrincipal;
+
     public void Update()
     {
         if (Input .GetKeyUp(KeyCode.Escape))
@@ -34,6 +42,22 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 0f;
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
+
+        btnReaundar.Play("BurbujaIdle",-1,0f);
+        btnOpciones.Play("BurbujaIdle", -1, 0f);
+        btnReiniciar.Play("BurbujaIdle", -1, 0f);
+        btnMenuPrincipal.Play("BurbujaIdle", -1, 0f);
+        //animator.Play("YourAnimationName", -1, 0f);
+
+    }
+
+    public void Opciones()
+    {
+        //sonidoBoton.Play();
+        //juegoPausado = true;
+        //Time.timeScale = 0f;
+        //botonPausa.SetActive(false);
+        //menuPausa.SetActive(true);
     }
 
     public void Reanudar()

@@ -20,7 +20,7 @@ public class MenuWin : MonoBehaviour
 
     [SerializeField] private GameObject menuWin;
 
-    private bool juegoPausado = false;
+    //private bool juegoPausado = false;
 
     public void Update()
     {
@@ -29,7 +29,7 @@ public class MenuWin : MonoBehaviour
 
     public void Ganar()
     {
-        juegoPausado = true;
+        //juegoPausado = true;
         Time.timeScale = 0f;
         botonPausa.SetActive(false);
         menuWin.SetActive(true);
