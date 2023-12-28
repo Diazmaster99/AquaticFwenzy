@@ -13,6 +13,8 @@ TagManager:
   - ProjectileBoundary
   - Shield
   - CondicionVictoria
+  - CabezaBoss
+  - CuerpoBoss
   layers:
   - Default
   - TransparentFX

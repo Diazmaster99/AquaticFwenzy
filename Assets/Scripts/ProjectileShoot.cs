@@ -31,7 +31,7 @@ public class ProjectileShoot : MonoBehaviour
                     Instantiate(grenadePrefab, transform.position, Quaternion.identity);
                 }
                 else
-                {
+                {                 
                     shoot.SetInteger("Shooting",1);
                     shootSoundEffect.Play();
                     Instantiate(projectilePrefab, transform.position, Quaternion.identity);

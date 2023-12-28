@@ -28,6 +28,7 @@ public class PowerUps : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
             powerUpSoundEffect.Play();
             PlayerController player = collision.GetComponent<PlayerController>();
+
             if(powerUpID == 1 && gunPowerUpOn == false)
             {
                 gunPowerUpOn = true;
@@ -42,6 +43,7 @@ public class PowerUps : MonoBehaviour
                 gunPowerUpOn = true;
                 player.CanGrenadeLauncher();
             }
+
             Destroy(gameObject, 0.9f);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
