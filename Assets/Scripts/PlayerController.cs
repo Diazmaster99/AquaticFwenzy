@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject botonOpciones;
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
+    [SerializeField] private GameObject efecto;
+    [SerializeField] private float cantidadPuntos;
+    [SerializeField] private Puntuaje puntuaje;
 
     //[SerializeField] private AudioSource killPlayerSoundEffect;
 
@@ -83,6 +86,16 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnTrigerEnter2D(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            puntuaje.SumarPuntos(cantidadPuntos);
+            Instantiate(efecto, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+    }
+    
 
 
     void OnTriggerEnter2D(Collider2D col)
