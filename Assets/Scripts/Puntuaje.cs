@@ -18,10 +18,14 @@ public class Puntuaje : MonoBehaviour
     {
         puntos += Time.deltaTime;
         textMesh.text = puntos.ToString("0");
+        puntos++;
     }
 
     public void SumarPuntos(float puntosEntrada)
     {
+        puntos = Time.deltaTime;
         puntos += puntosEntrada;
+        Destroy(gameObject);
+            
     }
 }

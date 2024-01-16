@@ -19,6 +19,8 @@ public class MenuWin : MonoBehaviour
 
     [SerializeField] private GameObject menuWin;
 
+    [SerializeField] private GameObject puntuaje;
+
     //private bool juegoPausado = false;
 
     public void Update()
@@ -32,6 +34,7 @@ public class MenuWin : MonoBehaviour
         Time.timeScale = 0f;
         botonPausa.SetActive(false);
         menuWin.SetActive(true);
+        puntuaje .SetActive(true);
     }
 
     public void MenuInicial()
