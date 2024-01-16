@@ -101,7 +101,8 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
  
-        if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && shieldActive==false )
+        if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE" ||
+            col.gameObject.tag == "Boss") && shieldActive==false )
         {
             botonMenu.SetActive(false);
             botonGameOver.SetActive(true);
