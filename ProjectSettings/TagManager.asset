@@ -15,6 +15,7 @@ TagManager:
   - CondicionVictoria
   - CabezaBoss
   - CuerpoBoss
+  - Boss
   layers:
   - Default
   - TransparentFX
