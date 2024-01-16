@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public GameObject projectilePrefab;
     [SerializeField] private AudioSource killPlayerSoundEffect;
     public float spawnTimer;
+    public float puntos;
     public float spawnMax = 3;
     public float spawnMin = 1.5f;
     public bool puedeDisparar = false;
@@ -52,6 +53,11 @@ public class EnemyController : MonoBehaviour
             || collision.gameObject.tag == "Shield")
         {
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            //puntos++;
         }
     }
 

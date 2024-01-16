@@ -5,9 +5,11 @@ using TMPro;
 
 public class Puntuaje : MonoBehaviour
 {
-    private float puntos;
+    public float puntos;
 
     private TextMeshProUGUI textMesh;
+
+    public TextMeshProUGUI puntosFinales;
 
     private void Start()
     {
@@ -18,10 +20,15 @@ public class Puntuaje : MonoBehaviour
     {
         puntos += Time.deltaTime;
         textMesh.text = puntos.ToString("0");
+       
     }
 
     public void SumarPuntos(float puntosEntrada)
     {
+        puntos = Time.deltaTime;
         puntos += puntosEntrada;
+            
     }
+
+
 }
