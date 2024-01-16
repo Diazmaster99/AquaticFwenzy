@@ -12,7 +12,8 @@ public class EnemyController : MonoBehaviour
     public float spawnMax = 3;
     public float spawnMin = 1.5f;
     public bool puedeDisparar = false;
-    public float moveSpeed=2;
+    public float moveSpeed = 2;
+    Animator muerte;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,26 +36,36 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Los enemigos solo deberian disparar si entran en el rango del jugador
-         if (collision.gameObject.tag == "ProjectileBoundary")
-         {
-            puedeDisparar = true;   
-         }
+        if (collision.gameObject.tag == "ProjectileBoundary")
+        {
+            puedeDisparar = true;
+        }
 
         if (collision.gameObject.tag == "Player")
         {
             gameObject.GetComponent<Renderer>().enabled = false;
             killPlayerSoundEffect.Play();
             Destroy(collision.gameObject);
-            Destroy(gameObject, 1.1f);
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 
-        if (collision.gameObject.tag == "DestroyBoundary" 
+        if (collision.gameObject.tag == "DestroyBoundary"
             || collision.gameObject.tag == "Shield")
         {
             Destroy(gameObject);
         }
     }
 
+    public void Muerte()
+    {
+        Destroy(gameObject);
+
+    }
+
+    //public void Muerte2()
+    //{
+    //    muerte = this.gameObject.GetComponent<Animator>();
+    //    muerte.SetBool("Muerte", false);
+
+    //}
 }
    
