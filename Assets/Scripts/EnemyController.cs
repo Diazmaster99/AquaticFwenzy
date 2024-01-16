@@ -58,7 +58,7 @@ public class EnemyController : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            puntos++;
+            //puntos++;
         }
     }
 
