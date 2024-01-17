@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public GameObject shieldPrefab;
     public PowerUps powerUps;
     [SerializeField] private GameObject botonGameOver;
-    [SerializeField] private GameObject botonMenu;
+    [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject botonOpciones;
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
  
         if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && shieldActive==false )
         {
-            botonMenu.SetActive(false);
+            botonPausa.SetActive(false);
             botonGameOver.SetActive(true);
             PowerUps.gunPowerUpOn = false;
             Time.timeScale = 0f;
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
         if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && shieldActive == false)
         {
             //killPlayerSoundEffect.Play();
-            botonMenu.SetActive(false);
+            botonPausa.SetActive(false);
             botonGameOver.SetActive(true);
             PowerUps.gunPowerUpOn = false;
             Time.timeScale = 0f;

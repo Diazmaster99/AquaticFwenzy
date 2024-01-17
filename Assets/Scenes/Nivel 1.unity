@@ -4023,13 +4023,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   hInput: 0
+  vInput: 0
   fastShoot: 0
   shieldActive: 0
   grenadeLauncher: 0
   shieldPrefab: {fileID: 1693642970}
   powerUps: {fileID: 453274900}
   botonGameOver: {fileID: 1052302376}
-  botonMenu: {fileID: 517195060}
+  botonMenu: {fileID: 326967051}
   botonOpciones: {fileID: 0}
   MenuWin: {fileID: 0}
   shieldDown: {fileID: 828182192}
