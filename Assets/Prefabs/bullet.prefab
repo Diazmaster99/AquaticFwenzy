@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killEnemySoundEffect: {fileID: 3482778135550719461}
-  killBossSoundEffect: {fileID: 0}
+  killBossSoundEffect: {fileID: 8176130185084951955}
   moveSpeed: 7
 --- !u!61 &-437486069094577663
 BoxCollider2D:
@@ -237,7 +237,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 829d45c2fae2cea4688882fc559ecdf5, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

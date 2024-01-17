@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5;
-    public float hInput;
+    public float hInput, vInput;
     public bool fastShoot = false;
     public bool shieldActive = false;
     public bool grenadeLauncher = false;
@@ -33,57 +33,31 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //hInput = Input.GetAxisRaw("Horizontal");
-        //transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
-
-        //if (Input.GetButtonDown(KeyCode.W))
-        //{
-        //    transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
-        //}
-
-        //if (Input.GetButtonDown(KeyCode.A))
-        //{
-        //    transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        //}
-
-        //if (Input.GetButtonDown(KeyCode.S))
-        //{
-        //    transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-        //}
-
-        //if (Input.GetButtonDown(KeyCode.D))
-        //{
-        //    transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-        //}
-
+        hInput = Input.GetAxisRaw("Horizontal");
+        vInput = Input.GetAxisRaw("Vertical");
+        transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector2.up * vInput * moveSpeed * Time.deltaTime);
+        /*
         if (Input.GetKey(KeyCode.UpArrow))
         {
-
             transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
-
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-
             transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-
             transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-
         }
-
+        */
     }
 
     private void OnTrigerEnter2D(Collider other)
@@ -101,8 +75,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
  
-        if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE" ||
-            col.gameObject.tag == "Boss") && shieldActive==false )
+        if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && shieldActive==false )
         {
             botonMenu.SetActive(false);
             botonGameOver.SetActive(true);

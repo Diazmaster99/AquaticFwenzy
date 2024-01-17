@@ -5019,7 +5019,7 @@ GameObject:
   - component: {fileID: 1525190512}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Boss
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10008,7 +10008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057e07f11df96974c929535906fb90ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killBossSoundEffect: {fileID: 1525190511}
+  killPlayerSoundEffect: {fileID: 1525190502}
   moveSpeed: 5
 --- !u!82 &1525190511
 AudioSource:
@@ -16132,6 +16132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killPlayerSoundEffect: {fileID: 2048045004}
+  botonGameOver: {fileID: 0}
+  botonMenu: {fileID: 0}
 --- !u!1 &2058630249
 GameObject:
   m_ObjectHideFlags: 0
