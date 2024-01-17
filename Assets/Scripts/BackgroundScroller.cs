@@ -22,13 +22,13 @@ public class BackgroundScroller : MonoBehaviour
 
     void Update()
     {
-        //regularParallax();
-        noiseParallax();
+        regularParallax();
+        //noiseParallax();
     }
 
     public void regularParallax()
     {
-        offset -= (Time.deltaTime * Speed) / 10;
+        offset -= (Time.deltaTime * Speed) / 3000;
         mat.SetTextureOffset("_MainTex", new Vector2(0, offset));
         if (!pauseManager.GetComponent<MenuPausa>().juegoPausado)
         {
@@ -38,7 +38,7 @@ public class BackgroundScroller : MonoBehaviour
 
     public void noiseParallax()
     {
-        offset -= (Mathf.PerlinNoise(0.1f,1f)) / 1000;
+        offset -= (Mathf.PerlinNoise(0.1f,1f)* Speed) / 10;
         mat.SetTextureOffset("_MainTex", new Vector2(0, offset));
         if (!pauseManager.GetComponent<MenuPausa>().juegoPausado)
         {
