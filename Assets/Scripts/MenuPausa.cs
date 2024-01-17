@@ -73,7 +73,7 @@ public class MenuPausa : MonoBehaviour
         
         sonidoBoton.Play();
         juegoPausado =false;
-        botonPausa.SetActive(true); 
+        botonPausa.SetActive(true);
         menuPausa.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); //Obtener la escena activa (cualquiera que este activa) y que devuelva el nombre de la escena
