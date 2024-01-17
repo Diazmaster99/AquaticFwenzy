@@ -4030,7 +4030,7 @@ MonoBehaviour:
   shieldPrefab: {fileID: 1693642970}
   powerUps: {fileID: 453274900}
   botonGameOver: {fileID: 1052302376}
-  botonMenu: {fileID: 326967051}
+  botonPausa: {fileID: 326967051}
   botonOpciones: {fileID: 0}
   MenuWin: {fileID: 0}
   shieldDown: {fileID: 828182192}
