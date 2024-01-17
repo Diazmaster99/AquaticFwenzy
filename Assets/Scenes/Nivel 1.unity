@@ -946,7 +946,7 @@ GameObject:
   - component: {fileID: 269726056}
   - component: {fileID: 269726055}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Corazon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1099,6 +1099,7 @@ GameObject:
   - component: {fileID: 326967056}
   - component: {fileID: 326967055}
   - component: {fileID: 326967054}
+  - component: {fileID: 326967053}
   m_Layer: 0
   m_Name: BotonPausa
   m_TagString: Untagged
@@ -1113,9 +1114,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326967051}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0000002, y: 2.0000002, z: 1.0000001}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1376988009}
@@ -1126,6 +1127,26 @@ RectTransform:
   m_AnchoredPosition: {x: -10.100098, y: -14.900024}
   m_SizeDelta: {x: 155.5588, y: 114.4988}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &326967053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326967051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111b5e4ceebbca446a7765339bc17051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonPausa: {fileID: 326967051}
+  menuPausa: {fileID: 994231879}
+  sonidoBoton: {fileID: 0}
+  juegoPausado: 0
+  btnReaundar: {fileID: 0}
+  btnOpciones: {fileID: 0}
+  btnReiniciar: {fileID: 0}
+  btnMenuPrincipal: {fileID: 0}
 --- !u!114 &326967054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1307,7 +1328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903326, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903327, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_RootOrder
@@ -2156,7 +2177,7 @@ GameObject:
   - component: {fileID: 502874034}
   - component: {fileID: 502874033}
   m_Layer: 0
-  m_Name: Image (1)
+  m_Name: Corazon 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3815,7 +3836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805916827}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 171.21, z: 0}
+  m_LocalPosition: {x: 0.7151847, y: 166.3, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5924,7 +5945,6 @@ GameObject:
   - component: {fileID: 1052302379}
   - component: {fileID: 1052302378}
   - component: {fileID: 1052302381}
-  - component: {fileID: 1052302382}
   m_Layer: 0
   m_Name: BTNGameOver
   m_TagString: Untagged
@@ -6143,20 +6163,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1052302382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052302376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18956741994dcb048927799c139c5f2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuGameOver: {fileID: 1052302376}
-  menuPausa: {fileID: 0}
 --- !u!1 &1063587971
 GameObject:
   m_ObjectHideFlags: 0
@@ -6169,7 +6175,7 @@ GameObject:
   - component: {fileID: 1063587974}
   - component: {fileID: 1063587973}
   m_Layer: 0
-  m_Name: Image (2)
+  m_Name: Corazon 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6738,11 +6744,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1233164829509181241, guid: 929839bd425cb2940ba74210ce75f55b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.788826
+      value: -37.31
       objectReference: {fileID: 0}
     - target: {fileID: 1233164829509181241, guid: 929839bd425cb2940ba74210ce75f55b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -62.378082
+      value: -65.48
       objectReference: {fileID: 0}
     - target: {fileID: 1233164829509181241, guid: 929839bd425cb2940ba74210ce75f55b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7158,12 +7164,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271425953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7e3f68806c1603499aa5bf01a004b40, type: 3}
+  m_Script: {fileID: 11500000, guid: 170df65fcb8e22a4a9dba5d9b71486b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  botonPausa: {fileID: 326967051}
-  menuWin: {fileID: 1271425953}
-  puntuaje: {fileID: 1725498448}
+  puntos: 0
+  puntosFinales: {fileID: 1725498451}
 --- !u!4 &1351572041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5329020803886274454, guid: b96b42433645d6448b0cc839dab26c02, type: 3}
@@ -8518,7 +8523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 115, y: -258}
+  m_AnchoredPosition: {x: 14.996, y: -258}
   m_SizeDelta: {x: 229.9914, y: 79.9914}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1645090286
@@ -15234,7 +15239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048044999}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.43, y: 11.1, z: -3.04}
+  m_LocalPosition: {x: 2.43, y: 5.79, z: -3.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15350,6 +15355,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killPlayerSoundEffect: {fileID: 2048045004}
+  botonGameOver: {fileID: 1052302376}
+  botonMenu: {fileID: 326967051}
 --- !u!1001 &2053937023
 PrefabInstance:
   m_ObjectHideFlags: 0
