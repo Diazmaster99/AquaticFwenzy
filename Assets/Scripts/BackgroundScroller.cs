@@ -22,13 +22,28 @@ public class BackgroundScroller : MonoBehaviour
 
     void Update()
     {
-        offset += (Time.deltaTime * Speed) / 10;
+        //regularParallax();
+        noiseParallax();
+    }
+
+    public void regularParallax()
+    {
+        offset -= (Time.deltaTime * Speed) / 10;
         mat.SetTextureOffset("_MainTex", new Vector2(0, offset));
         if (!pauseManager.GetComponent<MenuPausa>().juegoPausado)
         {
             StartCoroutine(aumentarVel());
         }
+    }
 
+    public void noiseParallax()
+    {
+        offset -= (Mathf.PerlinNoise(0.1f,1f)) / 1000;
+        mat.SetTextureOffset("_MainTex", new Vector2(0, offset));
+        if (!pauseManager.GetComponent<MenuPausa>().juegoPausado)
+        {
+            StartCoroutine(aumentarVel());
+        }
     }
 
     private IEnumerator aumentarVel()

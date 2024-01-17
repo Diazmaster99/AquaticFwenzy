@@ -35,8 +35,8 @@ public class Projectile : MonoBehaviour
                 }
                 //Destroy(collision.gameObject);
 
-                //Destroy(gameObject, 1.1f);
-                //gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                Destroy(gameObject);
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }
         }
 
