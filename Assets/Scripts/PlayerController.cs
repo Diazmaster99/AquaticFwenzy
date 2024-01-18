@@ -36,28 +36,7 @@ public class PlayerController : MonoBehaviour
         hInput = Input.GetAxisRaw("Horizontal");
         vInput = Input.GetAxisRaw("Vertical");
         transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
-        transform.Translate(Vector2.up * vInput * moveSpeed * Time.deltaTime);
-        /*
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        }
-        */
+        transform.Translate(Vector2.up * vInput * moveSpeed * Time.deltaTime);      
     }
 
     private void OnTrigerEnter2D(Collider other)
@@ -69,8 +48,6 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -99,7 +76,6 @@ public class PlayerController : MonoBehaviour
             //jugador.drag = 20;
         }
     }
-
     public void CanFastShoot()
     {
         //fastShoot = true;
@@ -129,7 +105,6 @@ public class PlayerController : MonoBehaviour
         projectileShoot.FastShootOff();
         //fastShoot = false;
     }
-
     public IEnumerator ShieldDownRoutine() 
     {
         yield return new WaitForSeconds(3f);

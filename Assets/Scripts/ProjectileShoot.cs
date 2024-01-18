@@ -14,9 +14,9 @@ public class ProjectileShoot : MonoBehaviour
     public Animator shoot;
 
     void Start()
-        {
+    {
         
-        }
+    }
 
     // Update is called once per frame
     void Update()

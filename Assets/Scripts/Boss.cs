@@ -46,9 +46,6 @@ public class Boss : MonoBehaviour
         }
 
     }
-   
-    
-
     public void Muerte()
     {
         Destroy(gameObject);
