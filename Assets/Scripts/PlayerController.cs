@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         PowerUps.gunPowerUpOn = false;
+        puntos = 0;
     }
 
     // Update is called once per frame

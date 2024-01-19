@@ -72,7 +72,6 @@ public class MenuPausa : MonoBehaviour
 
     public void Reiniciar ()
     {
-        jugador.GetComponent<PlayerController>().puntos = 0;
         sonidoBoton.Play();
         juegoPausado =false;
         botonPausa.SetActive(true);
