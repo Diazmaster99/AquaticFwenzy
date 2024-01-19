@@ -17,7 +17,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(moveSpeed * Time.deltaTime * Vector2.up);
+        transform.Translate(moveSpeed * Time.deltaTime * Vector2.right);
 
         if (vidaBoss <= 0)
         {
