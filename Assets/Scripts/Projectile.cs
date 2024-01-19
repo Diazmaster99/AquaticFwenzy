@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private AudioSource killEnemySoundEffect;
     public float moveSpeed;
     Animator muerte;
+    [SerializeField] public PlayerController player;
     void Start()
     {
         muerte = null;
@@ -26,6 +27,7 @@ public class Projectile : MonoBehaviour
             {
                 gameObject.GetComponent<Renderer>().enabled = false;
                 killEnemySoundEffect.Play();
+                player.SumarPuntos();
 
                 muerte = collision.gameObject.GetComponent<Animator>();
                 if (muerte != null)

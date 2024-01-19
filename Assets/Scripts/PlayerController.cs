@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -17,12 +18,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
     [SerializeField] private GameObject efecto;
-    [SerializeField] private float cantidadPuntos;
-    [SerializeField] private Puntuaje puntuaje;
+    [SerializeField] public int puntos;
+    [SerializeField] private TextMeshProUGUI puntosDisplay;
 
     //[SerializeField] private AudioSource killPlayerSoundEffect;
 
-    public Animator transition;
+    //public Animator transition;
 
     // Start is called before the first frame update
     void Start()
@@ -36,14 +37,22 @@ public class PlayerController : MonoBehaviour
         hInput = Input.GetAxisRaw("Horizontal");
         vInput = Input.GetAxisRaw("Vertical");
         transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
-        transform.Translate(Vector2.up * vInput * moveSpeed * Time.deltaTime);      
+        transform.Translate(Vector2.up * vInput * moveSpeed * Time.deltaTime);
+        
+        //puntosDisplay.ForceMeshUpdate(true);
+    }
+
+    public void SumarPuntos()
+    {
+        puntos = puntos + 1000;
+        puntosDisplay.SetText("Puntos: " + puntos);
     }
 
     private void OnTrigerEnter2D(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            puntuaje.SumarPuntos(cantidadPuntos);
+            //puntuaje.SumarPuntos(cantidadPuntos);
             Instantiate(efecto, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
