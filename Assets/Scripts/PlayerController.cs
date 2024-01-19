@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5;
     public float hInput, vInput;
     public bool fastShoot = false;
-    public bool shieldActive = false;
+    public static bool shieldActive = false;
     public bool grenadeLauncher = false;
     public GameObject shieldPrefab;
     public PowerUps powerUps;
