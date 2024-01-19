@@ -20,6 +20,8 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private Animator btnMenuPrincipal;
 
+    [SerializeField] private GameObject jugador;
+
     public void Update()
     {
         if (Input .GetKeyUp(KeyCode.Escape))
@@ -70,7 +72,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Reiniciar ()
     {
-        
+        jugador.GetComponent<PlayerController>().puntos = 0;
         sonidoBoton.Play();
         juegoPausado =false;
         botonPausa.SetActive(true);
@@ -81,6 +83,7 @@ public class MenuPausa : MonoBehaviour
 
     public void VolverMenuInicial()
     {
+        jugador.GetComponent<PlayerController>().puntos = 0;
         Time.timeScale = 1f;
         sonidoBoton.Play();
         botonPausa.SetActive(false);
@@ -92,6 +95,7 @@ public class MenuPausa : MonoBehaviour
 
     public void SiguienteNivel()
     {
+        jugador.GetComponent<PlayerController>().puntos = 0;
         Time.timeScale = 1f;
         sonidoBoton.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);

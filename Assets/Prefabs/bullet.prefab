@@ -104,6 +104,7 @@ MonoBehaviour:
   killEnemySoundEffect: {fileID: 3482778135550719461}
   killBossSoundEffect: {fileID: 8176130185084951955}
   moveSpeed: 7
+  player: {fileID: 0}
 --- !u!61 &-437486069094577663
 BoxCollider2D:
   m_ObjectHideFlags: 0
