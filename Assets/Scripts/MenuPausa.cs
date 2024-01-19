@@ -81,11 +81,19 @@ public class MenuPausa : MonoBehaviour
 
     public void VolverMenuInicial()
     {
+        Time.timeScale = 1f;
         sonidoBoton.Play();
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
         //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name); //descarga de memoria la escena actual
      
         SceneManager.LoadScene("MenuInicial");//carga el menu inicial
+    }
+
+    public void SiguienteNivel()
+    {
+        Time.timeScale = 1f;
+        sonidoBoton.Play();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

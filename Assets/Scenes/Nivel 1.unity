@@ -7691,9 +7691,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1340893032}
-        m_TargetAssemblyTypeName: Burbuja, Assembly-CSharp
-        m_MethodName: ExplotarBurbujaMenu
+      - m_Target: {fileID: 1376988010}
+        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
+        m_MethodName: SiguienteNivel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7753,7 +7753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31421bb5618d22f4e80939c7c9a0f519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btnSiguienteNivel: {fileID: 1340893027}
 --- !u!4 &1351572041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5329020803886274454, guid: b96b42433645d6448b0cc839dab26c02, type: 3}
