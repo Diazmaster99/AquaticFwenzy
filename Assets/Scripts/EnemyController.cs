@@ -60,7 +60,6 @@ public class EnemyController : MonoBehaviour
             //puntos++;
         }
     }
-
     public void Muerte()
     {
         Destroy(gameObject);

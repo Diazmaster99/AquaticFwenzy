@@ -5,12 +5,13 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     [SerializeField] private AudioSource killPlayerSoundEffect;
+    [SerializeField] private AudioSource killBossSoundEffect;
     public float moveSpeed;
     public static int vidaBoss = 10;
     // Start is called before the first frame update
     void Start()
     {
-      
+        vidaBoss = 10;
     }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class Boss : MonoBehaviour
 
         if (vidaBoss <= 0)
         {
+            killBossSoundEffect.Play();
             Muerte();
         }
     }
@@ -32,23 +34,44 @@ public class Boss : MonoBehaviour
             moveSpeed *= -1;
         }
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && PlayerController.shieldActive==false)
         {
-            gameObject.GetComponent<Renderer>().enabled = false;
+            vidaBoss--;
             killPlayerSoundEffect.Play();
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.tag == "Player" && PlayerController.shieldActive == true)
+        {
+            vidaBoss--;        
+        }
 
-        if (collision.gameObject.tag == "Projectile"
-            || collision.gameObject.tag == "Shield")
+        if (collision.gameObject.tag == "Projectile")
         {
             vidaBoss--;
         }
 
     }
-    public void Muerte()
+    private void OnParticleCollision(GameObject col)
     {
-        Destroy(gameObject);
+        if (col.gameObject.tag == "Shield")
+        {
+            Destroy(gameObject);
+        }
+
+        if (col.gameObject.tag == "Player" && PlayerController.shieldActive == false)
+        {
+            // botonMenu.SetActive(false);
+            // botonGameOver.SetActive(true);
+            killPlayerSoundEffect.Play();
+            PowerUps.gunPowerUpOn = false;
+            Time.timeScale = 0f;
+            Destroy(col.gameObject);
+        }
+    }
+
+    public void Muerte()
+    {    
+        Destroy(gameObject);      
     }
 }
     

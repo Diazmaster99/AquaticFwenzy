@@ -2337,7 +2337,6 @@ MonoBehaviour:
   hInput: 0
   vInput: 0
   fastShoot: 0
-  shieldActive: 0
   grenadeLauncher: 0
   shieldPrefab: {fileID: 1693642970}
   powerUps: {fileID: 453274900}
@@ -4305,11 +4304,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1233164829509181241, guid: 929839bd425cb2940ba74210ce75f55b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.788826
+      value: -36.4
       objectReference: {fileID: 0}
     - target: {fileID: 1233164829509181241, guid: 929839bd425cb2940ba74210ce75f55b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -62.378082
+      value: -66.92
       objectReference: {fileID: 0}
     - target: {fileID: 1233164829509181241, guid: 929839bd425cb2940ba74210ce75f55b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10010,6 +10009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killPlayerSoundEffect: {fileID: 1525190502}
+  killBossSoundEffect: {fileID: 1525190511}
   moveSpeed: 5
 --- !u!82 &1525190511
 AudioSource:
@@ -16017,8 +16017,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048044999}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.43, y: 11.1, z: -3.04}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.4299998, y: 11.100004, z: -3.04}
+  m_LocalScale: {x: 1.000001, y: 1.0000008, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -16133,8 +16133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killPlayerSoundEffect: {fileID: 2048045004}
-  botonGameOver: {fileID: 0}
-  botonMenu: {fileID: 0}
+  moveSpeed: 0
 --- !u!1 &2058630249
 GameObject:
   m_ObjectHideFlags: 0
