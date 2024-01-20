@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
             {
                 gameObject.GetComponent<Renderer>().enabled = false;
                 killEnemySoundEffect.Play();
-                player.SumarPuntos();
+               
                 
                 muerte = collision.gameObject.GetComponent<Animator>();
                 if (muerte != null)
@@ -38,6 +38,7 @@ public class Projectile : MonoBehaviour
 
                 Destroy(gameObject);
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                player.SumarPuntos();
             }
           
           

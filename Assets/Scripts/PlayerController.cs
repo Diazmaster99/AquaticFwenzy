@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         PowerUps.gunPowerUpOn = false;
-        puntos = 0;
     }
 
     // Update is called once per frame
@@ -40,17 +39,19 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
         transform.Translate(Vector2.up * vInput * moveSpeed * Time.deltaTime);
         
+        if (puntosDisplay != null)
+        {
+            puntosDisplay.SetText("Puntos: " + puntos);
+        }
         //puntosDisplay.ForceMeshUpdate(true);
     }
 
     public void SumarPuntos()
     {
-        puntos = puntos + 1000;
-        if (puntosDisplay!= null)
-        {
-            puntosDisplay.SetText("Puntos: " + puntos);
-        }
-        
+        puntos += 1000;
+        /*if (puntos == 1000) {    
+            puntos += 1000;
+        }*/
     }
 
     private void OnTrigerEnter2D(Collider other)

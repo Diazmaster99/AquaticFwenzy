@@ -48,6 +48,11 @@ public class EnemyController : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.gameObject.tag == "Projectile")
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        }
+
         if (collision.gameObject.tag == "DestroyBoundary"
             || collision.gameObject.tag == "Shield")
         {
