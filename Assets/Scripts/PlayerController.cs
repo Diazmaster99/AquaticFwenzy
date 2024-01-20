@@ -46,7 +46,11 @@ public class PlayerController : MonoBehaviour
     public void SumarPuntos()
     {
         puntos = puntos + 1000;
-        puntosDisplay.SetText("Puntos: " + puntos);
+        if (puntosDisplay!= null)
+        {
+            puntosDisplay.SetText("Puntos: " + puntos);
+        }
+        
     }
 
     private void OnTrigerEnter2D(Collider other)

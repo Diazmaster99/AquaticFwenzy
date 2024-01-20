@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.074616194, y: 0.02018261}
+  m_Offset: {x: -0.04205942, y: 0.02018261}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8514228, y: 2.8937244}
+  m_Size: {x: 2.5692654, y: 2.8937244}
   m_EdgeRadius: 0
 --- !u!114 &3545227049069133534
 MonoBehaviour:
@@ -130,6 +130,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3452663278403150975, guid: e3baaec4f35261b41bea94e2ebad24a8, type: 3}
   killPlayerSoundEffect: {fileID: 5217339898234011370}
   spawnTimer: 2.7
+  puntos: 0
   spawnMax: 2.7
   spawnMin: 2
   puedeDisparar: 0
