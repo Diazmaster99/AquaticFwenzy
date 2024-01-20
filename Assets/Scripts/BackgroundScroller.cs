@@ -17,7 +17,7 @@ public class BackgroundScroller : MonoBehaviour
     private void Start()
     {
         mat = GetComponent<Renderer>().material;
-        Speed = -0.3f;
+        Speed = 0.3f;
     }
 
 

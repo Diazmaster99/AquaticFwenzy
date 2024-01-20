@@ -26,6 +26,7 @@ public class Projectile : MonoBehaviour
             if (collision.gameObject.tag == "Enemy")
             {
                 gameObject.GetComponent<Renderer>().enabled = false;
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 killEnemySoundEffect.Play();
                
                 
@@ -35,9 +36,8 @@ public class Projectile : MonoBehaviour
                     muerte.SetBool("Muerte", true);
                 }
                 //Destroy(collision.gameObject);
-
-                Destroy(gameObject);
-                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                Destroy(gameObject,1.1f);
+                
                 player.SumarPuntos();
             }
           
