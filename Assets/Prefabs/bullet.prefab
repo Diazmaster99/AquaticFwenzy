@@ -102,9 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killEnemySoundEffect: {fileID: 3482778135550719461}
-  killBossSoundEffect: {fileID: 8176130185084951955}
   moveSpeed: 7
-  player: {fileID: 0}
+  player: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
 --- !u!61 &-437486069094577663
 BoxCollider2D:
   m_ObjectHideFlags: 0
