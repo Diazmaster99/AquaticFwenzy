@@ -82,7 +82,7 @@ public class MenuPausa : MonoBehaviour
 
     public void VolverMenuInicial()
     {
-        jugador.GetComponent<PlayerController>().puntos = 0;
+        
         Time.timeScale = 1f;
         sonidoBoton.Play();
         botonPausa.SetActive(false);
