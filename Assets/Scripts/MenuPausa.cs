@@ -45,20 +45,11 @@ public class MenuPausa : MonoBehaviour
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
 
-        btnReaundar.Play("BurbujaIdle",-1,0f);
+        btnReaundar.Play("BurbujaIdle",-1, 0f);
         btnOpciones.Play("BurbujaIdle", -1, 0f);
         btnReiniciar.Play("BurbujaIdle", -1, 0f);
         btnMenuPrincipal.Play("BurbujaIdle", -1, 0f);
 
-    }
-
-    public void Opciones()
-    {
-        //sonidoBoton.Play();
-        //juegoPausado = true;
-        //Time.timeScale = 0f;
-        //botonPausa.SetActive(false);
-        //menuPausa.SetActive(true);
     }
 
     public void Reanudar()
@@ -68,6 +59,15 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         botonPausa.SetActive(true);
         menuPausa.SetActive(false);
+    }
+
+    public void Opciones()
+    {
+        //sonidoBoton.Play();
+        //juegoPausado = true;
+        //Time.timeScale = 0f;
+        //botonPausa.SetActive(false);
+        //menuPausa.SetActive(true);
     }
 
     public void Reiniciar ()
@@ -94,7 +94,6 @@ public class MenuPausa : MonoBehaviour
 
     public void SiguienteNivel()
     {
-        jugador.GetComponent<PlayerController>().puntos = 0;
         Time.timeScale = 1f;
         sonidoBoton.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);

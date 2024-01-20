@@ -17,33 +17,18 @@ public class BackgroundScroller : MonoBehaviour
     private void Start()
     {
         mat = GetComponent<Renderer>().material;
+        Speed = -0.3f;
     }
 
 
     void Update()
     {
-        regularParallax();
-        //noiseParallax();
-    }
-
-    public void regularParallax()
-    {
-        offset -= (Time.deltaTime * Speed) / 3000;
+        offset += (Time.deltaTime * Speed) / 10;
         mat.SetTextureOffset("_MainTex", new Vector2(0, offset));
-        if (!pauseManager.GetComponent<MenuPausa>().juegoPausado)
-        {
-            StartCoroutine(aumentarVel());
-        }
-    }
-
-    public void noiseParallax()
-    {
-        offset -= (Mathf.PerlinNoise(0.1f,1f)* Speed) / 10;
-        mat.SetTextureOffset("_MainTex", new Vector2(0, offset));
-        if (!pauseManager.GetComponent<MenuPausa>().juegoPausado)
-        {
-            StartCoroutine(aumentarVel());
-        }
+        //if (!pauseManager.GetComponent<MenuPausa>().juegoPausado)
+        //{
+        //    //StartCoroutine(aumentarVel());
+        //}
     }
 
     private IEnumerator aumentarVel()
