@@ -4,40 +4,66 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    [SerializeField] private AudioSource killPlayerSoundEffect;
-    [SerializeField] private AudioSource killBossSoundEffect;
+    [SerializeField] private AudioSource SoundEffect;
+    [SerializeField] private AudioClip AudioClipMuerteBoss;
+    [SerializeField] private AudioClip AudioClipMuerteJugador;
     public float moveSpeed;
     public static int vidaBoss = 10;
+    [SerializeField] private Animator animacionBoss;
+    private bool sonidoBoss = true;
+    private bool muerto = false;
     // Start is called before the first frame update
     void Start()
     {
+        muerto = false;
+        sonidoBoss = true;
         vidaBoss = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(moveSpeed * Time.deltaTime * Vector2.right);
+        if (vidaBoss >0)
+        {
+            transform.Translate(moveSpeed * Time.deltaTime * Vector2.right);
+        }
 
         if (vidaBoss <= 0)
         {
-            killBossSoundEffect.Play();
-            Muerte();
+            if (sonidoBoss)
+            {
+                SoundEffect.clip = AudioClipMuerteBoss;
+                SoundEffect.Play();
+                sonidoBoss = false;
+            }
+            transform.Translate(Time.deltaTime * Vector2.up);
+
+            if (animacionBoss != null)
+            {
+                animacionBoss.SetBool("Muerte", true);
+            }
+
+            //Muerte();
+            //Ganar
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.tag == "Boundary")
+        if (!muerto)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-            moveSpeed *= -1;
+            if (collision.gameObject.tag == "Boundary")
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                moveSpeed *= -1;
+            }
         }
+        
 
         if (collision.gameObject.tag == "Player" && PlayerController.shieldActive==false)
         {
             vidaBoss--;
-            killPlayerSoundEffect.Play();
+            SoundEffect.clip = AudioClipMuerteJugador;
+            SoundEffect.Play();
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Player" && PlayerController.shieldActive == true)
@@ -62,7 +88,8 @@ public class Boss : MonoBehaviour
         {
             // botonMenu.SetActive(false);
             // botonGameOver.SetActive(true);
-            killPlayerSoundEffect.Play();
+            SoundEffect.clip = AudioClipMuerteJugador;
+            SoundEffect.Play();
             PowerUps.gunPowerUpOn = false;
             Time.timeScale = 0f;
             Destroy(col.gameObject);
