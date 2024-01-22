@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Medusa_muerte
+  m_Name: Serpiente_muerte
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: d4fa16142d717c0418f920077826b3a3, type: 3}
+      value: {fileID: 21300000, guid: b7044445b7e26394aa9363d1aaf049d1, type: 3}
     - time: 0.11666667
-      value: {fileID: 21300000, guid: fbeca2459dde9c749a84580ecb3b0da9, type: 3}
+      value: {fileID: 21300000, guid: 9003b34c34b2c5246912090b3aa11a71, type: 3}
+    - time: 0.21666667
+      value: {fileID: 21300000, guid: 61ae6b9e62818cd40b3c19259a14b273, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: 94e971aa536dec4499706e9d88c63b02, type: 3}
+      value: {fileID: 21300000, guid: 18d034aed1960f34992c03898d3028f1, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,9 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: d4fa16142d717c0418f920077826b3a3, type: 3}
-    - {fileID: 21300000, guid: fbeca2459dde9c749a84580ecb3b0da9, type: 3}
-    - {fileID: 21300000, guid: 94e971aa536dec4499706e9d88c63b02, type: 3}
+    - {fileID: 21300000, guid: b7044445b7e26394aa9363d1aaf049d1, type: 3}
+    - {fileID: 21300000, guid: 9003b34c34b2c5246912090b3aa11a71, type: 3}
+    - {fileID: 21300000, guid: 61ae6b9e62818cd40b3c19259a14b273, type: 3}
+    - {fileID: 21300000, guid: 18d034aed1960f34992c03898d3028f1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -57,7 +60,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
