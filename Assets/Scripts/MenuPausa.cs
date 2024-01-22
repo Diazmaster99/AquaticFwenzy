@@ -76,6 +76,7 @@ public class MenuPausa : MonoBehaviour
         juegoPausado =false;
         botonPausa.SetActive(true);
         menuPausa.SetActive(false);
+        PlayerController.puntos = 0;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); //Obtener la escena activa (cualquiera que este activa) y que devuelva el nombre de la escena
     }
@@ -87,8 +88,9 @@ public class MenuPausa : MonoBehaviour
         sonidoBoton.Play();
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
+        PlayerController.puntos = 0;
         //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name); //descarga de memoria la escena actual
-     
+
         SceneManager.LoadScene("MenuInicial");//carga el menu inicial
     }
 
