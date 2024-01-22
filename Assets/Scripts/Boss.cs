@@ -7,6 +7,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private AudioSource SoundEffect;
     [SerializeField] private AudioClip AudioClipMuerteBoss;
     [SerializeField] private AudioClip AudioClipMuerteJugador;
+    public GameObject menuWin;
     public float moveSpeed;
     public static int vidaBoss = 10;
     [SerializeField] private Animator animacionBoss;
@@ -41,6 +42,7 @@ public class Boss : MonoBehaviour
             if (animacionBoss != null)
             {
                 animacionBoss.SetBool("Muerte", true);
+                menuWin.SetActive(true);
             }
 
             //Muerte();
