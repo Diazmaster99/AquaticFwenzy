@@ -224,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 3264707320610247828, guid: 4c9c2e753c540f24b8946e98ffe78509, type: 3}
   explosionSoundEffect: {fileID: 3482778135550719461}
+  player: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
   moveSpeed: 6
 --- !u!95 &3403713215125178717
 Animator:

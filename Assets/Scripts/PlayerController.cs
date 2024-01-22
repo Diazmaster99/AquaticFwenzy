@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
     [SerializeField] private GameObject efecto;
-    [SerializeField] public int puntos;
+    [SerializeField] public static int puntos;
     [SerializeField] private TextMeshProUGUI puntosDisplay;
 
     //[SerializeField] private AudioSource killPlayerSoundEffect;

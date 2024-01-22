@@ -16,7 +16,7 @@ public class ProjectileShoot : MonoBehaviour
 
     void Start()
     {
-        
+        projectilePrefab.GetComponent<Projectile>().player = player;
     }
 
     // Update is called once per frame
@@ -29,14 +29,14 @@ public class ProjectileShoot : MonoBehaviour
                 if (grenadeLauncherOn) 
                 {
                     shootSoundEffect.Play();
-                    Instantiate(grenadePrefab, transform.position, Quaternion.identity);
+                    Instantiate(grenadePrefab, transform.position, Quaternion.identity);                   
                 }
                 else
                 {                 
                     shoot.SetInteger("Shooting",1);
                     shootSoundEffect.Play();
                     Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-                    projectilePrefab.GetComponent<Projectile>().player = player;
+                    //player.SumarPuntos();
                 }        
                 canFire = Time.time + fireRate;    
             }

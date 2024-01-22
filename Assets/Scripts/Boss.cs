@@ -23,7 +23,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vidaBoss >0)
+        if (vidaBoss > 0)
         {
             transform.Translate(moveSpeed * Time.deltaTime * Vector2.right);
         }
