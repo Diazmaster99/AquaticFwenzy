@@ -28,6 +28,7 @@ public class PowerUps : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             gameObject.GetComponent<Renderer>().enabled = false;
+            //gameObject.SetActive(false);
             powerUpSoundEffect.Play();
             PlayerController player = collision.GetComponent<PlayerController>();
 
@@ -52,7 +53,7 @@ public class PowerUps : MonoBehaviour
                 //Destroy(txt, 2f);
             }
 
-            Destroy(gameObject, 0.9f);
+            Destroy(gameObject, 0.35f);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
 
