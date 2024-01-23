@@ -13,12 +13,16 @@ public class Boss : MonoBehaviour
     [SerializeField] private Animator animacionBoss;
     private bool sonidoBoss = true;
     private bool muerto = false;
+    private ParticleSystem _myParticleSystem;
     // Start is called before the first frame update
     void Start()
     {
         muerto = false;
         sonidoBoss = true;
         vidaBoss = 10;
+
+        _myParticleSystem = GetComponent<ParticleSystem>();
+        InvokeRepeating(nameof(ShotWaterBubble),5,5);
     }
 
     // Update is called once per frame
@@ -44,7 +48,9 @@ public class Boss : MonoBehaviour
                 animacionBoss.SetBool("Muerte", true);
                 menuWin.SetActive(true);
             }
+            muerto = true;
 
+            this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             //Muerte();
             //Ganar
         }
@@ -63,10 +69,11 @@ public class Boss : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && PlayerController.shieldActive==false)
         {
-            vidaBoss--;
+            //vidaBoss--;
             SoundEffect.clip = AudioClipMuerteJugador;
             SoundEffect.Play();
             Destroy(collision.gameObject);
+            Time.timeScale = 0f;
         }
         if (collision.gameObject.tag == "Player" && PlayerController.shieldActive == true)
         {
@@ -88,8 +95,8 @@ public class Boss : MonoBehaviour
 
         if (col.gameObject.tag == "Player" && PlayerController.shieldActive == false)
         {
-            // botonMenu.SetActive(false);
-            // botonGameOver.SetActive(true);
+            //botonMenu.SetActive(false);
+            //botonGameOver.SetActive(true);
             SoundEffect.clip = AudioClipMuerteJugador;
             SoundEffect.Play();
             PowerUps.gunPowerUpOn = false;
@@ -102,6 +109,18 @@ public class Boss : MonoBehaviour
     {    
         Destroy(gameObject);      
     }
+
+    private void ShotWaterBubble()
+    {
+        if (!muerto)
+        {
+            ParticleSystem.EmissionModule emitter = _myParticleSystem.emission;
+
+            _myParticleSystem.Emit(20);
+        }
+        
+    }
+
 }
     
 
