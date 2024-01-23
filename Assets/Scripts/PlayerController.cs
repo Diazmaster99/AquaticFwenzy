@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnParticleCollision(GameObject col)
     {
-        if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && shieldActive == false)
+        if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE" || col.gameObject.tag == "Boss") && shieldActive == false)
         {
             //killPlayerSoundEffect.Play();
             botonPausa.SetActive(false);
