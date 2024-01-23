@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PowerUps : MonoBehaviour
@@ -8,6 +9,7 @@ public class PowerUps : MonoBehaviour
     public int powerUpID;
     public static bool gunPowerUpOn = false;
     [SerializeField] private AudioSource powerUpSoundEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,15 +35,21 @@ public class PowerUps : MonoBehaviour
             {
                 gunPowerUpOn = true;
                 player.CanFastShoot();
+                //var txt = Instantiate(player.txtPowerUp1, player.transform.position, Quaternion.identity);
+                //Destroy(txt, 2f);
             }
             if (powerUpID == 2)
             {
                 player.ShieldPowerUpOn();
+                //var txt = Instantiate(player.txtPowerUp2, player.transform.position, Quaternion.identity);
+                //Destroy(txt, 2f);
             }
             if(powerUpID==3 && gunPowerUpOn == false) 
             {
                 gunPowerUpOn = true;
                 player.CanGrenadeLauncher();
+                //var txt = Instantiate(player.txtPowerUp3, player.transform.position, Quaternion.identity);
+                //Destroy(txt, 2f);
             }
 
             Destroy(gameObject, 0.9f);

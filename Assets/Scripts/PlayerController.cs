@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public static int puntos;
     [SerializeField] private TextMeshProUGUI puntosDisplay;
 
+    public TextMeshProUGUI txtPowerUp1;
+    public TextMeshProUGUI txtPowerUp2;
+    public TextMeshProUGUI txtPowerUp3;
+
     //[SerializeField] private AudioSource killPlayerSoundEffect;
 
     //public Animator transition;
@@ -96,6 +100,7 @@ public class PlayerController : MonoBehaviour
         //fastShoot = true;
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOn();
+        txtPowerUp1.gameObject.SetActive(true);
         StartCoroutine (FastShootDownRoutine());
     }
 
@@ -103,6 +108,7 @@ public class PlayerController : MonoBehaviour
     {
         shieldActive = true;
         shieldPrefab.SetActive(true);
+        txtPowerUp2.gameObject.SetActive(true);
         StartCoroutine (ShieldDownRoutine());
     }
 
@@ -111,6 +117,7 @@ public class PlayerController : MonoBehaviour
         grenadeLauncher = true; 
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.GrenadeLauncherOn();
+        txtPowerUp3.gameObject.SetActive(true);
         StartCoroutine(GrenadeLauncherDownRoutine());
     }
     public IEnumerator FastShootDownRoutine() 
@@ -118,6 +125,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOff();
+        txtPowerUp1.gameObject.SetActive(false);
         //fastShoot = false;
     }
     public IEnumerator ShieldDownRoutine() 
@@ -126,6 +134,7 @@ public class PlayerController : MonoBehaviour
         shieldDown.Play();
         shieldPrefab.SetActive(false);
         shieldActive = false;
+        txtPowerUp2.gameObject.SetActive(false);
     }
     public IEnumerator GrenadeLauncherDownRoutine()
     {
@@ -133,5 +142,6 @@ public class PlayerController : MonoBehaviour
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOff();
         grenadeLauncher = false;
+        txtPowerUp3.gameObject.SetActive(false);
     }
 }
