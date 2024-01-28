@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI txtPowerUp2;
     public TextMeshProUGUI txtPowerUp3;
 
+    public GameObject floatingTextPrefab;
+    public GameObject canvas;
+
     //[SerializeField] private AudioSource killPlayerSoundEffect;
 
     //public Animator transition;
@@ -100,7 +103,13 @@ public class PlayerController : MonoBehaviour
         //fastShoot = true;
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOn();
-        txtPowerUp1.gameObject.SetActive(true);
+        //txtPowerUp1.gameObject.SetActive(true);
+
+        GameObject floatingText = Instantiate(floatingTextPrefab, this.transform.position, Quaternion.identity);
+        floatingText.transform.SetParent(canvas.transform, false);
+        floatingText.GetComponent<TextMeshProUGUI>().text = "Fwenzy!";
+        Destroy(floatingText, 2f);
+
         StartCoroutine (FastShootDownRoutine());
     }
 
@@ -108,7 +117,13 @@ public class PlayerController : MonoBehaviour
     {
         shieldActive = true;
         shieldPrefab.SetActive(true);
-        txtPowerUp2.gameObject.SetActive(true);
+        //txtPowerUp2.gameObject.SetActive(true);
+
+        GameObject floatingText = Instantiate(floatingTextPrefab, this.transform.position, Quaternion.identity);
+        floatingText.transform.SetParent(canvas.transform, false);
+        floatingText.GetComponent<TextMeshProUGUI>().text = "Escudo!";
+        Destroy(floatingText, 2f);
+
         StartCoroutine (ShieldDownRoutine());
     }
 
@@ -117,7 +132,13 @@ public class PlayerController : MonoBehaviour
         grenadeLauncher = true; 
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.GrenadeLauncherOn();
-        txtPowerUp3.gameObject.SetActive(true);
+        //txtPowerUp3.gameObject.SetActive(true);
+
+        GameObject floatingText = Instantiate(floatingTextPrefab, this.transform.position, Quaternion.identity);
+        floatingText.transform.SetParent(canvas.transform, false);
+        floatingText.GetComponent<TextMeshProUGUI>().text = "Lanzagranadas!";
+        Destroy(floatingText, 2f);
+
         StartCoroutine(GrenadeLauncherDownRoutine());
     }
     public IEnumerator FastShootDownRoutine() 
@@ -135,6 +156,8 @@ public class PlayerController : MonoBehaviour
         shieldPrefab.SetActive(false);
         shieldActive = false;
         txtPowerUp2.gameObject.SetActive(false);
+
+        
     }
     public IEnumerator GrenadeLauncherDownRoutine()
     {
@@ -143,5 +166,7 @@ public class PlayerController : MonoBehaviour
         projectileShoot.FastShootOff();
         grenadeLauncher = false;
         txtPowerUp3.gameObject.SetActive(false);
+
+        
     }
 }
