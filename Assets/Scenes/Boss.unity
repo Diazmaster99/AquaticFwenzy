@@ -747,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903326, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903327, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_RootOrder
@@ -2236,6 +2236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuwin: {fileID: 1271425953}
   moveSpeed: 2
+  decelerationRate: 1
 --- !u!1 &828182184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,6 +2287,9 @@ MonoBehaviour:
   shieldDown: {fileID: 828182192}
   efecto: {fileID: 0}
   puntosDisplay: {fileID: 0}
+  txtPowerUp1: {fileID: 0}
+  txtPowerUp2: {fileID: 0}
+  txtPowerUp3: {fileID: 0}
 --- !u!212 &828182186
 SpriteRenderer:
   m_ObjectHideFlags: 0

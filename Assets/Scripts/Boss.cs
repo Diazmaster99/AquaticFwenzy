@@ -22,7 +22,7 @@ public class Boss : MonoBehaviour
         vidaBoss = 10;
 
         _myParticleSystem = GetComponent<ParticleSystem>();
-        InvokeRepeating(nameof(ShotWaterBubble),5,5);
+        InvokeRepeating(nameof(InitiateShotWaterBubble),5,5);
     }
 
     // Update is called once per frame
@@ -112,14 +112,24 @@ public class Boss : MonoBehaviour
 
     private void ShotWaterBubble()
     {
+
+        ParticleSystem.EmissionModule emitter;
         if (!muerto)
         {
-            ParticleSystem.EmissionModule emitter = _myParticleSystem.emission;
+            emitter = _myParticleSystem.emission;
 
             _myParticleSystem.Emit(20);
         }
-        
+
+        animacionBoss.SetBool("Disparar", false);
+
     }
+
+    private void InitiateShotWaterBubble()
+    {
+        animacionBoss.SetBool("Disparar",true);
+    }
+
 
 }
     
