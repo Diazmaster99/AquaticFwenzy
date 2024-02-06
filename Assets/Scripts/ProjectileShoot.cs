@@ -11,6 +11,7 @@ public class ProjectileShoot : MonoBehaviour
     public bool grenadeLauncherOn=false;
     [SerializeField] private AudioSource shootSoundEffect;
     [SerializeField] private PlayerController player;
+    [SerializeField] private Transform boquilla;
 
     public Animator shoot;
 
@@ -29,13 +30,13 @@ public class ProjectileShoot : MonoBehaviour
                 if (grenadeLauncherOn) 
                 {
                     shootSoundEffect.Play();
-                    Instantiate(grenadePrefab, transform.position, Quaternion.identity);                   
+                    Instantiate(grenadePrefab, boquilla.position, Quaternion.identity);                   
                 }
                 else
                 {                 
                     shoot.SetInteger("Shooting",1);
                     shootSoundEffect.Play();
-                    Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                    Instantiate(projectilePrefab, boquilla.position, Quaternion.identity);
                     //player.SumarPuntos();
                 }        
                 canFire = Time.time + fireRate;    
