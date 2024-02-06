@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource shieldDown;
     [SerializeField] private GameObject efecto;
     [SerializeField] public static int puntos;
+    [SerializeField] public int vidas;
     [SerializeField] private TextMeshProUGUI puntosDisplay;
 
     public TextMeshProUGUI txtPowerUp1;
@@ -27,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
     public GameObject floatingTextPrefab;
     public GameObject canvas;
-
     //[SerializeField] private AudioSource killPlayerSoundEffect;
 
     //public Animator transition;
@@ -53,6 +53,44 @@ public class PlayerController : MonoBehaviour
         //puntosDisplay.ForceMeshUpdate(true);
     }
 
+    public PlayerController(int vidasIniciales = 3)
+    {
+        vidas = vidasIniciales;
+    }
+
+    public void Morir()
+    {
+        switch (vidas)
+        {
+            case 0:
+                if(vidas == 0)
+                {
+                    botonPausa.SetActive(false);
+                    botonGameOver.SetActive(true);
+                    Destroy(gameObject);
+                }
+                break;
+            case 1:
+                if(vidas == 1)
+                {
+                    botonPausa.SetActive(true);
+                    vidas--;
+                }
+                break;
+            case 2:
+                if(vidas == 2)
+                {
+                    botonPausa.SetActive(true);
+                    vidas--;
+                }
+                break;
+            case 3:
+
+                break;
+
+        }
+    }
+   
     public void SumarPuntos()
     {
         puntos += 1000;
@@ -71,6 +109,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     void OnTriggerEnter2D(Collider2D col)
     {
  
@@ -79,6 +118,7 @@ public class PlayerController : MonoBehaviour
             botonPausa.SetActive(false);
             botonGameOver.SetActive(true);
             PowerUps.gunPowerUpOn = false;
+            Morir();
             Time.timeScale = 0f;
             Destroy(this.gameObject);
             //jugador.drag = 20;

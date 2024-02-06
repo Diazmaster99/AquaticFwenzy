@@ -745,9 +745,9 @@ GameObject:
   - component: {fileID: 269726054}
   - component: {fileID: 269726056}
   - component: {fileID: 269726055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Corazon 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1306,7 +1306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903326, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903327, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_RootOrder
@@ -3453,6 +3453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuwin: {fileID: 1271425953}
   moveSpeed: 2
+  decelerationRate: 1
 --- !u!114 &828182185 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
@@ -3622,6 +3623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuwin: {fileID: 1271425953}
   moveSpeed: 2
+  decelerationRate: 1
 --- !u!50 &840837307
 Rigidbody2D:
   serializedVersion: 4
@@ -8300,7 +8302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 329}
+  m_AnchoredPosition: {x: 0, y: 258}
   m_SizeDelta: {x: 229.9914, y: 79.9914}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1725498451
