@@ -2286,10 +2286,13 @@ MonoBehaviour:
   MenuWin: {fileID: 0}
   shieldDown: {fileID: 828182192}
   efecto: {fileID: 0}
+  vidas: 0
   puntosDisplay: {fileID: 0}
   txtPowerUp1: {fileID: 0}
   txtPowerUp2: {fileID: 0}
   txtPowerUp3: {fileID: 0}
+  floatingTextPrefab: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!212 &828182186
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2425,6 +2428,7 @@ MonoBehaviour:
   grenadeLauncherOn: 0
   shootSoundEffect: {fileID: 828182191}
   player: {fileID: 0}
+  boquilla: {fileID: 0}
   shoot: {fileID: 936442906}
 --- !u!82 &828182191
 AudioSource:
