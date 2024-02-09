@@ -14,6 +14,18 @@ public class Boss : MonoBehaviour
     private bool sonidoBoss = true;
     private bool muerto = false;
     private ParticleSystem _myParticleSystem;
+
+
+
+    public bool isInvincible = false;
+    public float invincibilityDuration = 2f; // Duration of invincibility frames in seconds
+    private float invincibilityTimer = 0f;
+
+    // Variables for visual feedback
+    private SpriteRenderer spriteRenderer;
+    private Color normalColor;
+    private Color invincibleColor = new Color(1f, 1f, 1f, 0.5f); // Example: Semi-transparent white
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +35,32 @@ public class Boss : MonoBehaviour
 
         _myParticleSystem = GetComponent<ParticleSystem>();
         InvokeRepeating(nameof(InitiateShotWaterBubble),5,5);
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        normalColor = spriteRenderer.color;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Update invincibility timer
+        if (isInvincible)
+        {
+            invincibilityTimer -= Time.deltaTime;
+            if (invincibilityTimer <= 0)
+            {
+                isInvincible = false;
+                // Reset sprite color to normal
+                spriteRenderer.color = normalColor;
+            }
+        }
+
+
         if (vidaBoss > 0)
         {
             transform.Translate(moveSpeed * Time.deltaTime * Vector2.right);
+
         }
 
         if (vidaBoss <= 0)
@@ -77,12 +107,22 @@ public class Boss : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player" && PlayerController.shieldActive == true)
         {
-            vidaBoss--;        
+            //vidaBoss--;        
         }
 
         if (collision.gameObject.tag == "Projectile")
         {
-            vidaBoss--;
+            if (!isInvincible)
+            {
+                // Apply damage to player health or update player health
+                // Example: health -= damageAmount;
+
+                // Trigger invincibility frames
+                vidaBoss--;
+                Debug.Log("EL jefe tiene "+vidaBoss+" de vida");
+                StartInvincibility();
+            }
+
         }
 
     }
@@ -102,6 +142,32 @@ public class Boss : MonoBehaviour
             PowerUps.gunPowerUpOn = false;
             Time.timeScale = 0f;
             Destroy(col.gameObject);
+        }
+    }
+
+    private void StartInvincibility()
+    {
+        isInvincible = true;
+        invincibilityTimer = invincibilityDuration;
+        // Apply visual feedback for invincibility
+        FlashSprite();
+    }
+
+    private void FlashSprite()
+    {
+        // Flash the sprite on and off during invincibility
+        StartCoroutine(FlashSpriteCoroutine());
+    }
+
+    private IEnumerator FlashSpriteCoroutine()
+    {
+        while (invincibilityTimer > 0)
+        {
+            // Toggle between normal and invincible color
+            spriteRenderer.color = invincibleColor;
+            yield return new WaitForSeconds(0.1f); // Adjust the duration of each flash
+            spriteRenderer.color = normalColor;
+            yield return new WaitForSeconds(0.1f); // Adjust the duration of each flash
         }
     }
 

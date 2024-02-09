@@ -34,6 +34,18 @@ public class PlayerController : MonoBehaviour
 
     public Collider2D boundaryCollider;
 
+
+
+    public bool isInvincible = false;
+    public float invincibilityDuration = 2f; // Duration of invincibility frames in seconds
+    private float invincibilityTimer = 0f;
+
+    // Variables for visual feedback
+    private SpriteRenderer spriteRenderer;
+    private Color normalColor;
+    private Color invincibleColor = new Color(1f, 1f, 1f, 0.5f); // Example: Semi-transparent white
+
+
     //[SerializeField] private AudioSource killPlayerSoundEffect;
 
     //public Animator transition;
@@ -43,10 +55,13 @@ public class PlayerController : MonoBehaviour
     {
         PowerUps.gunPowerUpOn = false;
 
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        normalColor = spriteRenderer.color;
+
         //Vector3 clampedPosition = transform.position;
         //clampedPosition.x = Mathf.Clamp(clampedPosition.x, minPosition.x, maxPosition.x);
         //clampedPosition.y = Mathf.Clamp(clampedPosition.y, minPosition.y, maxPosition.y);
-        
+
 
     }
 
