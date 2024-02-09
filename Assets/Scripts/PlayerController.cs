@@ -28,6 +28,12 @@ public class PlayerController : MonoBehaviour
 
     public GameObject floatingTextPrefab;
     public GameObject canvas;
+
+    //public Vector3 minPosition;
+    //public Vector3 maxPosition;
+
+    public Collider2D boundaryCollider;
+
     //[SerializeField] private AudioSource killPlayerSoundEffect;
 
     //public Animator transition;
@@ -36,6 +42,12 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         PowerUps.gunPowerUpOn = false;
+
+        //Vector3 clampedPosition = transform.position;
+        //clampedPosition.x = Mathf.Clamp(clampedPosition.x, minPosition.x, maxPosition.x);
+        //clampedPosition.y = Mathf.Clamp(clampedPosition.y, minPosition.y, maxPosition.y);
+        
+
     }
 
     // Update is called once per frame
@@ -50,6 +62,23 @@ public class PlayerController : MonoBehaviour
         {
             puntosDisplay.SetText("Puntos: " + puntos);
         }
+
+        // Ensure the object stays within the boundary collider
+        if (!boundaryCollider.bounds.Contains(transform.position))
+        {
+            // If the object moves outside the boundary, clamp its position back inside
+            transform.position = boundaryCollider.ClosestPoint(transform.position);
+            Debug.Log("Fuera");
+        }
+
+        // Ensure the object stays within the boundary collider
+        if (boundaryCollider.bounds.Contains(transform.position))
+        {
+            // If the object moves outside the boundary, clamp its position back inside
+            //transform.position = boundaryCollider.ClosestPoint(transform.position);
+            Debug.Log("Dentro");
+        }
+
         //puntosDisplay.ForceMeshUpdate(true);
     }
 
@@ -99,15 +128,15 @@ public class PlayerController : MonoBehaviour
         }*/
     }
 
-    private void OnTrigerEnter2D(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            //puntuaje.SumarPuntos(cantidadPuntos);
-            Instantiate(efecto, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-    }
+    //private void OnTrigerEnter2D(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        //puntuaje.SumarPuntos(cantidadPuntos);
+    //        Instantiate(efecto, transform.position, Quaternion.identity);
+    //        Destroy(gameObject);
+    //    }
+    //}
 
 
     void OnTriggerEnter2D(Collider2D col)
@@ -122,6 +151,14 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0f;
             Destroy(this.gameObject);
             //jugador.drag = 20;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Boundary")
+        {
+
         }
     }
 
