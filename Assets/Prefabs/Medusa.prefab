@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 3401091117457023045}
   - component: {fileID: 3401091117457023043}
   - component: {fileID: 3545227049069133534}
+  - component: {fileID: -3529987221917679824}
   - component: {fileID: 5217339898234011370}
   - component: {fileID: 7517255092494193397}
   - component: {fileID: 7169061268112836298}
   m_Layer: 0
-  m_Name: Enemy 2
+  m_Name: Medusa
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,14 +128,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27052c30064982540b42a12300150726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 3452663278403150975, guid: e3baaec4f35261b41bea94e2ebad24a8, type: 3}
   killPlayerSoundEffect: {fileID: 5217339898234011370}
+  moveSpeed: 2
+--- !u!114 &-3529987221917679824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401091117457023041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf89068c8fe986f4cbec3c55c78a52eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   spawnTimer: 2.7
-  puntos: 0
   spawnMax: 2.7
   spawnMin: 2
   puedeDisparar: 0
-  moveSpeed: 2
+  projectilePrefab: {fileID: 3452663278403150975, guid: e3baaec4f35261b41bea94e2ebad24a8, type: 3}
 --- !u!82 &5217339898234011370
 AudioSource:
   m_ObjectHideFlags: 0
