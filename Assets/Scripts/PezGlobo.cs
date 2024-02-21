@@ -21,8 +21,8 @@ public class PezGlobo : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0 && puedeDisparar)
         {
-            Instantiate(projectilePrefab2, transform.position, Quaternion.identity);
-            Instantiate(projectilePrefab2, transform.position, Quaternion.LookRotation(Vector3.forward));
+            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(projectilePrefab2, transform.position, Quaternion.LookRotation(Vector3.forward * 90));
             Instantiate(projectilePrefab3, transform.position, Quaternion.LookRotation(Vector3.forward * -180));
             Instantiate(projectilePrefab4, transform.position, Quaternion.LookRotation(Vector3.forward * -45));
             spawnTimer = Random.Range(spawnMin, spawnMax);
