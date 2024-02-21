@@ -7,7 +7,7 @@ public class PezGlobo : MonoBehaviour
     public float spawnTimer;
     public float spawnMax = 3;
     public float spawnMin = 1.5f;
-    public GameObject projectilePrefab;
+    public GameObject projectilePrefab, projectilePrefab2, projectilePrefab3, projectilePrefab4;
     public bool puedeDisparar = false;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,10 @@ public class PezGlobo : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0 && puedeDisparar)
         {
-            Instantiate(projectilePrefab, transform.position, Quaternion.AngleAxis(45, Vector3.down));
+            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(projectilePrefab2, transform.position, Quaternion.LookRotation(Vector3.forward * 90));
+            Instantiate(projectilePrefab3, transform.position, Quaternion.LookRotation(Vector3.forward * -180));
+            Instantiate(projectilePrefab4, transform.position, Quaternion.LookRotation(Vector3.forward * -45));
             spawnTimer = Random.Range(spawnMin, spawnMax);
         }
     }
