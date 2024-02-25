@@ -1,6 +1,8 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -28,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject floatingTextPrefab;
     public GameObject canvas;
+
+    public GameManager gameManager;
 
     //public Vector3 minPosition;
     //public Vector3 maxPosition;
@@ -97,11 +101,11 @@ public class PlayerController : MonoBehaviour
         //puntosDisplay.ForceMeshUpdate(true);
     }
 
+
     public PlayerController(int vidasIniciales = 3)
     {
         vidas = vidasIniciales;
     }
-
     public void Morir()
     {
         switch (vidas)
@@ -115,18 +119,10 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case 1:
-                if(vidas == 1)
-                {
-                    botonPausa.SetActive(true);
-                    vidas--;
-                }
-                break;
             case 2:
-                if(vidas == 2)
-                {
                     botonPausa.SetActive(true);
                     vidas--;
-                }
+                
                 break;
             case 3:
 
@@ -134,7 +130,15 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-   
+
+    /*private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.PerderVida();
+        }
+    }*/
+
     public void SumarPuntos()
     {
         puntos += 1000;
@@ -185,6 +189,7 @@ public class PlayerController : MonoBehaviour
             botonPausa.SetActive(false);
             botonGameOver.SetActive(true);
             PowerUps.gunPowerUpOn = false;
+            Morir();
             Time.timeScale = 0f;
             Destroy(this.gameObject);
             //jugador.drag = 20;
