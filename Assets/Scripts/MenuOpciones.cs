@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuOpciones : MonoBehaviour
 {
-    private bool fullscreen = false;
+    //private bool fullscreen = false;
 
     // Update is called once per frame
     void Update()
@@ -12,29 +12,26 @@ public class MenuOpciones : MonoBehaviour
         
     }
 
-    private void FullScreen() {
-        if (!fullscreen)
-        {
-            Screen.fullScreen = true;
-        }
-        else
-        {
-            fullscreen = false;
-        }
+    public void FullScreen(bool fullscreen) {
+
+        Debug.Log("Fullscreen es: "+fullscreen);
+        Screen.fullScreen = fullscreen;
+
     }
 
-    private void ChangeResolution()
+    public void ChangeResolution(int numero)
     {
-        int numero = 1;
+        Debug.Log("resolution es: " + numero);
+        //int numero = 1;
         switch (numero)
         {
+            case 0:
+                Screen.SetResolution(1920, 1080, true);
+                break;
             case 1:
-                Screen.SetResolution(1920, 1080, false);
+                Screen.SetResolution(1420, 960, true);
                 break;
             case 2:
-                Screen.SetResolution(1420, 960, false);
-                break;
-            case 3:
                 //Screen.SetResolution(800, 600, false);
                 break;
             default:

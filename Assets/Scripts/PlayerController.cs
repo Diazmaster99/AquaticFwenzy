@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         {
             // If the object moves outside the boundary, clamp its position back inside
             transform.position = boundaryCollider.ClosestPoint(transform.position);
-            Debug.Log("Fuera");
+            //Debug.Log("Fuera");
         }
 
         // Ensure the object stays within the boundary collider
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             // If the object moves outside the boundary, clamp its position back inside
             //transform.position = boundaryCollider.ClosestPoint(transform.position);
-            Debug.Log("Dentro");
+            //Debug.Log("Dentro");
         }
 
         //puntosDisplay.ForceMeshUpdate(true);
