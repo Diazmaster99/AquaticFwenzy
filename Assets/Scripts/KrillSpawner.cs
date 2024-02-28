@@ -27,6 +27,11 @@ public class KrillSpawner : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (col.gameObject.tag == "Projectile")
+        {          
+            Destroy(gameObject);
+        }
+
         if (col.gameObject.tag == "Player" && PlayerController.shieldActive == false)
         {
             killPlayerSoundEffect.Play();

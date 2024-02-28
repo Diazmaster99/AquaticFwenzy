@@ -8,6 +8,7 @@ public class Grenade : MonoBehaviour
     public GameObject explosion;
     [SerializeField] private AudioSource explosionSoundEffect;
     public float moveSpeed;
+    
     void Start()
     {
 

@@ -23,7 +23,7 @@ public class ProjectileE1 : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().enabled = false;
             killPlayerSoundEffect.Play();
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
             Destroy(gameObject, 1.1f);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }

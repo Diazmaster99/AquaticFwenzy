@@ -5,7 +5,7 @@ using UnityEngine;
 public class AreaDaño : MonoBehaviour
 {
     public float radius = 2;
-
+    [SerializeField] PlayerController player;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class AreaDaño : MonoBehaviour
             
                 if (col.gameObject.tag == "Player")
                 {
-                    Destroy(col.gameObject);
+                    player.Morir();
                 }
             
         }
