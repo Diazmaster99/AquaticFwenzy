@@ -19,26 +19,23 @@ public class KrillSpawner : MonoBehaviour
     {
         _transform.position = new Vector2(Mathf.PerlinNoise(-5f, 11f), 11);
     }
-
+    
     private void OnParticleCollision(GameObject col)
     {
-        if (col.gameObject.tag == "Shield")
+        if (col.gameObject.tag == "Shield" || col.gameObject.tag == "Projectile")
         {
             Destroy(gameObject);
         }
-
-        if (col.gameObject.tag == "Projectile")
-        {          
-            Destroy(gameObject);
-        }
-
+        
+   
         if (col.gameObject.tag == "Player" && PlayerController.shieldActive == false)
         {
             killPlayerSoundEffect.Play();
             PowerUps.gunPowerUpOn = false;
             Time.timeScale = 0f;
             Destroy(col.gameObject);
-        }
+        }  
+   
     }
-
+    
     }

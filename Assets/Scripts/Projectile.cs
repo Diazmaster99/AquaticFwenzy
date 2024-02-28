@@ -61,5 +61,16 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    
+   private void OnParticleCollision(GameObject col)
+    {
+        if (col.gameObject.tag != "Enemies")
+        {
+            if (col.gameObject.tag == "Enemy")
+            {
+                Destroy(col.gameObject);
+            }
+        }
+    }
+  
+
 }

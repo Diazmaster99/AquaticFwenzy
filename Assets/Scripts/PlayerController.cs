@@ -185,7 +185,8 @@ public class PlayerController : MonoBehaviour
             Destroy(this.gameObject);
             //jugador.drag = 20;
             */
-             Morir();
+           Morir();
+
         }
     }
     public void CanFastShoot()
