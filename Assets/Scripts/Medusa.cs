@@ -7,12 +7,14 @@ public class Medusa : MonoBehaviour
     public float spawnTimer;
     public float spawnMax = 3;
     public float spawnMin = 1.5f;
-    public GameObject projectilePrefab;
+    public GameObject areaDaño;
     public bool puedeDisparar = false;
+
+    [SerializeField] private AudioSource electricSoundEffect;
     // Start is called before the first frame update
     void Start()
     {
-        spawnTimer = Random.Range(spawnMin, spawnMax);
+        spawnTimer = 2;
     }
 
     // Update is called once per frame
@@ -21,8 +23,9 @@ public class Medusa : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0 && puedeDisparar)
         {
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            spawnTimer = Random.Range(spawnMin, spawnMax);
+            //Instantiate(areaDaño, transform.position, Quaternion.identity);
+            StartCoroutine(Explode(0));
+            spawnTimer = 2;
         }
     }
 
@@ -34,5 +37,11 @@ public class Medusa : MonoBehaviour
             puedeDisparar = true;
         }
 
+    }   
+
+    IEnumerator Explode(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Instantiate(areaDaño, transform.position, Quaternion.identity);
     }
 }

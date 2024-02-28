@@ -145,8 +145,9 @@ MonoBehaviour:
   spawnTimer: 2.7
   spawnMax: 2.7
   spawnMin: 2
+  "areaDa\xF1o": {fileID: 3264707320610247828, guid: 011ea872be65b6347bdcf1991c35a58e, type: 3}
   puedeDisparar: 0
-  projectilePrefab: {fileID: 3452663278403150975, guid: e3baaec4f35261b41bea94e2ebad24a8, type: 3}
+  electricSoundEffect: {fileID: 0}
 --- !u!82 &5217339898234011370
 AudioSource:
   m_ObjectHideFlags: 0
