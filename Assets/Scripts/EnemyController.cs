@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
         {
             gameObject.GetComponent<Renderer>().enabled = false;
             killPlayerSoundEffect.Play();
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.tag == "Projectile")

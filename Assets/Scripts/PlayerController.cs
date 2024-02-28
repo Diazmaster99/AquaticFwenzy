@@ -20,8 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
     [SerializeField] private GameObject efecto;
-    [SerializeField] public static int puntos;
-    [SerializeField] public int vidas;
+    [SerializeField] public static int puntos, vidas;
     [SerializeField] private TextMeshProUGUI puntosDisplay;
 
     public TextMeshProUGUI txtPowerUp1;
@@ -58,7 +57,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         PowerUps.gunPowerUpOn = false;
-
+        vidas = 2;
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalColor = spriteRenderer.color;
 
@@ -82,7 +81,7 @@ public class PlayerController : MonoBehaviour
             puntosDisplay.SetText("Puntos: " + puntos);
         }
 
-        // Ensure the object stays within the boundary collider
+        /* Ensure the object stays within the boundary collider
         if (!boundaryCollider.bounds.Contains(transform.position))
         {
             // If the object moves outside the boundary, clamp its position back inside
@@ -97,37 +96,29 @@ public class PlayerController : MonoBehaviour
             //transform.position = boundaryCollider.ClosestPoint(transform.position);
             Debug.Log("Dentro");
         }
+        */
 
         //puntosDisplay.ForceMeshUpdate(true);
     }
 
 
-    public PlayerController(int vidasIniciales = 3)
-    {
-        vidas = vidasIniciales;
-    }
     public void Morir()
     {
         switch (vidas)
         {
-            case 0:
-                if(vidas == 0)
-                {
+            case 0:                            
                     botonPausa.SetActive(false);
                     botonGameOver.SetActive(true);
+                    Time.timeScale = 0f;
                     Destroy(gameObject);
-                }
+                
                 break;
             case 1:
             case 2:
-                    botonPausa.SetActive(true);
+                    //botonPausa.SetActive(true);
                     vidas--;
                 
                 break;
-            case 3:
-
-                break;
-
         }
     }
 
@@ -163,13 +154,14 @@ public class PlayerController : MonoBehaviour
  
         if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE" || col.gameObject.tag == "Boss") && shieldActive==false )
         {
-            botonPausa.SetActive(false);
+            /*botonPausa.SetActive(false);
             botonGameOver.SetActive(true);
             PowerUps.gunPowerUpOn = false;
-            Morir();
             Time.timeScale = 0f;
             Destroy(this.gameObject);
-            //jugador.drag = 20;
+            jugador.drag = 20; */
+            Morir();
+            
         }
     }
 
@@ -185,14 +177,15 @@ public class PlayerController : MonoBehaviour
     {
         if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE" || col.gameObject.tag == "Boss") && shieldActive == false)
         {
-            //killPlayerSoundEffect.Play();
+            /*killPlayerSoundEffect.Play();
             botonPausa.SetActive(false);
             botonGameOver.SetActive(true);
-            PowerUps.gunPowerUpOn = false;
-            Morir();
+            PowerUps.gunPowerUpOn = false;          
             Time.timeScale = 0f;
             Destroy(this.gameObject);
             //jugador.drag = 20;
+            */
+             Morir();
         }
     }
     public void CanFastShoot()

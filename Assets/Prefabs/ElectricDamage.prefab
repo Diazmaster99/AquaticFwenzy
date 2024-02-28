@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: -1235710091479316138}
   m_Layer: 0
   m_Name: ElectricDamage
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -592,6 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2
+  player: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
 --- !u!1 &3264707320829061854
 GameObject:
   m_ObjectHideFlags: 0
