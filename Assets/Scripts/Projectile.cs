@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
                 {
                     muerte.SetBool("Muerte", true);
                 }
-                //Destroy(collision.gameObject);
+                //Destroy(collision.gameObject); 
                 Destroy(gameObject,1.1f);
                 
                 player.SumarPuntos();
@@ -61,16 +61,21 @@ public class Projectile : MonoBehaviour
         }
     }
 
-   private void OnParticleCollision(GameObject col)
+    private void OnParticleCollision(GameObject col)
     {
-        if (col.gameObject.tag != "Enemies")
+        if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && PlayerController.shieldActive == false)
         {
-            if (col.gameObject.tag == "Enemy")
-            {
-                Destroy(col.gameObject);
-            }
+            /*killPlayerSoundEffect.Play();
+            botonPausa.SetActive(false);
+            botonGameOver.SetActive(true);
+            PowerUps.gunPowerUpOn = false;          
+            Time.timeScale = 0f;
+            Destroy(this.gameObject);
+            //jugador.drag = 20;
+            */
+            player.SumarPuntos();
+
         }
     }
-  
 
 }

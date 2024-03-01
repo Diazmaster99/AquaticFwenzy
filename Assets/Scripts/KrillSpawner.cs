@@ -28,12 +28,11 @@ public class KrillSpawner : MonoBehaviour
         }
         
    
-        if (col.gameObject.tag == "Player" && PlayerController.shieldActive == false)
+        if ((col.gameObject.tag == "Player" || col.gameObject.tag == "Projectile" ) && PlayerController.shieldActive == false )
         {
             killPlayerSoundEffect.Play();
             PowerUps.gunPowerUpOn = false;
-            Time.timeScale = 0f;
-            Destroy(col.gameObject);
+            //Destroy(gameObject);
         }  
    
     }

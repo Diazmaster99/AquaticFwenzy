@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         switch (vidas)
         {
             case 0:                            
-                    botonPausa.SetActive(false);
+                    //botonPausa.SetActive(false);
                     botonGameOver.SetActive(true);
                     Time.timeScale = 0f;
                     Destroy(gameObject);
