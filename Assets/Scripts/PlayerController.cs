@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public bool grenadeLauncher = false;
     public GameObject shieldPrefab;
     public PowerUps powerUps;
+    //[SerializeField]public PowerUpTimer powerUpTimer;
     [SerializeField] private GameObject botonGameOver;
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject botonOpciones;
@@ -234,6 +235,7 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator FastShootDownRoutine() 
     {
+        powerUpTimer.Vaciar();
         yield return new WaitForSeconds(3f);
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOff();
