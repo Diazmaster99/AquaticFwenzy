@@ -9,7 +9,7 @@ public class PowerUpTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        wheel = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class PowerUpTimer : MonoBehaviour
     {
         if (tiempo == 3)
         {
-     
+
         }
         else 
         {
