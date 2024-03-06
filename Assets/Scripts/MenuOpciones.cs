@@ -14,6 +14,8 @@ public class MenuOpciones : MonoBehaviour
     private float currentRefreshRate;
     private int currentResolutionIndex = 0;
 
+    public Toggle fullScreenToggle;
+
 
 
     // Start is called before the first frame update
@@ -51,6 +53,7 @@ public class MenuOpciones : MonoBehaviour
         for (int i = 0; i < filteredResolutionList.Count; i++)
         {
             string resolutionOption = filteredResolutionList[i].width + "x" + filteredResolutionList[i].height + " " + filteredResolutionList[i].refreshRate + "Hz";
+            options.Add(resolutionOption);
             if (filteredResolutionList[i].width == Screen.width && filteredResolutionList[i].height == Screen.height)
             {
                 currentResolutionIndex = i;
@@ -75,7 +78,10 @@ public class MenuOpciones : MonoBehaviour
     {
         Resolution resolution = filteredResolutionList[resolutionIndex];
         Screen.SetResolution(resolution.width,resolution.height,true);
-        Debug.Log("resolution es: " + resolutionIndex);
+
+        fullScreenToggle.isOn = true;
+
+        Debug.Log("resolution es: " + filteredResolutionList[resolutionIndex]);
         //int numero = 1;
         //switch (resolutionIndex)
         //{
