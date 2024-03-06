@@ -1,9 +1,11 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RadialFill : MonoBehaviour
+public class PowerUpTimer : MonoBehaviour
 {
+    public Image wheel;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,11 +15,20 @@ public class RadialFill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Vaciar(int tiempo) 
     {
-        
+        if (tiempo == 3)
+        {
+     
+        }
+        else 
+        {
+
+        }
     }
+
+
 }
