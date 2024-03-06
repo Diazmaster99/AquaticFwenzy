@@ -12,7 +12,8 @@ public class PezGlobo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnTimer = Random.Range(spawnMin, spawnMax);
+        //spawnTimer = Random.Range(spawnMin, spawnMax);
+        spawnTimer = 1.5f;
     }
 
     // Update is called once per frame
@@ -25,7 +26,8 @@ public class PezGlobo : MonoBehaviour
             Instantiate(projectilePrefab2, transform.position, Quaternion.LookRotation(Vector3.forward * 90));
             Instantiate(projectilePrefab3, transform.position, Quaternion.LookRotation(Vector3.forward * -180));
             Instantiate(projectilePrefab4, transform.position, Quaternion.LookRotation(Vector3.forward * -45));
-            spawnTimer = Random.Range(spawnMin, spawnMax);
+            //spawnTimer = Random.Range(spawnMin, spawnMax);
+            spawnTimer = 1.5f;
         }
     }
 
