@@ -12,7 +12,8 @@ public class Serpiente : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnTimer = Random.Range(spawnMin, spawnMax);
+        //spawnTimer = Random.Range(spawnMin, spawnMax);
+        spawnTimer = 2;
     }
 
     // Update is called once per frame
@@ -22,7 +23,8 @@ public class Serpiente : MonoBehaviour
         if (spawnTimer <= 0 && puedeDisparar)
         {
             Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            spawnTimer = Random.Range(spawnMin, spawnMax);
+            //spawnTimer = Random.Range(spawnMin, spawnMax);
+            spawnTimer = 2;
         }
     }
 

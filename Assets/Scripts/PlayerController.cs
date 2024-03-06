@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
             puntosDisplay.SetText("Puntos: " + puntos);
         }
 
-        /* Ensure the object stays within the boundary collider
+        //Ensure the object stays within the boundary collider
         if (!boundaryCollider.bounds.Contains(transform.position))
         {
             // If the object moves outside the boundary, clamp its position back inside
@@ -93,10 +93,10 @@ public class PlayerController : MonoBehaviour
         if (boundaryCollider.bounds.Contains(transform.position))
         {
             // If the object moves outside the boundary, clamp its position back inside
-            //transform.position = boundaryCollider.ClosestPoint(transform.position);
+            transform.position = boundaryCollider.ClosestPoint(transform.position);
             //Debug.Log("Dentro");
         }
-        */
+        
 
         //puntosDisplay.ForceMeshUpdate(true);
     }
