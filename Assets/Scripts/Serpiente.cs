@@ -9,6 +9,7 @@ public class Serpiente : MonoBehaviour
     public float spawnMin = 1.5f;
     public GameObject projectilePrefab;
     public bool puedeDisparar = false;
+    public GameObject salidaDisparo;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class Serpiente : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0 && puedeDisparar)
         {
-            Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            Instantiate(projectilePrefab, salidaDisparo.transform.position, Quaternion.identity);
             //spawnTimer = Random.Range(spawnMin, spawnMax);
             spawnTimer = 2;
         }
