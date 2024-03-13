@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55e8312a70e05f4ea07f3520a0423a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 1.5
   powerUpID: 2
   powerUpSoundEffect: {fileID: 1233164829509181245}
 --- !u!82 &1233164829509181245
