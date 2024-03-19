@@ -62,7 +62,14 @@ public class MenuOpciones : MonoBehaviour
 
 
         resolutionDropdown.AddOptions(options);
+
+        //for (int i = 0; i < options.Count; i++)
+        //{
+        //    resolutionDropdown.options.Add(new TMP_Dropdown.OptionData(options[i]));
+        //}
+
         resolutionDropdown.value = currentResolutionIndex;
+        //resolutionDropdown.itemText.text = currentResolutionIndex.ToString();
         resolutionDropdown.RefreshShownValue();
 
     }
