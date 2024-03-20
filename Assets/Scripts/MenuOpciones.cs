@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class MenuOpciones : MonoBehaviour
@@ -16,7 +17,8 @@ public class MenuOpciones : MonoBehaviour
 
     public Toggle fullScreenToggle;
 
-
+    [SerializeField]
+    AudioMixer audioMixer;
 
     // Start is called before the first frame update
     void Start()
@@ -105,6 +107,22 @@ public class MenuOpciones : MonoBehaviour
         //        break;
         //}
         
+    }
+
+    public void changeVolumenMaster(float slidervalue)
+    {
+        Debug.Log("Valor es: "+slidervalue);
+        audioMixer.SetFloat("Master",Mathf.Log10(slidervalue)*20); 
+    }
+
+    public void changeVolumenMusica(float slidervalue)
+    {
+        audioMixer.SetFloat("Musica", Mathf.Log10(slidervalue) * 20);
+    }
+
+    public void changeVolumenFX(float slidervalue)
+    {
+        audioMixer.SetFloat("FX", Mathf.Log10(slidervalue) * 20);
     }
 
 }
