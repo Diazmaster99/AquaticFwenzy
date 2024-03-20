@@ -73,6 +73,13 @@ public class MenuPausa : MonoBehaviour
         menuOpciones.SetActive(true);
     }
 
+    public void atrasOpciones()
+    {
+        sonidoBoton.Play();
+        menuPausa.SetActive(true);
+        menuOpciones.SetActive(false);
+    }
+
     public void Reiniciar ()
     {
         sonidoBoton.Play();
