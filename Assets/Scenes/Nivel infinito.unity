@@ -849,7 +849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903326, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903327, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_RootOrder
@@ -1647,7 +1647,7 @@ PrefabInstance:
     - target: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 902326265}
+      objectReference: {fileID: 0}
     - target: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
       propertyPath: puntos
       value: 0
@@ -3023,11 +3023,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &902326265 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6151628298979004244, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
-  m_PrefabInstance: {fileID: 557746306}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &948277065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7801077485734195247, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
@@ -6176,7 +6171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 329}
+  m_AnchoredPosition: {x: 0, y: 224.27}
   m_SizeDelta: {x: 229.9914, y: 79.9914}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1725498451
@@ -6232,7 +6227,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
