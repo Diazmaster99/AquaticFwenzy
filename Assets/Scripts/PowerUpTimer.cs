@@ -1,6 +1,7 @@
 using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,18 +27,15 @@ public class PowerUpTimer : MonoBehaviour
     {
         //wheel.fillAmount = tiempo / tiempoMax;
         if (tiempoMax == 3)
-        {
-            tiempo += 0.0022f;
-            wheel.fillAmount = tiempo / tiempoMax;       
-            
+        {   
+            wheel.fillAmount += 1.0f / tiempoMax * Time.deltaTime;
         }
         if (tiempoMax == 6)
         {
-            tiempo += 0.0022f;
-            wheel.fillAmount = tiempo / tiempoMax;
-            
+            wheel.fillAmount += 1.0f / tiempoMax * Time.deltaTime;
+
         }
-        if (tiempo >= tiempoMax) 
+        if (wheel.fillAmount >= 1) 
         {
             tiempo = 0;
             tiempoMax = 0;
