@@ -66,7 +66,6 @@ public class PlayerController : MonoBehaviour
         //clampedPosition.x = Mathf.Clamp(clampedPosition.x, minPosition.x, maxPosition.x);
         //clampedPosition.y = Mathf.Clamp(clampedPosition.y, minPosition.y, maxPosition.y);
 
-
     }
 
     // Update is called once per frame
@@ -235,7 +234,7 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator FastShootDownRoutine() 
     {
-        powerUpTimer.Vaciar(3);
+        PowerUpTimer.tiempoMax = 3;
         yield return new WaitForSeconds(3f);
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOff();
@@ -244,7 +243,7 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator ShieldDownRoutine() 
     {
-        powerUpTimer.Vaciar(3);
+        PowerUpTimer.tiempoMax = 3;
         yield return new WaitForSeconds(3f);
         shieldDown.Play();
         shieldPrefab.SetActive(false);
@@ -255,7 +254,7 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator GrenadeLauncherDownRoutine()
     {
-        powerUpTimer.Vaciar(6);
+        PowerUpTimer.tiempoMax = 6;
         yield return new WaitForSeconds(6f);     
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOff();
