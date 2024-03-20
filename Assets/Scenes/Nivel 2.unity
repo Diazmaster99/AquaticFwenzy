@@ -459,6 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 1576580682}
   fullScreenToggle: {fileID: 0}
+  audioMixer: {fileID: 0}
 --- !u!4 &59313509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3401091117457023042, guid: 30bea0060d22b5f48a568172d5f5b348, type: 3}
@@ -1391,7 +1392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c837e00619c28ec4abd82bd17c84a1c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d172831a70746d14bbe93807214489d8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1605,6 +1606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   botonPausa: {fileID: 326967051}
   menuPausa: {fileID: 994231879}
+  menuOpciones: {fileID: 0}
   sonidoBoton: {fileID: 1376988014}
   juegoPausado: 0
   btnReaundar: {fileID: 857286056}
@@ -3126,7 +3128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c837e00619c28ec4abd82bd17c84a1c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d172831a70746d14bbe93807214489d8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7613,7 +7615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c837e00619c28ec4abd82bd17c84a1c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d172831a70746d14bbe93807214489d8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9508,6 +9510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   botonPausa: {fileID: 326967051}
   menuPausa: {fileID: 994231879}
+  menuOpciones: {fileID: 0}
   sonidoBoton: {fileID: 1376988014}
   juegoPausado: 0
   btnReaundar: {fileID: 857286056}
