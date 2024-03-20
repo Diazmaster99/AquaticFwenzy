@@ -9,6 +9,8 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private GameObject menuPausa;
 
+    [SerializeField] private GameObject menuOpciones;
+
     public AudioSource sonidoBoton;
     public bool juegoPausado = false;
 
@@ -63,11 +65,12 @@ public class MenuPausa : MonoBehaviour
 
     public void Opciones()
     {
-        //sonidoBoton.Play();
-        //juegoPausado = true;
-        //Time.timeScale = 0f;
-        //botonPausa.SetActive(false);
-        //menuPausa.SetActive(true);
+        sonidoBoton.Play();
+        juegoPausado = true;
+        Time.timeScale = 0f;
+        botonPausa.SetActive(false);
+        menuPausa.SetActive(false);
+        menuOpciones.SetActive(true);
     }
 
     public void Reiniciar ()
