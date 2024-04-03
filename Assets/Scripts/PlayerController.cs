@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -21,7 +22,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
     [SerializeField] private GameObject efecto;
-    [SerializeField] public static int puntos, vidas;
+    [SerializeField] public int puntos, vidas;
+    [SerializeField] public int imagenVidas;
     [SerializeField] private TextMeshProUGUI puntosDisplay;
 
     public TextMeshProUGUI txtPowerUp1;
@@ -61,6 +63,7 @@ public class PlayerController : MonoBehaviour
         vidas = 2;
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalColor = spriteRenderer.color;
+        vidas = imagenVidas;
 
         //Vector3 clampedPosition = transform.position;
         //clampedPosition.x = Mathf.Clamp(clampedPosition.x, minPosition.x, maxPosition.x);
@@ -115,8 +118,13 @@ public class PlayerController : MonoBehaviour
                 break;
             case 1:
             case 2:
-                    //botonPausa.SetActive(true);
-                    vidas--;
+
+                if (vidas > 0 && vidas <= imagenVidas)
+                {
+                    imagenVidas = vidas - 1;
+                }
+                //botonPausa.SetActive(true);
+                vidas--;
                 
                 break;
         }

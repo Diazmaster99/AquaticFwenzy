@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int vidas = 3;
+    public int vidas = 3;
+    public int contador = 3;
+    public GameObject imagenVidas;
     public GameObject botonPausa;
     public GameObject botonGameOver;
     public PlayerController playerController;
 
     public static GameManager instance;
+
+    public int Length { get; internal set; }
+
 
     private void Awake()
     {
@@ -31,19 +36,24 @@ public class GameManager : MonoBehaviour
         {
             botonPausa.SetActive(false);
             botonGameOver.SetActive(true);
+            imagenVidas.SetActive(false);
             playerController.Morir();
         }
+
         else
         {
+            imagenVidas.SetActive(true);
             ActualizarVidas();
         }
     }
+
 
     public void RecuperarVidas()
     {
         if(vidas < 3)
         {
             vidas++;
+            imagenVidas.SetActive(true);
             ActualizarVidas();
         }
     }
@@ -52,7 +62,15 @@ public class GameManager : MonoBehaviour
     {
         botonPausa.SetActive(true);
         botonGameOver.SetActive(false);
+        imagenVidas.SetActive(true);
     }
+
+    void ActualizarContadorVidas()
+    {
+
+    }
+
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
