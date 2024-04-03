@@ -9536,8 +9536,9 @@ MonoBehaviour:
   AudioClipMuerteBoss: {fileID: 8300000, guid: ea7a7cb4a4d917d439fe2f8105d2285c, type: 3}
   AudioClipMuerteJugador: {fileID: 8300000, guid: 64392bc68f545224d8663c85b839727d, type: 3}
   menuWin: {fileID: 1271425953}
-  moveSpeed: 5
   animacionBoss: {fileID: 1525190513}
+  moveForce: 0
+  maxSpeed: 0
   isInvincible: 0
   invincibilityDuration: 2
 --- !u!82 &1525190511
