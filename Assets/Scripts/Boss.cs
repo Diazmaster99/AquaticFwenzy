@@ -8,14 +8,12 @@ public class Boss : MonoBehaviour
     [SerializeField] private AudioClip AudioClipMuerteBoss;
     [SerializeField] private AudioClip AudioClipMuerteJugador;
     public GameObject menuWin;
-    public float moveSpeed;
+    private float moveSpeed, moveSpeedAnterior;
     public static int vidaBoss = 10;
     [SerializeField] private Animator animacionBoss;
     private bool sonidoBoss = true;
     private bool muerto = false;
     private ParticleSystem _myParticleSystem;
-
-
 
     public bool isInvincible = false;
     public float invincibilityDuration = 2f; // Duration of invincibility frames in seconds
@@ -32,10 +30,12 @@ public class Boss : MonoBehaviour
         muerto = false;
         sonidoBoss = true;
         vidaBoss = 10;
-
+        moveSpeed = 5f;
+        moveSpeedAnterior = 5f;
         _myParticleSystem = GetComponent<ParticleSystem>();
         InvokeRepeating(nameof(InitiateShotWaterBubble),5,5);
-
+        InvokeRepeating("VelocidadRandom", 2, 2);
+        InvokeRepeating("ActualizarMovespeedAnterior", 2, 2);
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalColor = spriteRenderer.color;
 
@@ -44,6 +44,8 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /* v = new Vector3(GetComponent<Transform>().position.x,
+                    0.0f, 0.0f); */
         // Update invincibility timer
         if (isInvincible)
         {
@@ -60,7 +62,6 @@ public class Boss : MonoBehaviour
         if (vidaBoss > 0)
         {
             transform.Translate(moveSpeed * Time.deltaTime * Vector2.right);
-
         }
 
         if (vidaBoss <= 0)
@@ -85,6 +86,13 @@ public class Boss : MonoBehaviour
             //Ganar
         }
     }
+
+   /* void FixedUpdate()
+    {
+        GetComponent<Rigidbody2D>().velocity = Vector3.ClampMagnitude
+        (GetComponent<Rigidbody2D>().velocity, maxSpeed);
+        GetComponent<Rigidbody2D>().AddForce(v.normalized * moveForce);
+    } */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!muerto)
@@ -196,7 +204,26 @@ public class Boss : MonoBehaviour
         animacionBoss.SetBool("Disparar",true);
     }
 
+    private void ActualizarMovespeedAnterior() 
+    {
+        moveSpeedAnterior = moveSpeed;
+    }
+    private void VelocidadRandom() 
+    {
+        moveSpeed = Random.Range(-5f, 5f);
+          
+        if ((moveSpeedAnterior >= 4 && moveSpeed >= 3) && (moveSpeed > -1 && moveSpeed < 1)) 
+        {
+            moveSpeed = Random.Range(-5f, 5f);
+        }
+        if ((moveSpeedAnterior <=-4 && moveSpeed <= -3) && (moveSpeed > -1 && moveSpeed < 1))
+        {
+            moveSpeed = Random.Range(-5f, 5f);
+        }
+        //Debug.Log(moveSpeed);
+        //Debug.Log(moveSpeedAnterior);
 
+    }
 }
     
 
