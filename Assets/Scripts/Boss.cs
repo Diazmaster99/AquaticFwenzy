@@ -7,7 +7,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private AudioSource SoundEffect;
     [SerializeField] private AudioClip AudioClipMuerteBoss;
     [SerializeField] private AudioClip AudioClipMuerteJugador;
-    public GameObject menuWin;
+    public GameObject menuWin, serpientesIzquierda, serpientesDerecha;
     private float moveSpeed, moveSpeedAnterior;
     public static int vidaBoss = 10;
     [SerializeField] private Animator animacionBoss;
@@ -63,7 +63,11 @@ public class Boss : MonoBehaviour
         {
             transform.Translate(moveSpeed * Time.deltaTime * Vector2.right);
         }
-
+        if (vidaBoss < 5)
+        {
+            serpientesIzquierda.SetActive(true);
+            serpientesDerecha.SetActive(true);
+        }
         if (vidaBoss <= 0)
         {
             if (sonidoBoss)
