@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float hInput, vInput;
     public bool fastShoot = false;
     public static bool shieldActive = false;
+    public static int puntos;
     public bool grenadeLauncher = false;
     public GameObject shieldPrefab;
     public PowerUps powerUps;
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
     [SerializeField] private GameObject efecto;
-    [SerializeField] public int puntos, vidas;
+    [SerializeField] public int  vidas;
     [SerializeField] public int imagenVidas;
     [SerializeField] private TextMeshProUGUI puntosDisplay;
 
