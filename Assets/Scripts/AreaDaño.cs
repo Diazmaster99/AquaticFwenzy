@@ -21,7 +21,7 @@ public class AreaDaño : MonoBehaviour
             
                 if (col.gameObject.tag == "Player")
                 {
-                    player.Morir();
+                    player.perderVida();
                 }
             
         }

@@ -16,15 +16,15 @@ public class PlayerController : MonoBehaviour
     public bool grenadeLauncher = false;
     public GameObject shieldPrefab;
     public PowerUps powerUps;
-    [SerializeField] public PowerUpTimer powerUpTimer;
+    public PowerUpTimer powerUpTimer;
     [SerializeField] private GameObject botonGameOver;
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject botonOpciones;
     [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown;
     [SerializeField] private GameObject efecto;
-    [SerializeField] public int  vidas;
-    [SerializeField] public int imagenVidas;
+    public int  vidas;
+    public GameObject[] imagenVidas;
     [SerializeField] private TextMeshProUGUI puntosDisplay;
 
     public TextMeshProUGUI txtPowerUp1;
@@ -43,14 +43,14 @@ public class PlayerController : MonoBehaviour
 
 
 
-    public bool isInvincible = false;
-    public float invincibilityDuration = 2f; // Duration of invincibility frames in seconds
-    private float invincibilityTimer = 0f;
+    //public bool isInvincible = false;
+    //public float invincibilityDuration = 2f; // Duration of invincibility frames in seconds
+    //private float invincibilityTimer = 0f;
 
-    // Variables for visual feedback
-    private SpriteRenderer spriteRenderer;
-    private Color normalColor;
-    private Color invincibleColor = new Color(1f, 1f, 1f, 0.5f); // Example: Semi-transparent white
+    //// Variables for visual feedback
+    //private SpriteRenderer spriteRenderer;
+    //private Color normalColor;
+    //private Color invincibleColor = new Color(1f, 1f, 1f, 0.5f); // Example: Semi-transparent white
 
 
     //[SerializeField] private AudioSource killPlayerSoundEffect;
@@ -62,9 +62,9 @@ public class PlayerController : MonoBehaviour
     {
         PowerUps.gunPowerUpOn = false;
         vidas = 2;
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        normalColor = spriteRenderer.color;
-        vidas = imagenVidas;
+        //spriteRenderer = GetComponent<SpriteRenderer>();
+        //normalColor = spriteRenderer.color;
+        //vidas = imagenVidas;
 
         //Vector3 clampedPosition = transform.position;
         //clampedPosition.x = Mathf.Clamp(clampedPosition.x, minPosition.x, maxPosition.x);
@@ -106,70 +106,41 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void Morir()
+    public void perderVida()
     {
         switch (vidas)
         {
-            case 0:                            
-                    //botonPausa.SetActive(false);
-                    botonGameOver.SetActive(true);
-                    Time.timeScale = 0f;
-                    Destroy(gameObject);
-                
+            case 0:
+                imagenVidas[0].SetActive(false);
+                botonPausa.SetActive(false);
+                //killPlayerSoundEffect.Play();
+                botonGameOver.SetActive(true);
+                Time.timeScale = 0f;
+                Destroy(gameObject);
                 break;
             case 1:
-            case 2:
-
-                if (vidas > 0 && vidas <= imagenVidas)
-                {
-                    imagenVidas = vidas - 1;
-                }
-                //botonPausa.SetActive(true);
+                imagenVidas[1].SetActive(false);
                 vidas--;
-                
+                break;
+            case 2:
+                imagenVidas[2].SetActive(false);
+                vidas--;
                 break;
         }
     }
-
-    /*private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            GameManager.instance.PerderVida();
-        }
-    }*/
 
     public void SumarPuntos()
     {
         puntos += 1000;
-        /*if (puntos == 1000) {    
-            puntos += 1000;
-        }*/
     }
-
-    //private void OnTrigerEnter2D(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        //puntuaje.SumarPuntos(cantidadPuntos);
-    //        Instantiate(efecto, transform.position, Quaternion.identity);
-    //        Destroy(gameObject);
-    //    }
-    //}
-
 
     void OnTriggerEnter2D(Collider2D col)
     {
  
         if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE" || col.gameObject.tag == "Boss") && shieldActive==false )
         {
-            /*botonPausa.SetActive(false);
-            botonGameOver.SetActive(true);
-            PowerUps.gunPowerUpOn = false;
-            Time.timeScale = 0f;
-            Destroy(this.gameObject);
-            jugador.drag = 20; */
-            Morir();
+            perderVida();
+            Destroy(col.gameObject);
             
         }
     }
@@ -194,7 +165,8 @@ public class PlayerController : MonoBehaviour
             Destroy(this.gameObject);
             //jugador.drag = 20;
             */
-           Morir();
+           perderVida();
+           Destroy(col.gameObject);
 
         }
     }
@@ -219,7 +191,6 @@ public class PlayerController : MonoBehaviour
     {
         shieldActive = true;
         shieldPrefab.SetActive(true);
-        //txtPowerUp2.gameObject.SetActive(true);
 
         GameObject floatingText = Instantiate(floatingTextPrefab, this.transform.position, Quaternion.identity);
         floatingText.transform.SetParent(canvas.transform, false);
@@ -236,7 +207,6 @@ public class PlayerController : MonoBehaviour
         grenadeLauncher = true; 
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.GrenadeLauncherOn();
-        //txtPowerUp3.gameObject.SetActive(true);
 
         GameObject floatingText = Instantiate(floatingTextPrefab, this.transform.position, Quaternion.identity);
         floatingText.transform.SetParent(canvas.transform, false);
@@ -254,7 +224,6 @@ public class PlayerController : MonoBehaviour
         ProjectileShoot projectileShoot = GetComponent<ProjectileShoot>();
         projectileShoot.FastShootOff();
         txtPowerUp1.gameObject.SetActive(false);
-        //fastShoot = false;
     }
     public IEnumerator ShieldDownRoutine() 
     {
