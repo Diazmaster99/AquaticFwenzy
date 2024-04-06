@@ -207,7 +207,9 @@ public class PlayerController : MonoBehaviour
 
         GameObject floatingText = Instantiate(floatingTextPrefab, this.transform.position, Quaternion.identity);
         floatingText.transform.SetParent(canvas.transform, false);
-        floatingText.GetComponent<TextMeshProUGUI>().text = "Fwenzy!";
+        floatingText.GetComponent<TextMeshProUGUI>().text = "¡A por todas!";
+        TextoFluido textoFluido = floatingText.AddComponent<TextoFluido>();
+
         Destroy(floatingText, 2f);
 
         StartCoroutine (FastShootDownRoutine());
@@ -221,7 +223,9 @@ public class PlayerController : MonoBehaviour
 
         GameObject floatingText = Instantiate(floatingTextPrefab, this.transform.position, Quaternion.identity);
         floatingText.transform.SetParent(canvas.transform, false);
-        floatingText.GetComponent<TextMeshProUGUI>().text = "Escudo!";
+        floatingText.GetComponent<TextMeshProUGUI>().text = "¡Protegete!";
+        TextoFluido textoFluido = floatingText.AddComponent<TextoFluido>();
+
         Destroy(floatingText, 2f);
 
         StartCoroutine (ShieldDownRoutine());
@@ -236,7 +240,9 @@ public class PlayerController : MonoBehaviour
 
         GameObject floatingText = Instantiate(floatingTextPrefab, this.transform.position, Quaternion.identity);
         floatingText.transform.SetParent(canvas.transform, false);
-        floatingText.GetComponent<TextMeshProUGUI>().text = "Lanzagranadas!";
+        floatingText.GetComponent<TextMeshProUGUI>().text = "¡A saco paco!";
+        TextoFluido textoFluido = floatingText.AddComponent<TextoFluido>();
+
         Destroy(floatingText, 2f);
 
         StartCoroutine(GrenadeLauncherDownRoutine());

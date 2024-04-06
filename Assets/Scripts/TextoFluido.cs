@@ -7,18 +7,20 @@ using UnityEngine;
 public class TextoFluido : MonoBehaviour
 {
 
-    public TMP_Text textoInicio;
+    private TMP_Text textoInicio;
     private Color startColor = new Color(0, 1, 0.816f); // #00FFD0
-    private Color endColor = new Color(0.709f, 0.267f, 0.063f); // #B54410
-    public float speed = 1f; // Speed of color change
+    private Color endColor = new Color(0.851f, 0.745f, 0.18f, 1.0f); // #D9BE2E
+    public float speed = 5f; // Speed of color change
     void Start()
     {
-
+        textoInicio = GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        changeColor();
+
         textoInicio.ForceMeshUpdate();
         var textInfo = textoInicio.textInfo;
 
@@ -42,15 +44,27 @@ public class TextoFluido : MonoBehaviour
 
         }
 
-        //// Calculate the interpolation factor based on time and speed
-        //float t = Mathf.PingPong(Time.time * speed, 1f);
+        for (int i = 0; i < textInfo.meshInfo.Length; i++)
+        {
+            var meshInfo = textInfo.meshInfo[i];
+            meshInfo.mesh.vertices = meshInfo.vertices;
+            textoInicio.UpdateGeometry(meshInfo.mesh, i);
+        }
 
-        //// Interpolate between startColor and endColor using the factor t
-        //Color lerpedColor = Color.Lerp(startColor, endColor, t);
+        
 
-        //// Apply the lerped color to the text
-        //textoInicio.color = lerpedColor;
+    }
 
+    void changeColor()
+    {
+        // Calculate the interpolation factor based on time and speed
+        float t = Mathf.PingPong(Time.time * speed, 1f);
+
+        // Interpolate between startColor and endColor using the factor t
+        Color lerpedColor = Color.Lerp(startColor, endColor, t);
+
+        // Apply the lerped color to the text
+        textoInicio.color = lerpedColor;
     }
 
 }
