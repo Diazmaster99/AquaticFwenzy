@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource shieldDown;
     [SerializeField] private GameObject efecto;
     public int  vidas;
-    public GameObject[] imagenVidas;
+    public GameObject[] imagenVidas = new GameObject[3];
     [SerializeField] private TextMeshProUGUI puntosDisplay;
 
     public TextMeshProUGUI txtPowerUp1;
@@ -34,23 +34,19 @@ public class PlayerController : MonoBehaviour
     public GameObject floatingTextPrefab;
     public GameObject canvas;
 
-    public GameManager gameManager;
-
     //public Vector3 minPosition;
     //public Vector3 maxPosition;
 
     public Collider2D boundaryCollider;
 
+    public bool isInvincible = false;
+    public float invincibilityDuration = 2f; // Duration of invincibility frames in seconds
+    private float invincibilityTimer = 0f;
 
-
-    //public bool isInvincible = false;
-    //public float invincibilityDuration = 2f; // Duration of invincibility frames in seconds
-    //private float invincibilityTimer = 0f;
-
-    //// Variables for visual feedback
-    //private SpriteRenderer spriteRenderer;
-    //private Color normalColor;
-    //private Color invincibleColor = new Color(1f, 1f, 1f, 0.5f); // Example: Semi-transparent white
+    // Variables for visual feedback
+    private SpriteRenderer spriteRenderer;
+    private Color normalColor;
+    private Color invincibleColor = new Color(1f, 1f, 1f, 0.5f); // Example: Semi-transparent white
 
 
     //[SerializeField] private AudioSource killPlayerSoundEffect;
@@ -62,13 +58,8 @@ public class PlayerController : MonoBehaviour
     {
         PowerUps.gunPowerUpOn = false;
         vidas = 2;
-        //spriteRenderer = GetComponent<SpriteRenderer>();
-        //normalColor = spriteRenderer.color;
-        //vidas = imagenVidas;
-
-        //Vector3 clampedPosition = transform.position;
-        //clampedPosition.x = Mathf.Clamp(clampedPosition.x, minPosition.x, maxPosition.x);
-        //clampedPosition.y = Mathf.Clamp(clampedPosition.y, minPosition.y, maxPosition.y);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        normalColor = spriteRenderer.color;
 
     }
 
@@ -79,7 +70,19 @@ public class PlayerController : MonoBehaviour
         vInput = Input.GetAxisRaw("Vertical");
         transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
         transform.Translate(Vector2.up * vInput * moveSpeed * Time.deltaTime);
-        
+
+        // Update invincibility timer
+        if (isInvincible)
+        {
+            invincibilityTimer -= Time.deltaTime;
+            if (invincibilityTimer <= 0)
+            {
+                isInvincible = false;
+                // Reset sprite color to normal
+                spriteRenderer.color = normalColor;
+            }
+        }
+
         if (puntosDisplay != null)
         {
             puntosDisplay.SetText("Puntos: " + puntos);
@@ -111,21 +114,59 @@ public class PlayerController : MonoBehaviour
         switch (vidas)
         {
             case 0:
-                imagenVidas[0].SetActive(false);
-                botonPausa.SetActive(false);
-                //killPlayerSoundEffect.Play();
-                botonGameOver.SetActive(true);
-                Time.timeScale = 0f;
-                Destroy(gameObject);
+                if (!isInvincible)
+                {
+                    imagenVidas[0].SetActive(false);
+                    botonPausa.SetActive(false);
+                    //killPlayerSoundEffect.Play();
+                    botonGameOver.SetActive(true);
+                    Time.timeScale = 0f;
+                    Destroy(gameObject);
+                }
+                    
                 break;
             case 1:
-                imagenVidas[1].SetActive(false);
-                vidas--;
+                if (!isInvincible)
+                {
+                    imagenVidas[1].SetActive(false);
+                    vidas--;
+                }
+                
                 break;
             case 2:
-                imagenVidas[2].SetActive(false);
-                vidas--;
+                if (!isInvincible)
+                {
+                    imagenVidas[2].SetActive(false);
+                    vidas--;
+                }
                 break;
+        }
+    }
+
+    private void StartInvincibility()
+    {
+        perderVida();
+        isInvincible = true;
+        invincibilityTimer = invincibilityDuration;
+        // Apply visual feedback for invincibility
+        FlashSprite();
+    }
+
+    private void FlashSprite()
+    {
+        // Flash the sprite on and off during invincibility
+        StartCoroutine(FlashSpriteCoroutine());
+    }
+
+    private IEnumerator FlashSpriteCoroutine()
+    {
+        while (invincibilityTimer > 0)
+        {
+            // Toggle between normal and invincible color
+            spriteRenderer.color = invincibleColor;
+            yield return new WaitForSeconds(0.1f); // Adjust the duration of each flash
+            spriteRenderer.color = normalColor;
+            yield return new WaitForSeconds(0.1f); // Adjust the duration of each flash
         }
     }
 
@@ -139,7 +180,7 @@ public class PlayerController : MonoBehaviour
  
         if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE" || col.gameObject.tag == "Boss") && shieldActive==false )
         {
-            perderVida();
+            StartInvincibility();
             Destroy(col.gameObject);
             
         }
@@ -165,8 +206,8 @@ public class PlayerController : MonoBehaviour
             Destroy(this.gameObject);
             //jugador.drag = 20;
             */
-           perderVida();
-           Destroy(col.gameObject);
+            StartInvincibility();
+            Destroy(col.gameObject);
 
         }
     }

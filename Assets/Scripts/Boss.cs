@@ -44,8 +44,6 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* v = new Vector3(GetComponent<Transform>().position.x,
-                    0.0f, 0.0f); */
         // Update invincibility timer
         if (isInvincible)
         {
@@ -90,13 +88,6 @@ public class Boss : MonoBehaviour
             //Ganar
         }
     }
-
-   /* void FixedUpdate()
-    {
-        GetComponent<Rigidbody2D>().velocity = Vector3.ClampMagnitude
-        (GetComponent<Rigidbody2D>().velocity, maxSpeed);
-        GetComponent<Rigidbody2D>().AddForce(v.normalized * moveForce);
-    } */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!muerto)
