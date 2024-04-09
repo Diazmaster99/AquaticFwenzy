@@ -19,6 +19,7 @@ public class Projectile : MonoBehaviour
     {
         transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -63,19 +64,7 @@ public class Projectile : MonoBehaviour
 
     private void OnParticleCollision(GameObject col)
     {
-        if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && PlayerController.shieldActive == false)
-        {
-            /*killPlayerSoundEffect.Play();
-            botonPausa.SetActive(false);
-            botonGameOver.SetActive(true);
-            PowerUps.gunPowerUpOn = false;          
-            Time.timeScale = 0f;
-            Destroy(this.gameObject);
-            //jugador.drag = 20;
-            */
-            player.SumarPuntos();
-
-        }
+  
     }
 
 }

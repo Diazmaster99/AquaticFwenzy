@@ -207,7 +207,8 @@ public class PlayerController : MonoBehaviour
             //jugador.drag = 20;
             */
             StartInvincibility();
-            Destroy(col.gameObject);
+            Debug.Log("Golpeado");
+            //Destroy(col.gameObject);
 
         }
     }

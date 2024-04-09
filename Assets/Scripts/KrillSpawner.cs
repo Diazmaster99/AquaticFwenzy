@@ -17,10 +17,10 @@ public class KrillSpawner : MonoBehaviour
 
     void Update()
     {
-        _transform.position = new Vector2(Mathf.PerlinNoise(-5f, 11f), 11);
+        //_transform.position = new Vector2(Mathf.PerlinNoise(-5f, 11f), 11);
     }
     
-    private void OnParticleCollision(GameObject col)
+   /* private void OnParticleCollision(GameObject col)
     {
         if (col.gameObject.tag == "Shield" || col.gameObject.tag == "Projectile")
         {
@@ -35,6 +35,6 @@ public class KrillSpawner : MonoBehaviour
             //Destroy(gameObject);
         }  
    
-    }
+    } */
     
     }
