@@ -6,7 +6,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private AudioSource killPlayerSoundEffect;
+    //[SerializeField] private AudioSource killPlayerSoundEffect;
     public float moveSpeed = 2;
     Animator muerte;
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             gameObject.GetComponent<Renderer>().enabled = false;
-            killPlayerSoundEffect.Play();
+            //killPlayerSoundEffect.Play();
             //Destroy(collision.gameObject);
         }
 

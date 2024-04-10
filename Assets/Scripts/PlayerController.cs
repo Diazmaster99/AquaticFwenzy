@@ -16,12 +16,11 @@ public class PlayerController : MonoBehaviour
     public bool grenadeLauncher = false;
     public GameObject shieldPrefab;
     public PowerUps powerUps;
-    public PowerUpTimer powerUpTimer;
     [SerializeField] private GameObject botonGameOver;
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject botonOpciones;
     [SerializeField] private GameObject MenuWin;
-    [SerializeField] private AudioSource shieldDown;
+    [SerializeField] private AudioSource shieldDown, killPlayerSoundEffect;
     [SerializeField] private GameObject efecto;
     public int  vidas;
     public GameObject[] imagenVidas = new GameObject[3];
@@ -118,10 +117,10 @@ public class PlayerController : MonoBehaviour
                 {
                     imagenVidas[0].SetActive(false);
                     botonPausa.SetActive(false);
-                    //killPlayerSoundEffect.Play();
+                    killPlayerSoundEffect.Play();
                     botonGameOver.SetActive(true);
                     Time.timeScale = 0f;
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
                 }
                     
                 break;
@@ -207,7 +206,6 @@ public class PlayerController : MonoBehaviour
             //jugador.drag = 20;
             */
             StartInvincibility();
-            Debug.Log("Golpeado");
             //Destroy(col.gameObject);
 
         }
