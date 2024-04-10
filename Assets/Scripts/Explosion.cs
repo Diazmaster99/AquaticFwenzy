@@ -7,7 +7,7 @@ public class Explosion : MonoBehaviour
 {
 
     public float radius = 5;
-    
+    Animator muerte;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class Explosion : MonoBehaviour
             {
                 if (col.gameObject.tag == "Enemy")
                 {
-                    Destroy(col.gameObject);                    
+                    Destroy(col.gameObject);     
                 }
             }
         }

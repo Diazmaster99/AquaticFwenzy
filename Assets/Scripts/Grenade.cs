@@ -8,7 +8,8 @@ public class Grenade : MonoBehaviour
     public GameObject explosion;
     [SerializeField] private AudioSource explosionSoundEffect;
     public float moveSpeed;
-    
+    Animator muerte;
+
     void Start()
     {
 
@@ -30,8 +31,13 @@ public class Grenade : MonoBehaviour
                 StartCoroutine(Explode(0));
                 gameObject.GetComponent<Renderer>().enabled = false;
                 explosionSoundEffect.Play();
-                Destroy(collision.gameObject);
+                muerte = collision.gameObject.GetComponent<Animator>();
+                if (muerte != null)
+                {
+                    muerte.SetBool("Muerte", true);
+                }
                 Destroy(gameObject, 1.3f);
+
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 PlayerController.puntos += 1000;
             }
