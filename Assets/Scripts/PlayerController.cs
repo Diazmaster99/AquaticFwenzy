@@ -174,6 +174,11 @@ public class PlayerController : MonoBehaviour
         puntos += 1000;
     }
 
+    public void SumarPuntosKrill()
+    {
+        puntos += 150;
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
  
