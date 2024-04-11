@@ -47,6 +47,10 @@ public class PlayerController : MonoBehaviour
     private Color normalColor;
     private Color invincibleColor = new Color(1f, 1f, 1f, 0.5f); // Example: Semi-transparent white
 
+    public int textSizeIncreaseAmount = 40;
+    public int defaultFontSize = 36;
+    public float textSizeResetDelay = 0.5f;
+
 
     //[SerializeField] private AudioSource killPlayerSoundEffect;
 
@@ -85,6 +89,7 @@ public class PlayerController : MonoBehaviour
         if (puntosDisplay != null)
         {
             puntosDisplay.SetText("Puntos: " + puntos);
+
         }
 
          //Ensure the object stays within the boundary collider
@@ -169,9 +174,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void IncreaseTextSize()
+    {
+        // Increase text size
+        puntosDisplay.fontSize += (int)textSizeIncreaseAmount;
+    }
+
+    void ResetTextSizeDelayed()
+    {
+        // Reset text size after a delay
+        Invoke("ResetTextSize", textSizeResetDelay);
+    }
+
+    void ResetTextSize()
+    {
+        // Reset text size to default
+        puntosDisplay.fontSize = defaultFontSize;
+    }
+
     public void SumarPuntos()
     {
         puntos += 1000;
+        IncreaseTextSize();
     }
 
     public void SumarPuntosKrill()
