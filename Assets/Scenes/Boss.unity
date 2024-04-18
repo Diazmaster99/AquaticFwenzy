@@ -584,6 +584,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218227623}
   m_CullTransparentMesh: 1
+--- !u!82 &231229669 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1782614857610249935, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
+  m_PrefabInstance: {fileID: 811024421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &231229671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
+  m_PrefabInstance: {fileID: 811024421}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8b5a2c3e35a184d890d2e95c6890ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &269726053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,7 +1633,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3229711073074129500, guid: 04d13e57621bc1f40ac13127baa712a4, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8355b8e7a04ad494cbe7240eead8b9d0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.057
+  m_Volume: 0.578
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2614,6 +2630,10 @@ PrefabInstance:
       value: Player (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
+      propertyPath: vidas
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
       propertyPath: MenuWin
       value: 
       objectReference: {fileID: 1271425953}
@@ -2629,6 +2649,14 @@ PrefabInstance:
       propertyPath: boundaryCollider
       value: 
       objectReference: {fileID: 842495588}
+    - target: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
+      propertyPath: invincibilityDuration
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
+      propertyPath: killPlayerSoundEffect
+      value: 
+      objectReference: {fileID: 231229669}
     - target: {fileID: 1782614857610249929, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
       propertyPath: imagenVidas.Array.data[0]
       value: 
@@ -10167,6 +10195,7 @@ MonoBehaviour:
   animacionBoss: {fileID: 1525190513}
   isInvincible: 0
   invincibilityDuration: 2
+  jugador: {fileID: 231229671}
 --- !u!82 &1525190511
 AudioSource:
   m_ObjectHideFlags: 0

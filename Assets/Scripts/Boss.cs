@@ -7,12 +7,18 @@ public class Boss : MonoBehaviour
     [SerializeField] private AudioSource SoundEffect;
     [SerializeField] private AudioClip AudioClipMuerteBoss;
     [SerializeField] private AudioClip AudioClipMuerteJugador;
+
     public GameObject menuWin, serpientesIzquierda, serpientesDerecha;
+
     private float moveSpeed, moveSpeedAnterior;
+
     public static int vidaBoss = 10;
+
     [SerializeField] private Animator animacionBoss;
+
     private bool sonidoBoss = true;
     private bool muerto = false;
+    private bool gritando = false;
     private ParticleSystem _myParticleSystem;
 
     public bool isInvincible = false;
@@ -23,6 +29,8 @@ public class Boss : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color normalColor;
     private Color invincibleColor = new Color(1f, 1f, 1f, 0.5f); // Example: Semi-transparent white
+
+    public PlayerController jugador;
 
     // Start is called before the first frame update
     void Start()
@@ -61,11 +69,16 @@ public class Boss : MonoBehaviour
         {
             transform.Translate(moveSpeed * Time.deltaTime * Vector2.right);
         }
+
         if (vidaBoss < 5)
         {
+            gritando = true;
             serpientesIzquierda.SetActive(true);
             serpientesDerecha.SetActive(true);
+            //amimacionBoss.setBool("SegundoAtaque",true);
+            
         }
+
         if (vidaBoss <= 0)
         {
             if (sonidoBoss)
@@ -88,9 +101,15 @@ public class Boss : MonoBehaviour
             //Ganar
         }
     }
+
+    private void PararDeGritar()
+    {
+        gritando = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!muerto)
+        if (!muerto && !gritando)
         {
             if (collision.gameObject.tag == "Boundary")
             {
@@ -103,15 +122,18 @@ public class Boss : MonoBehaviour
         if (collision.gameObject.tag == "Player" && PlayerController.shieldActive==false)
         {
             //vidaBoss--;
-            SoundEffect.clip = AudioClipMuerteJugador;
-            SoundEffect.Play();
-            Destroy(collision.gameObject);
-            Time.timeScale = 0f;
+            //SoundEffect.clip = AudioClipMuerteJugador;
+            //SoundEffect.Play();
+            //Destroy(collision.gameObject);
+            //Time.timeScale = 0f;
+            jugador.StartInvincibility();
+
+
         }
-        if (collision.gameObject.tag == "Player" && PlayerController.shieldActive == true)
-        {
-            //vidaBoss--;        
-        }
+        //if (collision.gameObject.tag == "Player" && PlayerController.shieldActive == true)
+        //{
+        //    //vidaBoss--;        
+        //}
 
         if (collision.gameObject.tag == "Projectile")
         {
@@ -122,7 +144,7 @@ public class Boss : MonoBehaviour
 
                 // Trigger invincibility frames
                 vidaBoss--;
-                Debug.Log("EL jefe tiene "+vidaBoss+" de vida");
+                //Debug.Log("EL jefe tiene "+vidaBoss+" de vida");
                 StartInvincibility();
             }
 
@@ -138,13 +160,14 @@ public class Boss : MonoBehaviour
 
         if (col.gameObject.tag == "Player" && PlayerController.shieldActive == false)
         {
-            //botonMenu.SetActive(false);
-            //botonGameOver.SetActive(true);
-            SoundEffect.clip = AudioClipMuerteJugador;
-            SoundEffect.Play();
-            PowerUps.gunPowerUpOn = false;
-            Time.timeScale = 0f;
-            Destroy(col.gameObject);
+            ////botonMenu.SetActive(false);
+            ////botonGameOver.SetActive(true);
+            //SoundEffect.clip = AudioClipMuerteJugador;
+            //SoundEffect.Play();
+            //PowerUps.gunPowerUpOn = false;
+            //Time.timeScale = 0f;
+            //Destroy(col.gameObject);
+            jugador.StartInvincibility();
         }
     }
 
@@ -174,16 +197,16 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void Muerte()
-    {    
-        Destroy(gameObject);      
-    }
+    //public void Muerte()
+    //{    
+    //    Destroy(gameObject);      
+    //}
 
     private void ShotWaterBubble()
     {
 
         ParticleSystem.EmissionModule emitter;
-        if (!muerto)
+        if (!muerto && !gritando)
         {
             emitter = _myParticleSystem.emission;
 
