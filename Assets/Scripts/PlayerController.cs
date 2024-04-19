@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject botonOpciones;
     [SerializeField] private GameObject MenuWin;
-    [SerializeField] private AudioSource shieldDown, killPlayerSoundEffect;
+    [SerializeField] private AudioSource shieldDown, killPlayerSoundEffect,recibirdmg;
     [SerializeField] private GameObject efecto;
     public int  vidas;
     public GameObject[] imagenVidas = new GameObject[3];
@@ -123,13 +123,15 @@ public class PlayerController : MonoBehaviour
                     killPlayerSoundEffect.Play();
                     botonGameOver.SetActive(true);
                     Time.timeScale = 0f;
-                    Destroy(gameObject);
+                    //Destroy(gameObject);
+                    DesactivarJugador();
                 }
                     
                 break;
             case 1:
                 if (!isInvincible)
                 {
+                    recibirdmg.Play();
                     imagenVidas[1].SetActive(false);
                     vidas--;
                 }
@@ -138,6 +140,7 @@ public class PlayerController : MonoBehaviour
             case 2:
                 if (!isInvincible)
                 {
+                    recibirdmg.Play();
                     imagenVidas[2].SetActive(false);
                     vidas--;
                 }
@@ -172,6 +175,42 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void DesactivarJugador()
+    {
+        // Get the number of child objects
+        int childCount = transform.childCount;
+
+        // Create an array to store child GameObjects
+        GameObject[] childObjects = new GameObject[childCount];
+
+        for (int i = 0; i < childCount; i++)
+        {
+            // Get the transform of the child object at index i
+            Transform childTransform = transform.GetChild(i);
+
+            // Get the GameObject associated with the child transform
+            GameObject childObject = childTransform.gameObject;
+
+            // Store the child GameObject in the array
+            childObjects[i] = childObject;
+        }
+
+        for (int i = 0; i < childCount; i++)
+        {
+            SpriteRenderer spriteRenderer = childObjects[i].GetComponent<SpriteRenderer>();
+
+            if (spriteRenderer != null)
+            {
+                childObjects[i].GetComponent<SpriteRenderer>().enabled = false;
+            }
+            
+        }
+
+        this.GetComponent<SpriteRenderer>().enabled = false;
+
+    }
+
+
     void IncreaseTextSize()
     {
         // Increase text size
@@ -186,34 +225,34 @@ public class PlayerController : MonoBehaviour
         Invoke("ResetTextSize", textSizeResetDelay);
     }
 
-    void ResetTextSize()
-    {
-        // Reset text size to default
-        if (sizeTransitionCoroutine != null)
-        {
-            StopCoroutine(sizeTransitionCoroutine);
-        }
+    //void ResetTextSize()
+    //{
+    //    // Reset text size to default
+    //    if (sizeTransitionCoroutine != null)
+    //    {
+    //        StopCoroutine(sizeTransitionCoroutine);
+    //    }
 
-        sizeTransitionCoroutine = StartCoroutine(SmoothFontSizeTransition());
+    //    sizeTransitionCoroutine = StartCoroutine(SmoothFontSizeTransition());
 
-        puntosDisplay.fontSize = defaultFontSize;
-    }
+    //    puntosDisplay.fontSize = defaultFontSize;
+    //}
 
-    IEnumerator SmoothFontSizeTransition()
-    {
-        targetFontSize = 36;
-        float currentFontSize = puntosDisplay.fontSize;
-        float t = 0;
+    //IEnumerator SmoothFontSizeTransition()
+    //{
+    //    targetFontSize = 36;
+    //    float currentFontSize = puntosDisplay.fontSize;
+    //    float t = 0;
 
-        while (t < smoothTime)
-        {
-            t += Time.deltaTime;
-            puntosDisplay.fontSize = (int)Mathf.Lerp(currentFontSize, targetFontSize, t / smoothTime);
-            yield return null;
-        }
+    //    while (t < smoothTime)
+    //    {
+    //        t += Time.deltaTime;
+    //        puntosDisplay.fontSize = (int)Mathf.Lerp(currentFontSize, targetFontSize, t / smoothTime);
+    //        yield return null;
+    //    }
 
-        puntosDisplay.fontSize = targetFontSize;
-    }
+    //    puntosDisplay.fontSize = targetFontSize;
+    //}
 
     public void SumarPuntos()
     {
@@ -231,10 +270,17 @@ public class PlayerController : MonoBehaviour
  
         if ((col.gameObject.tag == "Enemy" || col.gameObject.tag == "ProjectileE") && shieldActive==false )
         {
+            
             StartInvincibility();
             Destroy(col.gameObject);
             
         }
+
+        if (col.gameObject.tag == "Boss")
+        {
+            StartInvincibility();
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
