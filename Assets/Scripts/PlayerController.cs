@@ -134,18 +134,26 @@ public class PlayerController : MonoBehaviour
             case 1:
                 if (!isInvincible)
                 {
-                    recibirdmg.Play();
-                    imagenVidas[1].SetActive(false);
-                    vidas--;
+                    if (imagenVidas[0])
+                    {
+                        recibirdmg.Play();
+                        imagenVidas[1].SetActive(false);
+                        vidas--;
+                    }
+                    
                 }
                 
                 break;
             case 2:
                 if (!isInvincible)
                 {
-                    recibirdmg.Play();
-                    imagenVidas[2].SetActive(false);
-                    vidas--;
+                    if (imagenVidas[2])
+                    {
+                        recibirdmg.Play();
+                        imagenVidas[2].SetActive(false);
+                        vidas--;
+                    }
+                    
                 }
                 break;
         }
@@ -216,10 +224,13 @@ public class PlayerController : MonoBehaviour
 
     void IncreaseTextSize()
     {
-        // Increase text size
-        puntosDisplay.fontSize = (int)textSizeIncreaseAmount;
-        //cambiarTextoPuntuaje();
-        ResetTextSizeDelayed();
+        if (puntosDisplay != null)
+        {
+            // Increase text size
+            puntosDisplay.fontSize = (int)textSizeIncreaseAmount;
+            //cambiarTextoPuntuaje();
+            ResetTextSizeDelayed();
+        }
     }
 
     void ResetTextSizeDelayed()

@@ -152,6 +152,7 @@ public class Boss : MonoBehaviour
         {
             if (!isInvincible)
             {
+                
                 SoundEffect.clip = AudioClipRecibirDmgBoss;
                 SoundEffect.Play();
                 vidaBoss--;
@@ -167,6 +168,11 @@ public class Boss : MonoBehaviour
         if (col.gameObject.tag == "Shield")
         {
             Destroy(gameObject);
+        }
+
+        if (col.gameObject.tag == "Projectile")
+        {
+            Destroy(col.gameObject);
         }
 
         if (col.gameObject.tag == "Player" && PlayerController.shieldActive == false)
