@@ -10,6 +10,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private AudioClip AudioClipRecibirDmgBoss;
     [SerializeField] private AudioClip AudioClipCogerAire;
     [SerializeField] private AudioClip AudioClipBurbujasDisparadas;
+    [SerializeField] private AudioClip AudioClipGritar;
 
     public GameObject menuWin, serpientesIzquierda, serpientesDerecha;
 
@@ -22,6 +23,7 @@ public class Boss : MonoBehaviour
     private bool sonidoBoss = true;
     private bool muerto = false;
     private bool gritando = false;
+    private bool realizadoSegundoAtaque = false;
     private ParticleSystem _myParticleSystem;
 
     public bool isInvincible = false;
@@ -75,10 +77,18 @@ public class Boss : MonoBehaviour
 
         if (vidaBoss < 5)
         {
-            gritando = true;
-            serpientesIzquierda.SetActive(true);
-            serpientesDerecha.SetActive(true);
-            //amimacionBoss.setBool("SegundoAtaque",true);
+            if (!realizadoSegundoAtaque)
+            {
+                SoundEffect.clip = AudioClipGritar;
+                SoundEffect.Play();
+
+                animacionBoss.SetTrigger("Gritar");
+                gritando = true;
+                serpientesIzquierda.SetActive(true);
+                serpientesDerecha.SetActive(true);
+                realizadoSegundoAtaque = true;
+            }
+            
             
         }
 
@@ -222,8 +232,12 @@ public class Boss : MonoBehaviour
 
     private void InitiateShotWaterBubble()
     {
-        SoundEffect.clip = AudioClipCogerAire;
-        SoundEffect.Play();
+        if (!muerto && !gritando)
+        {
+            SoundEffect.clip = AudioClipCogerAire;
+            SoundEffect.Play();
+        }
+        
         animacionBoss.SetBool("Disparar",true);
         
     }

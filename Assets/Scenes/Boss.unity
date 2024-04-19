@@ -10079,6 +10079,7 @@ MonoBehaviour:
   AudioClipRecibirDmgBoss: {fileID: 8300000, guid: 299409668ed92e243a973d5636f92ff2, type: 3}
   AudioClipCogerAire: {fileID: 8300000, guid: d7ef9eb9d982b2b4699ea3ed6ddbf230, type: 3}
   AudioClipBurbujasDisparadas: {fileID: 8300000, guid: 9db561ba8d0919147a197ba5fddbb08b, type: 3}
+  AudioClipGritar: {fileID: 8300000, guid: 404f522ee45edf445ab71dd2dab13859, type: 3}
   menuWin: {fileID: 1271425953}
   serpientesIzquierda: {fileID: 960187565}
   serpientesDerecha: {fileID: 1809688630}
