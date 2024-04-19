@@ -118,13 +118,16 @@ public class PlayerController : MonoBehaviour
             case 0:
                 if (!isInvincible)
                 {
-                    imagenVidas[0].SetActive(false);
-                    botonPausa.SetActive(false);
-                    killPlayerSoundEffect.Play();
-                    botonGameOver.SetActive(true);
-                    Time.timeScale = 0f;
-                    //Destroy(gameObject);
-                    DesactivarJugador();
+                    if (imagenVidas[0])
+                    {
+                        imagenVidas[0].SetActive(false);
+                        botonPausa.SetActive(false);
+                        killPlayerSoundEffect.Play();
+                        botonGameOver.SetActive(true);
+                        Time.timeScale = 0f;
+                        //Destroy(gameObject);
+                        DesactivarJugador();
+                    }
                 }
                     
                 break;
@@ -225,34 +228,34 @@ public class PlayerController : MonoBehaviour
         Invoke("ResetTextSize", textSizeResetDelay);
     }
 
-    //void ResetTextSize()
-    //{
-    //    // Reset text size to default
-    //    if (sizeTransitionCoroutine != null)
-    //    {
-    //        StopCoroutine(sizeTransitionCoroutine);
-    //    }
+    void ResetTextSize()
+    {
+        // Reset text size to default
+        if (sizeTransitionCoroutine != null)
+        {
+            StopCoroutine(sizeTransitionCoroutine);
+        }
 
-    //    sizeTransitionCoroutine = StartCoroutine(SmoothFontSizeTransition());
+        sizeTransitionCoroutine = StartCoroutine(SmoothFontSizeTransition());
 
-    //    puntosDisplay.fontSize = defaultFontSize;
-    //}
+        puntosDisplay.fontSize = defaultFontSize;
+    }
 
-    //IEnumerator SmoothFontSizeTransition()
-    //{
-    //    targetFontSize = 36;
-    //    float currentFontSize = puntosDisplay.fontSize;
-    //    float t = 0;
+    IEnumerator SmoothFontSizeTransition()
+    {
+        targetFontSize = 36;
+        float currentFontSize = puntosDisplay.fontSize;
+        float t = 0;
 
-    //    while (t < smoothTime)
-    //    {
-    //        t += Time.deltaTime;
-    //        puntosDisplay.fontSize = (int)Mathf.Lerp(currentFontSize, targetFontSize, t / smoothTime);
-    //        yield return null;
-    //    }
+        while (t < smoothTime)
+        {
+            t += Time.deltaTime;
+            puntosDisplay.fontSize = (int)Mathf.Lerp(currentFontSize, targetFontSize, t / smoothTime);
+            yield return null;
+        }
 
-    //    puntosDisplay.fontSize = targetFontSize;
-    //}
+        puntosDisplay.fontSize = targetFontSize;
+    }
 
     public void SumarPuntos()
     {
