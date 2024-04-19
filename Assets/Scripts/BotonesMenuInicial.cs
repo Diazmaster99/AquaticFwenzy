@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BotonesMenuInicial : MonoBehaviour
 {
@@ -19,4 +20,15 @@ public class BotonesMenuInicial : MonoBehaviour
         //sonidoBoton.Play();
         menuOpciones.SetActive(false);
     }
+
+    public void Creditos()
+    {
+        SceneManager.LoadScene("Creditos");
+    }
+
+    public void VolverMenuInicial()
+    {
+        SceneManager.LoadScene("MenuInicial");
+    }
+
 }
