@@ -6,7 +6,6 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private AudioSource killEnemySoundEffect;
-    [SerializeField] private AudioSource killBossSoundEffect;
     public float moveSpeed;
     Animator muerte;
     [SerializeField] public PlayerController player;
@@ -47,8 +46,7 @@ public class Projectile : MonoBehaviour
             {
                 gameObject.GetComponent<Renderer>().enabled = false;
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
-                killBossSoundEffect.Play();
-                muerte = collision.gameObject.GetComponent<Animator>();
+                //muerte = collision.gameObject.GetComponent<Animator>();
 
                 Destroy(gameObject, 1.1f);
             }

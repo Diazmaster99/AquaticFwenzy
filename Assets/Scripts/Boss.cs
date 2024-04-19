@@ -7,6 +7,9 @@ public class Boss : MonoBehaviour
     [SerializeField] private AudioSource SoundEffect;
     [SerializeField] private AudioClip AudioClipMuerteBoss;
     [SerializeField] private AudioClip AudioClipMuerteJugador;
+    [SerializeField] private AudioClip AudioClipRecibirDmgBoss;
+    [SerializeField] private AudioClip AudioClipCogerAire;
+    [SerializeField] private AudioClip AudioClipBurbujasDisparadas;
 
     public GameObject menuWin, serpientesIzquierda, serpientesDerecha;
 
@@ -139,10 +142,8 @@ public class Boss : MonoBehaviour
         {
             if (!isInvincible)
             {
-                // Apply damage to player health or update player health
-                // Example: health -= damageAmount;
-
-                // Trigger invincibility frames
+                SoundEffect.clip = AudioClipRecibirDmgBoss;
+                SoundEffect.Play();
                 vidaBoss--;
                 //Debug.Log("EL jefe tiene "+vidaBoss+" de vida");
                 StartInvincibility();
@@ -211,6 +212,8 @@ public class Boss : MonoBehaviour
             emitter = _myParticleSystem.emission;
 
             _myParticleSystem.Emit(20);
+            SoundEffect.clip = AudioClipBurbujasDisparadas;
+            SoundEffect.Play();
         }
 
         animacionBoss.SetBool("Disparar", false);
@@ -219,7 +222,10 @@ public class Boss : MonoBehaviour
 
     private void InitiateShotWaterBubble()
     {
+        SoundEffect.clip = AudioClipCogerAire;
+        SoundEffect.Play();
         animacionBoss.SetBool("Disparar",true);
+        
     }
 
     private void ActualizarMovespeedAnterior() 

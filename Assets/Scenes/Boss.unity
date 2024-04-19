@@ -10076,6 +10076,9 @@ MonoBehaviour:
   SoundEffect: {fileID: 1525190511}
   AudioClipMuerteBoss: {fileID: 8300000, guid: ea7a7cb4a4d917d439fe2f8105d2285c, type: 3}
   AudioClipMuerteJugador: {fileID: 8300000, guid: 64392bc68f545224d8663c85b839727d, type: 3}
+  AudioClipRecibirDmgBoss: {fileID: 8300000, guid: 299409668ed92e243a973d5636f92ff2, type: 3}
+  AudioClipCogerAire: {fileID: 8300000, guid: d7ef9eb9d982b2b4699ea3ed6ddbf230, type: 3}
+  AudioClipBurbujasDisparadas: {fileID: 8300000, guid: 9db561ba8d0919147a197ba5fddbb08b, type: 3}
   menuWin: {fileID: 1271425953}
   serpientesIzquierda: {fileID: 960187565}
   serpientesDerecha: {fileID: 1809688630}
@@ -10093,7 +10096,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 299409668ed92e243a973d5636f92ff2, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
