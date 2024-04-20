@@ -63,6 +63,9 @@ public class Projectile : MonoBehaviour
     private void OnParticleCollision(GameObject col)
     {
         player.SumarPuntosKrill();
+
+        Destroy(this.gameObject);
+
     }
 
 }

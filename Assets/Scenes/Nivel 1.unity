@@ -16181,8 +16181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21bdfe8c5e0ef754399f8cfd01c07bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killPlayerSoundEffect: {fileID: 2048045004}
-  moveSpeed: 0
 --- !u!1001 &2049034839
 PrefabInstance:
   m_ObjectHideFlags: 0
