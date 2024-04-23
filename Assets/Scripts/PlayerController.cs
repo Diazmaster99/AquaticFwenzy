@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
 
         if (puntosDisplay != null)
         {
-            puntosDisplay.SetText("Puntos: " + puntos);
+            puntosDisplay.SetText("" + puntos);
 
         }
 
