@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private AudioSource killEnemySoundEffect;
+    private AudioSource killEnemySoundEffect;
+    public AudioSource killKrillSoundEffect;
     public float moveSpeed;
     Animator muerte;
     [SerializeField] public PlayerController player;
@@ -28,6 +29,11 @@ public class Projectile : MonoBehaviour
             {
                 gameObject.GetComponent<Renderer>().enabled = false;
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+                killEnemySoundEffect = collision.GetComponent<AudioSource>();
+
+                Debug.Log("Enemigo colisionado"+ collision.name);
+
                 killEnemySoundEffect.Play();
                
                 
@@ -63,8 +69,9 @@ public class Projectile : MonoBehaviour
     private void OnParticleCollision(GameObject col)
     {
         player.SumarPuntosKrill();
+        killKrillSoundEffect.Play();
 
-        Destroy(this.gameObject);
+        Destroy(this.gameObject,0.5f);
 
     }
 

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3452663278403150974}
   - component: {fileID: 3452663278403150972}
   - component: {fileID: -437486069094577663}
-  - component: {fileID: 3482778135550719461}
   - component: {fileID: 8231723288806797837}
+  - component: {fileID: 7805296518843663177}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Projectile
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad65679148753246a7b29cac5afb12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killEnemySoundEffect: {fileID: 3482778135550719461}
+  killKrillSoundEffect: {fileID: 7805296518843663177}
   moveSpeed: 7
   player: {fileID: 0}
 --- !u!61 &-437486069094577663
@@ -129,7 +129,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8459239, y: 1.9283466}
   m_EdgeRadius: 0
---- !u!82 &3482778135550719461
+--- !u!95 &8231723288806797837
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452663278403150975}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 30dcb0f4d3be671438d533ea6c3f5893, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &7805296518843663177
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,9 +160,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5025114331282548689, guid: 04d13e57621bc1f40ac13127baa712a4, type: 2}
-  m_audioClip: {fileID: 8300000, guid: f6af7506da1a9a740878d22952ae4909, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 79cffe29f2772af4085c8f102ba6c2ba, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.63
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -149,7 +170,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.2325387
+  MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -225,24 +246,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &8231723288806797837
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3452663278403150975}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 30dcb0f4d3be671438d533ea6c3f5893, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
