@@ -5264,7 +5264,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuwin: {fileID: 1271425953}
   moveSpeed: 2
-  decelerationRate: 0.1
 --- !u!1 &820355228
 GameObject:
   m_ObjectHideFlags: 0
@@ -10803,7 +10802,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuwin: {fileID: 1271425953}
   moveSpeed: 5
-  decelerationRate: 5000
 --- !u!212 &1671129657
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17949,8 +17947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21bdfe8c5e0ef754399f8cfd01c07bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killPlayerSoundEffect: {fileID: 2048045004}
-  moveSpeed: 0
 --- !u!1 &2048912329
 GameObject:
   m_ObjectHideFlags: 0
@@ -18313,7 +18309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27052c30064982540b42a12300150726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killPlayerSoundEffect: {fileID: 5937885569192206578}
   moveSpeed: 2
 --- !u!1001 &3439801351184895313
 PrefabInstance:

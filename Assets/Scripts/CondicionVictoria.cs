@@ -6,7 +6,7 @@ public class CondicionVictoria : MonoBehaviour
 {
     public GameObject menuwin;
     public float moveSpeed;
-    public float decelerationRate = 1;
+    //public float decelerationRate = 1;
     private Rigidbody2D rb;
     private bool final = false;
     // Start is called before the first frame update
@@ -18,64 +18,27 @@ public class CondicionVictoria : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
-
-        if (final)
+        if (!final)
         {
-            Slow();
+            transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
         }
-        
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "ProjectileBoundary")
+
+        if (collision.gameObject.tag == "Finish")
         {
             final = true;
         }
 
         if (collision.gameObject.tag == "Player")
         {
-            
+
             menuwin.SetActive(true);
             Time.timeScale = 0f;
         }
     }
-
-    private void Slow()
-    {
-
-        moveSpeed = moveSpeed - 0.01f;
-
-        if (moveSpeed <= 0) 
-        {
-            moveSpeed = 0;
-        }
-
-        //rb.gravityScale -= decelerationRate * Time.deltaTime;
-
-        //if (rb.gravityScale<=0)
-        //{
-        //    moveSpeed = 0f;
-        //    rb.gravityScale = 0f;
-        //}
-
-        //// Slow down the object gradually
-        //if (rb.velocity.magnitude > 0.1f)
-        //{
-        //    rb.velocity -= rb.velocity.normalized * decelerationRate * Time.deltaTime;
-        //}
-        //else
-        //{
-        //    // Stop the object completely when its speed is very low
-        //    rb.velocity = Vector2.zero;
-        //}
-
-        
-
-    }
-
 
 
 }
