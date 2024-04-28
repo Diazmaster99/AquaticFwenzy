@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55e8312a70e05f4ea07f3520a0423a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.5
+  moveSpeed: 2
   powerUpID: 3
   powerUpSoundEffect: {fileID: 2766139825298975167}
 --- !u!82 &2766139825298975167
