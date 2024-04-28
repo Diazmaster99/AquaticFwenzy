@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PowerUps : MonoBehaviour
 {
-    public float moveSpeed = 3.0f;
+    public float moveSpeed;
     public int powerUpID;
     public static bool gunPowerUpOn = false;
     [SerializeField] private AudioSource powerUpSoundEffect;
@@ -19,7 +19,7 @@ public class PowerUps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(moveSpeed * Time.deltaTime * Vector2.down);
+        transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
