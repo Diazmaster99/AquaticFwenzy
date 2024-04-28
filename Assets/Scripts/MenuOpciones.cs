@@ -20,21 +20,11 @@ public class MenuOpciones : MonoBehaviour
     [SerializeField]
     AudioMixer audioMixer;
 
+    public GameObject menuOpciones;
+
     // Start is called before the first frame update
     void Start()
     {
-        //resolutions = Screen.resolutions;
-        //resolutionDropdown.ClearOptions();
-
-        //List<string> options = new List<string>();
-
-        //for (int i = 0; i < resolutions.Length; i++)
-        //{
-        //    string option = resolutions[i] + " x " + " height";
-        //    options.Add(option);
-        //}
-
-        //resolutionDropdown.AddOptions(options);
 
         resolutions = Screen.resolutions;
         filteredResolutionList = new List<Resolution>();
@@ -65,13 +55,7 @@ public class MenuOpciones : MonoBehaviour
 
         resolutionDropdown.AddOptions(options);
 
-        //for (int i = 0; i < options.Count; i++)
-        //{
-        //    resolutionDropdown.options.Add(new TMP_Dropdown.OptionData(options[i]));
-        //}
-
         resolutionDropdown.value = currentResolutionIndex;
-        //resolutionDropdown.itemText.text = currentResolutionIndex.ToString();
         resolutionDropdown.RefreshShownValue();
 
     }
@@ -91,22 +75,6 @@ public class MenuOpciones : MonoBehaviour
         fullScreenToggle.isOn = true;
 
         Debug.Log("resolution es: " + filteredResolutionList[resolutionIndex]);
-        //int numero = 1;
-        //switch (resolutionIndex)
-        //{
-        //    case 0:
-        //        Screen.SetResolution(1920, 1080, true);
-        //        break;
-        //    case 1:
-        //        Screen.SetResolution(1420, 960, true);
-        //        break;
-        //    case 2:
-        //        //Screen.SetResolution(800, 600, false);
-        //        break;
-        //    default:
-        //        break;
-        //}
-        
     }
 
     public void changeVolumenMaster(float slidervalue)
@@ -123,6 +91,11 @@ public class MenuOpciones : MonoBehaviour
     public void changeVolumenFX(float slidervalue)
     {
         audioMixer.SetFloat("FX", Mathf.Log10(slidervalue) * 20);
+    }
+
+    public void ocultarMenuOpciones()
+    {
+        menuOpciones.SetActive(false);
     }
 
 }
