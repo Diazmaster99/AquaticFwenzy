@@ -42,6 +42,7 @@ public class Medusa : MonoBehaviour
     IEnumerator Explode(float time)
     {
         yield return new WaitForSeconds(time);
+        electricSoundEffect.Play();
         Instantiate(areaDaño, transform.position, Quaternion.identity);
     }
 }
