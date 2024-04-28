@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7169061268112836298}
   - component: {fileID: 6722280734149822630}
   m_Layer: 0
-  m_Name: Medusa
+  m_Name: Medusa2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
