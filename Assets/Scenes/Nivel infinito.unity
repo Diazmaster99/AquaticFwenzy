@@ -1167,7 +1167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &453274900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1740,7 +1740,7 @@ PrefabInstance:
     - target: {fileID: 1782614857610249934, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
       propertyPath: shoot
       value: 
-      objectReference: {fileID: 1185712417}
+      objectReference: {fileID: 0}
     - target: {fileID: 1782614857610249934, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
       propertyPath: player
       value: 
@@ -2616,7 +2616,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuwin: {fileID: 1271425953}
   moveSpeed: 2
-  decelerationRate: 1
 --- !u!4 &833884789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1233164829509181241, guid: 929839bd425cb2940ba74210ce75f55b, type: 3}
@@ -2656,7 +2655,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuwin: {fileID: 1271425953}
   moveSpeed: 2
-  decelerationRate: 1
 --- !u!50 &840837307
 Rigidbody2D:
   serializedVersion: 4
@@ -4093,6 +4091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1118701467}
+  - component: {fileID: 1118701468}
   m_Layer: 0
   m_Name: PowerUp spawner
   m_TagString: Untagged
@@ -4108,13 +4107,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118701466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4000444, y: -0.32299203, z: -0.052433122}
+  m_LocalPosition: {x: -7.88, y: 7.49, z: -0.052433122}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1118701468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118701466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937576285eec8b440970755ed24ebb59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  shieldPowerUp: {fileID: 1233164829509181244, guid: 929839bd425cb2940ba74210ce75f55b, type: 3}
+  fwenzyPowerUp: {fileID: 7058008344228610835, guid: 4bb5ec7db5f60c8448607a787b22001c, type: 3}
+  grenadePowerUp: {fileID: 2766139825298975165, guid: 36465af62137ca844aab9344a8cbdd2d, type: 3}
+  spawnTimer: 0
+  spawnMax: 9
+  spawnMin: 6
 --- !u!1 &1142267652
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,11 +4540,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174890113}
   m_CullTransparentMesh: 1
---- !u!95 &1185712417 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1782614857518724218, guid: 1fc835909237f6c418414e5796a50bb0, type: 3}
-  m_PrefabInstance: {fileID: 557746306}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1238410138
 GameObject:
   m_ObjectHideFlags: 0
@@ -11823,5 +11836,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21bdfe8c5e0ef754399f8cfd01c07bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killPlayerSoundEffect: {fileID: 2048045004}
-  moveSpeed: 0
