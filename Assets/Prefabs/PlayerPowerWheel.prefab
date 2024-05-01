@@ -375,7 +375,7 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 2343828988510719628, guid: e66b11d916aa1634794e451fb97a41eb, type: 3}
   canvas: {fileID: 0}
   boundaryCollider: {fileID: 0}
-  isInvincible: 0
+  isInvincible: 1
   invincibilityDuration: 0.8
   textSizeIncreaseAmount: 50
   defaultFontSize: 36
