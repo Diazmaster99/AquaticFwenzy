@@ -98,4 +98,9 @@ public class MenuOpciones : MonoBehaviour
         menuOpciones.SetActive(false);
     }
 
+    public void SalirEscritorio()
+    {
+        Application.Quit();
+    }
+
 }
