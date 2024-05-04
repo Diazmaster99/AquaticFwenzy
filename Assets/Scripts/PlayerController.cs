@@ -58,7 +58,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         PowerUps.gunPowerUpOn = false;
-        vidas = 2;
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalColor = spriteRenderer.color;
 
@@ -134,7 +133,7 @@ public class PlayerController : MonoBehaviour
             case 1:
                 if (!isInvincible)
                 {
-                    if (imagenVidas[0])
+                    if (imagenVidas[1])
                     {
                         recibirdmg.Play();
                         imagenVidas[1].SetActive(false);
