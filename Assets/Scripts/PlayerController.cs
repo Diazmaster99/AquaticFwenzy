@@ -270,6 +270,8 @@ public class PlayerController : MonoBehaviour
     public void SumarPuntos()
     {
         puntos += 1000;
+        TextoFluido textoFluido = puntosDisplay.AddComponent<TextoFluido>();
+        textoFluido.timer = 0.8f;
         IncreaseTextSize();
     }
 
@@ -324,6 +326,7 @@ public class PlayerController : MonoBehaviour
         floatingText.transform.SetParent(canvas.transform, false);
         floatingText.GetComponent<TextMeshProUGUI>().text = "¡A por todas!";
         TextoFluido textoFluido = floatingText.AddComponent<TextoFluido>();
+        textoFluido.timer = 5f;
 
         Destroy(floatingText, 2f);
 
@@ -339,6 +342,7 @@ public class PlayerController : MonoBehaviour
         floatingText.transform.SetParent(canvas.transform, false);
         floatingText.GetComponent<TextMeshProUGUI>().text = "¡Protegete!";
         TextoFluido textoFluido = floatingText.AddComponent<TextoFluido>();
+        textoFluido.timer = 5f;
 
         Destroy(floatingText, 2f);
 
@@ -355,6 +359,7 @@ public class PlayerController : MonoBehaviour
         floatingText.transform.SetParent(canvas.transform, false);
         floatingText.GetComponent<TextMeshProUGUI>().text = "¡A saco paco!";
         TextoFluido textoFluido = floatingText.AddComponent<TextoFluido>();
+        textoFluido.timer = 5f;
 
         Destroy(floatingText, 2f);
 

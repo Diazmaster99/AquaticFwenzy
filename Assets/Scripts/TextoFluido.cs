@@ -11,15 +11,31 @@ public class TextoFluido : MonoBehaviour
     private Color startColor = new Color(0, 1, 0.816f); // #00FFD0
     private Color endColor = new Color(0.851f, 0.745f, 0.18f, 1.0f); // #D9BE2E
     public float speed = 5f; // Speed of color change
+    public float timer;
+    private Coroutine timerCoroutine;
     void Start()
     {
         textoInicio = GetComponent<TMP_Text>();
+        timerCoroutine = StartCoroutine(InitializeScript());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator InitializeScript()
     {
-        changeColor();
+        float segundos = 0f;
+        while (segundos < timer)
+        {
+            MoveText();
+
+            yield return null;
+
+            segundos += Time.deltaTime;
+        }
+        timerCoroutine = null;
+    }
+
+    void MoveText()
+    {
+        ChangeColor();
 
         textoInicio.ForceMeshUpdate();
         var textInfo = textoInicio.textInfo;
@@ -50,12 +66,9 @@ public class TextoFluido : MonoBehaviour
             meshInfo.mesh.vertices = meshInfo.vertices;
             textoInicio.UpdateGeometry(meshInfo.mesh, i);
         }
-
-        
-
     }
 
-    void changeColor()
+    void ChangeColor()
     {
         // Calculate the interpolation factor based on time and speed
         float t = Mathf.PingPong(Time.time * speed, 1f);
@@ -66,5 +79,7 @@ public class TextoFluido : MonoBehaviour
         // Apply the lerped color to the text
         textoInicio.color = lerpedColor;
     }
+
+    
 
 }
