@@ -1009,7 +1009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903326, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903327, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_RootOrder
@@ -7669,7 +7669,7 @@ ParticleSystem:
     enabled: 1
     mode: 0
     timeMode: 2
-    fps: 3
+    fps: 5
     frameOverTime:
       serializedVersion: 2
       minMaxState: 1
@@ -7777,8 +7777,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 3
-    tilesY: 1
+    tilesX: 4
+    tilesY: 2
     animationType: 0
     rowIndex: 0
     cycles: 10000
@@ -7786,8 +7786,6 @@ ParticleSystem:
     rowMode: 1
     sprites:
     - sprite: {fileID: 21300000, guid: 1ec85971b2cedd14fade3a965f2afa6c, type: 3}
-    - sprite: {fileID: 21300000, guid: ed18c148c2bc76640857a3f6c0c90bed, type: 3}
-    - sprite: {fileID: 21300000, guid: 18deff5c57bc45f4eb2e26cdd4d358f0, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
