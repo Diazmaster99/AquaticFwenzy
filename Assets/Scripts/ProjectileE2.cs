@@ -6,6 +6,7 @@ using UnityEngine;
 public class ProjectileE2 : MonoBehaviour
 {
     [SerializeField] private AudioSource killPlayerSoundEffect;
+    [SerializeField] private AudioSource shieldReflect;
     public float moveSpeed;
     void Start()
     {
@@ -21,16 +22,26 @@ public class ProjectileE2 : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            gameObject.GetComponent<Renderer>().enabled = false;
-            killPlayerSoundEffect.Play();
-            //Destroy(collision.gameObject);
-            Destroy(gameObject, 1.1f);
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            if (!PlayerController.shieldActive)
+            {
+                gameObject.GetComponent<Renderer>().enabled = false;
+                killPlayerSoundEffect.Play();
+                //Destroy(collision.gameObject);
+                Destroy(gameObject, 0.5f);
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            }
+            else
+            {
+                shieldReflect.Play();
+                Destroy(gameObject, 0.5f);
+            }
+
         }
 
         if (collision.gameObject.tag == "Shield")
         {
-            Destroy(gameObject);
+            shieldReflect.Play();
+            Destroy(gameObject, 0.5f);
         }
 
         if (collision.gameObject.tag == "DestroyBoundary")
