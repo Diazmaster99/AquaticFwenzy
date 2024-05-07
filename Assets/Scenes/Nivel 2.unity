@@ -1131,6 +1131,7 @@ MonoBehaviour:
   botonPausa: {fileID: 326967051}
   menuPausa: {fileID: 994231879}
   menuOpciones: {fileID: 0}
+  panelOpciones: {fileID: 0}
   sonidoBoton: {fileID: 1376988014}
   juegoPausado: 0
   btnReaundar: {fileID: 857286056}
@@ -1381,6 +1382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  timer: 0
 --- !u!1001 &334816111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7871,6 +7873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  timer: 0
 --- !u!1 &721142626
 GameObject:
   m_ObjectHideFlags: 0
@@ -10601,6 +10604,7 @@ MonoBehaviour:
   botonPausa: {fileID: 326967051}
   menuPausa: {fileID: 994231879}
   menuOpciones: {fileID: 49729031}
+  panelOpciones: {fileID: 0}
   sonidoBoton: {fileID: 1376988014}
   juegoPausado: 0
   btnReaundar: {fileID: 857286056}
@@ -11796,6 +11800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  timer: 0
 --- !u!1 &1725498448
 GameObject:
   m_ObjectHideFlags: 0
@@ -14195,8 +14200,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 3
-    tilesY: 1
+    tilesX: 4
+    tilesY: 2
     animationType: 0
     rowIndex: 0
     cycles: 10000

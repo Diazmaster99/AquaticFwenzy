@@ -7,18 +7,21 @@ public class BotonesMenuInicial : MonoBehaviour
 {
     public AudioSource sonidoBoton;
     [SerializeField] private GameObject menuOpciones;
+    [SerializeField] private GameObject panelOpciones;
 
 
     public void Opciones()
     {
         //sonidoBoton.Play();
         menuOpciones.SetActive(true);
+        panelOpciones.SetActive(true);
     }
 
     public void atrasOpciones()
     {
         //sonidoBoton.Play();
         menuOpciones.SetActive(false);
+        panelOpciones.SetActive(false);
     }
 
     public void Creditos()

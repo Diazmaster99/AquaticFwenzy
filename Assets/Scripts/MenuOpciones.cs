@@ -22,6 +22,9 @@ public class MenuOpciones : MonoBehaviour
 
     public GameObject menuOpciones;
 
+    [SerializeField]
+    public GameObject panelOpciones;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +99,7 @@ public class MenuOpciones : MonoBehaviour
     public void ocultarMenuOpciones()
     {
         menuOpciones.SetActive(false);
+        panelOpciones.SetActive(false);
     }
 
     public void SalirEscritorio()

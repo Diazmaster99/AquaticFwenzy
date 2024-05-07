@@ -578,6 +578,7 @@ MonoBehaviour:
   botonPausa: {fileID: 326967051}
   menuPausa: {fileID: 1383658416}
   menuOpciones: {fileID: 1375448592}
+  panelOpciones: {fileID: 0}
   sonidoBoton: {fileID: 0}
   juegoPausado: 0
   btnReaundar: {fileID: 1383658420}
@@ -3273,6 +3274,7 @@ MonoBehaviour:
   botonPausa: {fileID: 326967051}
   menuPausa: {fileID: 1383658416}
   menuOpciones: {fileID: 1375448592}
+  panelOpciones: {fileID: 0}
   sonidoBoton: {fileID: 1376988014}
   juegoPausado: 0
   btnReaundar: {fileID: 1383658420}
@@ -5265,8 +5267,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 3
-    tilesY: 1
+    tilesX: 4
+    tilesY: 2
     animationType: 0
     rowIndex: 0
     cycles: 10000
