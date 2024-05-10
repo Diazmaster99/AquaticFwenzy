@@ -1485,7 +1485,7 @@ PrefabInstance:
       objectReference: {fileID: 1315502024}
     - target: {fileID: 1160497608929014930, guid: db577d133103bcd468e497e76396de0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: VolverMenuInicial
+      value: atrasOpciones
       objectReference: {fileID: 0}
     - target: {fileID: 1160497608929014930, guid: db577d133103bcd468e497e76396de0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2263,7 +2263,7 @@ Animator:
   m_GameObject: {fileID: 2063116845}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 637e4fc50f693e342a4c6b8f9f71adb3, type: 2}
+  m_Controller: {fileID: 9100000, guid: a8ca0a5378e35124684dbddd435f3838, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2553,7 +2553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903326, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903327, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_RootOrder

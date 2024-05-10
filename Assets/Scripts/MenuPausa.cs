@@ -76,7 +76,7 @@ public class MenuPausa : MonoBehaviour
         panelOpciones.SetActive(true);
     }
 
-    public void atrasOpciones()
+    public void AtrasOpciones()
     {
         sonidoBoton.Play();
         menuPausa.SetActive(true);
@@ -101,7 +101,7 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         sonidoBoton.Play();
         botonPausa.SetActive(false);
-        menuPausa.SetActive(true);
+        //menuPausa.SetActive(true);
         PlayerController.puntos = 0;
         //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name); //descarga de memoria la escena actual
 
