@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3833469090226551678}
   - component: {fileID: 3833469090226551673}
   - component: {fileID: 3112832583746495970}
-  - component: {fileID: -7468578213318802163}
+  - component: {fileID: 8116198397123971368}
   - component: {fileID: 5937885569619224022}
   - component: {fileID: 8237798555750451657}
   - component: {fileID: 659132702837657345}
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
---- !u!114 &-7468578213318802163
+--- !u!114 &8116198397123971368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,16 +112,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 3833469090226551677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a795299e611d36348a5083adb410f5e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 90d234797361edb4597e6fc943200a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTimer: 2.7
   spawnMax: 2.7
   spawnMin: 2
-  projectilePrefab: {fileID: 3452663278403150975, guid: 231cb54a0af6de044ae8ac4e9e23c1df, type: 3}
-  projectilePrefab2: {fileID: 3452663278403150975, guid: 35a512ad07d56844d82827db39483168, type: 3}
-  projectilePrefab3: {fileID: 3452663278403150975, guid: 3b0bc9a1e8d2212418873c3401449e1d, type: 3}
-  projectilePrefab4: {fileID: 3452663278403150975, guid: 539162c2f3a237a459570751946a896e, type: 3}
+  projectilePrefabAbajo: {fileID: 3452663278403150975, guid: 231cb54a0af6de044ae8ac4e9e23c1df, type: 3}
+  projectilePrefabArriba: {fileID: 3452663278403150975, guid: 35a512ad07d56844d82827db39483168, type: 3}
+  projectilePrefabIzquierda: {fileID: 3452663278403150975, guid: 3b0bc9a1e8d2212418873c3401449e1d, type: 3}
+  projectilePrefabDerecha: {fileID: 3452663278403150975, guid: 539162c2f3a237a459570751946a896e, type: 3}
   puedeDisparar: 0
 --- !u!82 &5937885569619224022
 AudioSource:

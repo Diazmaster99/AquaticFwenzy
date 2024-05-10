@@ -118,10 +118,10 @@ MonoBehaviour:
   spawnTimer: 2.7
   spawnMax: 2.7
   spawnMin: 2
-  projectilePrefab: {fileID: 3452663278403150975, guid: f7962f91b57d48348b3b42ebab5009a5, type: 3}
-  projectilePrefab2: {fileID: 3452663278403150975, guid: 2ddadafb7e8253c48ba9f3732ba71621, type: 3}
-  projectilePrefab3: {fileID: 3452663278403150975, guid: 556de6195150ed54da0ad17047d564f0, type: 3}
-  projectilePrefab4: {fileID: 3452663278403150975, guid: d77d969649b78444b97bbb0e17e5b866, type: 3}
+  projectilePrefabAbajo: {fileID: 3452663278403150975, guid: f7962f91b57d48348b3b42ebab5009a5, type: 3}
+  projectilePrefabArriba: {fileID: 3452663278403150975, guid: 2ddadafb7e8253c48ba9f3732ba71621, type: 3}
+  projectilePrefabIzquierda: {fileID: 3452663278403150975, guid: d77d969649b78444b97bbb0e17e5b866, type: 3}
+  projectilePrefabDerecha: {fileID: 3452663278403150975, guid: 556de6195150ed54da0ad17047d564f0, type: 3}
   puedeDisparar: 0
 --- !u!82 &5937885569619224022
 AudioSource:

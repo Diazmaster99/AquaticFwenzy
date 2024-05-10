@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PezGlobo : MonoBehaviour
+public class Calamar : MonoBehaviour
 {
     public float spawnTimer;
     public float spawnMax = 3;
@@ -23,8 +23,8 @@ public class PezGlobo : MonoBehaviour
         if (spawnTimer <= 0 && puedeDisparar)
         {
             // Instantiate the prefabs with different rotations
-            Instantiate(projectilePrefabAbajo, transform.position, Quaternion.Euler(0f, 0f, -180f)); // No rotation
-            Instantiate(projectilePrefabArriba, transform.position, Quaternion.Euler(0f, 0f, 0f)); // 90 degrees clockwise rotation around z-axis
+            Instantiate(projectilePrefabAbajo, transform.position, Quaternion.Euler(0f, 0f, 0f)); // No rotation
+            Instantiate(projectilePrefabArriba, transform.position, Quaternion.Euler(0f, 0f, 180f)); // 90 degrees clockwise rotation around z-axis
             Instantiate(projectilePrefabIzquierda, transform.position, Quaternion.Euler(0f, 0f, 270f)); // 180 degrees clockwise rotation around z-axis
             Instantiate(projectilePrefabDerecha, transform.position, Quaternion.Euler(0f, 0f, -270f)); // 45 degrees anti-clockwise rotation around z-axis
 

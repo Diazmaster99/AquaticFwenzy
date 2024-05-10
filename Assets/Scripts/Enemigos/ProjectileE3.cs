@@ -15,7 +15,10 @@ public class ProjectileE3 : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+        Vector3 rightPosition = transform.position + Vector3.right * moveSpeed;
+
+        Vector3 moveDirection = Vector3.right;
+        this.transform.position += moveDirection * moveSpeed * Time.deltaTime;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
