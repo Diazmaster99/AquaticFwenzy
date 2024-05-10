@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9009832195816473438}
   - component: {fileID: 4515222877734157897}
   m_Layer: 0
-  m_Name: bulletE
+  m_Name: bulletManta
   m_TagString: ProjectileE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d0dfac96ec4a5a64eb35cf238d784ac0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3f6854ab7bbec64aa1392e6650bed6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014518052, y: -0.47615963}
+  m_Offset: {x: 0.06025088, y: 0.6914326}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4315585, y: 0.47082114}
+  m_Size: {x: 0.7516885, y: 0.65375304}
   m_EdgeRadius: 0
 --- !u!82 &3482778135550719461
 AudioSource:
@@ -236,7 +236,7 @@ Animator:
   m_GameObject: {fileID: 3452663278403150975}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f7d7cd22ac591ab4fb680536215890ff, type: 2}
+  m_Controller: {fileID: 9100000, guid: 61b7a975cf4737a49adaa6be897a7720, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

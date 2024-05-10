@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 3452663278403150974}
   - component: {fileID: -437486069094577663}
   - component: {fileID: 3482778135550719461}
+  - component: {fileID: 5052713175857582105}
   - component: {fileID: 9009832195816473438}
-  - component: {fileID: 8465841620725677801}
-  - component: {fileID: -6908089608068089605}
+  - component: {fileID: 4515222877734157897}
   m_Layer: 0
-  m_Name: bulletE 2
+  m_Name: bulletPezGlobo Abajo
   m_TagString: ProjectileE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,14 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3452663278403150975}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.01, y: -3.532, z: 0}
   m_LocalScale: {x: 0.236175, y: 0.236175, z: 0.236175}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3452663278403150974
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -211,6 +211,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5052713175857582105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452663278403150975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765d89f7066732e4fb9b89b7ab704775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  killPlayerSoundEffect: {fileID: 3482778135550719461}
+  shieldReflect: {fileID: 4515222877734157897}
+  moveSpeed: 4
 --- !u!95 &9009832195816473438
 Animator:
   serializedVersion: 5
@@ -232,22 +247,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8465841620725677801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3452663278403150975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b4e8a18d5aa9b4fb1e1159e92a4c98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  killPlayerSoundEffect: {fileID: 3482778135550719461}
-  shieldReflect: {fileID: -6908089608068089605}
-  moveSpeed: 4
---- !u!82 &-6908089608068089605
+--- !u!82 &4515222877734157897
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
