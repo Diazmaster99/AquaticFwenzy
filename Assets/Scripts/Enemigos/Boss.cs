@@ -57,6 +57,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // Update invincibility timer
         if (isInvincible)
         {
@@ -74,6 +75,12 @@ public class Boss : MonoBehaviour
         {
             transform.Translate(moveSpeed * Time.deltaTime * Vector2.right);
         }
+        
+        if (transform.position.x <= -8.2f || transform.position.x >= 8.2f)
+        {
+            moveSpeed = -moveSpeed;
+        }
+        
 
         if (vidaBoss < 5)
         {
@@ -122,14 +129,14 @@ public class Boss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!muerto && !gritando)
+       /* if (!muerto && !gritando)
         {
             if (collision.gameObject.tag == "Boundary")
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
                 moveSpeed *= -1;
             }
-        }
+        }*/
         
 
         if (collision.gameObject.tag == "Player" && PlayerController.shieldActive==false)
