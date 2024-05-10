@@ -25,7 +25,8 @@ public class Explosion : MonoBehaviour
             {
                 if (col.gameObject.tag == "Enemy")
                 {
-                    Destroy(col.gameObject);     
+                    Destroy(col.gameObject);
+                    PlayerController.puntos += 1000;
                 }
             }
         }
@@ -33,7 +34,7 @@ public class Explosion : MonoBehaviour
 
     public void OnDestroy()
     {
-            Destroy(gameObject);
+            Destroy(gameObject);     
     }
     private void OnDrawGizmosSelected()
     {
