@@ -54,12 +54,15 @@ public class PlayerController : MonoBehaviour
     private int targetFontSize;
     private Coroutine sizeTransitionCoroutine;
 
+    TextoFluido textoFluido;
+
     // Start is called before the first frame update
     void Start()
     {
         PowerUps.gunPowerUpOn = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalColor = spriteRenderer.color;
+        textoFluido = puntosDisplay.AddComponent<TextoFluido>();
 
     }
 
@@ -270,7 +273,7 @@ public class PlayerController : MonoBehaviour
     public void SumarPuntos()
     {
         puntos += 1000;
-        TextoFluido textoFluido = puntosDisplay.AddComponent<TextoFluido>();
+        textoFluido = puntosDisplay.AddComponent<TextoFluido>();
         textoFluido.timer = 0.8f;
         IncreaseTextSize();
     }
@@ -278,6 +281,9 @@ public class PlayerController : MonoBehaviour
     public void SumarPuntosKrill()
     {
         puntos += 150;
+        textoFluido = puntosDisplay.AddComponent<TextoFluido>();
+        textoFluido.timer = 0.8f;
+        IncreaseTextSize();
     }
 
     void OnTriggerEnter2D(Collider2D col)
