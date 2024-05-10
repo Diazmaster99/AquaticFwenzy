@@ -39,7 +39,7 @@ public class Grenade : MonoBehaviour
                 Destroy(gameObject, 1.3f);
 
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
-                PlayerController.puntos += 1000;
+                
             }
             
         }
@@ -55,6 +55,6 @@ public class Grenade : MonoBehaviour
     IEnumerator Explode(float time)
     {
         yield return new WaitForSeconds(time);
-        Instantiate(explosion, transform.position, Quaternion.identity);    
+        Instantiate(explosion, transform.position, Quaternion.identity);
     }
 }
