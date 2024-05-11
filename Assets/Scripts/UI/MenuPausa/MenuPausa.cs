@@ -16,16 +16,6 @@ public class MenuPausa : MonoBehaviour
     public AudioSource sonidoBoton;
     public bool juegoPausado = false;
 
-    [SerializeField] private Animator btnReaundar;
-
-    [SerializeField] private Animator btnOpciones;
-
-    [SerializeField] private Animator btnReiniciar;
-
-    [SerializeField] private Animator btnMenuPrincipal;
-
-    [SerializeField] private GameObject jugador;
-
     public void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape) && juegoPausado)
@@ -41,6 +31,15 @@ public class MenuPausa : MonoBehaviour
         }
     }
 
+    public void Reanudar()
+    {
+        sonidoBoton.Play();
+        juegoPausado = false;
+        Time.timeScale = 1f;
+        botonPausa.SetActive(true);
+        menuPausa.SetActive(false);
+    }
+
     public void Pausa()
     {
         sonidoBoton.Play();
@@ -49,20 +48,6 @@ public class MenuPausa : MonoBehaviour
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
 
-        //btnReaundar.Play("BurbujaIdle",-1, 0f);
-        //btnOpciones.Play("BurbujaIdle", -1, 0f);
-        //btnReiniciar.Play("BurbujaIdle", -1, 0f);
-        //btnMenuPrincipal.Play("BurbujaIdle", -1, 0f);
-
-    }
-
-    public void Reanudar()
-    {
-        sonidoBoton.Play();
-        juegoPausado =false;
-        Time.timeScale = 1f;
-        botonPausa.SetActive(true);
-        menuPausa.SetActive(false);
     }
 
     public void Opciones()
@@ -101,9 +86,7 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         sonidoBoton.Play();
         botonPausa.SetActive(false);
-        //menuPausa.SetActive(true);
         PlayerController.puntos = 0;
-        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name); //descarga de memoria la escena actual
 
         SceneManager.LoadScene("MenuInicial");//carga el menu inicial
     }

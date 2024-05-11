@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
         PowerUps.gunPowerUpOn = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         normalColor = spriteRenderer.color;
-        textoFluido = puntosDisplay.AddComponent<TextoFluido>();
 
     }
 
