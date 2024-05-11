@@ -23,8 +23,8 @@ public class Mantarraya : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0 && puedeDisparar)
         {
-            Instantiate(projectilePrefab, salidaDisparo.transform.position, Quaternion.identity);
-            Instantiate(projectilePrefab, salidaDisparo2.transform.position, Quaternion.identity);
+            Instantiate(projectilePrefab, salidaDisparo.transform.position, Quaternion.Euler(0f, 0f, -180f)); // -180 degrees clockwise rotation around z-axis
+            Instantiate(projectilePrefab, salidaDisparo2.transform.position, Quaternion.Euler(0f, 0f, -180f)); // -180 degrees clockwise rotation around z-axis
             //spawnTimer = Random.Range(spawnMin, spawnMax);
             spawnTimer = 2;
         }
