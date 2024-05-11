@@ -261,7 +261,8 @@ GameObject:
   - component: {fileID: 8564755375061105440}
   - component: {fileID: 8564755375061105443}
   - component: {fileID: 8564755375061105442}
-  - component: {fileID: 8564755375061105445}
+  - component: {fileID: 9211567671518652803}
+  - component: {fileID: 2060256250305179172}
   m_Layer: 0
   m_Name: Opciones
   m_TagString: Untagged
@@ -372,8 +373,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
+      - m_Target: {fileID: 9211567671518652803}
+        m_TargetAssemblyTypeName: BtnOpciones, Assembly-CSharp
         m_MethodName: Opciones
         m_Mode: 1
         m_Arguments:
@@ -480,7 +481,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &8564755375061105445
+--- !u!114 &9211567671518652803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564755375061105447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0790ed0a5f2d36542bf0c12af3ae8fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comandosMenupausa: {fileID: 0}
+--- !u!95 &2060256250305179172
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -675,7 +689,8 @@ GameObject:
   - component: {fileID: 8564755375196957064}
   - component: {fileID: 8564755375196957067}
   - component: {fileID: 8564755375196957063}
-  - component: {fileID: 8564755375196957062}
+  - component: {fileID: 6676840657658662647}
+  - component: {fileID: 1797053053591759690}
   m_Layer: 0
   m_Name: Resumen
   m_TagString: Untagged
@@ -787,7 +802,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
+        m_TargetAssemblyTypeName: BtnReanudar, Assembly-CSharp
         m_MethodName: Reanudar
         m_Mode: 1
         m_Arguments:
@@ -894,7 +909,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &8564755375196957062
+--- !u!95 &6676840657658662647
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -915,6 +930,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1797053053591759690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564755375196957069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942660a665186544e8e78184f91e9110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comandosMenupausa: {fileID: 0}
 --- !u!1 &8564755375751657794
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +956,8 @@ GameObject:
   - component: {fileID: 8564755375751657823}
   - component: {fileID: 8564755375751657822}
   - component: {fileID: 8564755375751657793}
-  - component: {fileID: 8564755375751657792}
+  - component: {fileID: 7297730894422355159}
+  - component: {fileID: 5337307622746062672}
   m_Layer: 0
   m_Name: Reiniciar
   m_TagString: Untagged
@@ -1040,7 +1069,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
+        m_TargetAssemblyTypeName: BtnReiniciar, Assembly-CSharp
         m_MethodName: Reiniciar
         m_Mode: 1
         m_Arguments:
@@ -1147,7 +1176,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &8564755375751657792
+--- !u!95 &7297730894422355159
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -1168,6 +1197,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5337307622746062672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564755375751657794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80be802123787142bf438602d2846f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comandosMenupausa: {fileID: 0}
 --- !u!1 &8564755376271793232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1223,8 @@ GameObject:
   - component: {fileID: 8564755376271793325}
   - component: {fileID: 8564755376271793324}
   - component: {fileID: 8564755376271793327}
-  - component: {fileID: 8564755376271793326}
+  - component: {fileID: 3223333616163436460}
+  - component: {fileID: 1886835858467983091}
   m_Layer: 0
   m_Name: Menu principal
   m_TagString: Untagged
@@ -1292,8 +1335,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
+      - m_Target: {fileID: 3223333616163436460}
+        m_TargetAssemblyTypeName: BtnMenuprincipal, Assembly-CSharp
         m_MethodName: VolverMenuInicial
         m_Mode: 1
         m_Arguments:
@@ -1400,7 +1443,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &8564755376271793326
+--- !u!114 &3223333616163436460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564755376271793232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8850346aa9d50bf4d82f846aed9f01e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comandosMenupausa: {fileID: 0}
+--- !u!95 &1886835858467983091
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

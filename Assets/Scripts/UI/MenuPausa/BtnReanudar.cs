@@ -5,16 +5,19 @@ using UnityEngine;
 public class BtnReanudar : MonoBehaviour
 {
     public MenuPausa comandosMenupausa;
-    private Animator animator;
+    private Animator _animator;
+    private AudioSource _sonidoBoton;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
+        _sonidoBoton = GetComponent<AudioSource>();
     }
 
     public void Reanudar()
     {
-        animator.SetTrigger("Pulsado");
+        _sonidoBoton.Play();
+        _animator.SetTrigger("Pulsado");
     }
 
     public void RealizarAccion()

@@ -33,7 +33,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Reanudar()
     {
-        sonidoBoton.Play();
+        //sonidoBoton.Play();
         juegoPausado = false;
         Time.timeScale = 1f;
         botonPausa.SetActive(true);
@@ -42,7 +42,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Pausa()
     {
-        sonidoBoton.Play();
+        //sonidoBoton.Play();
         juegoPausado = true;
         Time.timeScale = 0f;
         botonPausa.SetActive(false);
@@ -52,7 +52,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Opciones()
     {
-        sonidoBoton.Play();
+        //sonidoBoton.Play();
         juegoPausado = true;
         Time.timeScale = 0f;
         botonPausa.SetActive(false);
@@ -63,7 +63,7 @@ public class MenuPausa : MonoBehaviour
 
     public void AtrasOpciones()
     {
-        sonidoBoton.Play();
+        //sonidoBoton.Play();
         menuPausa.SetActive(true);
         menuOpciones.SetActive(false);
         panelOpciones.SetActive(false);
@@ -71,7 +71,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Reiniciar ()
     {
-        sonidoBoton.Play();
+        //sonidoBoton.Play();
         juegoPausado =false;
         botonPausa.SetActive(true);
         menuPausa.SetActive(false);
@@ -84,7 +84,7 @@ public class MenuPausa : MonoBehaviour
     {
         
         Time.timeScale = 1f;
-        sonidoBoton.Play();
+        //sonidoBoton.Play();
         botonPausa.SetActive(false);
         PlayerController.puntos = 0;
 
