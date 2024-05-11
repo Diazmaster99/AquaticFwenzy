@@ -648,13 +648,7 @@ MonoBehaviour:
   menuPausa: {fileID: 994231879}
   menuOpciones: {fileID: 0}
   panelOpciones: {fileID: 0}
-  sonidoBoton: {fileID: 1376988014}
   juegoPausado: 0
-  btnReaundar: {fileID: 0}
-  btnOpciones: {fileID: 0}
-  btnReiniciar: {fileID: 0}
-  btnMenuPrincipal: {fileID: 0}
-  jugador: {fileID: 0}
 --- !u!114 &326967054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1005,7 +999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903326, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 362227289420903327, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: m_RootOrder
@@ -1860,6 +1854,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &541800526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5337307622746062672, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+  m_PrefabInstance: {fileID: 8564755374373227566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80be802123787142bf438602d2846f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &579910143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3661,6 +3666,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063587971}
   m_CullTransparentMesh: 1
+--- !u!114 &1116941789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1797053053591759690, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+  m_PrefabInstance: {fileID: 8564755374373227566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942660a665186544e8e78184f91e9110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1130838356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4818,13 +4834,7 @@ MonoBehaviour:
   menuPausa: {fileID: 994231879}
   menuOpciones: {fileID: 1334981579}
   panelOpciones: {fileID: 491441549}
-  sonidoBoton: {fileID: 1376988014}
   juegoPausado: 0
-  btnReaundar: {fileID: 0}
-  btnOpciones: {fileID: 0}
-  btnReiniciar: {fileID: 0}
-  btnMenuPrincipal: {fileID: 0}
-  jugador: {fileID: 0}
 --- !u!114 &1376988011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6114,6 +6124,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5329020803886274454, guid: b96b42433645d6448b0cc839dab26c02, type: 3}
   m_PrefabInstance: {fileID: 1744733465}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1759407520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3223333616163436460, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+  m_PrefabInstance: {fileID: 8564755374373227566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8850346aa9d50bf4d82f846aed9f01e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1804295933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6368,6 +6389,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3401091117457023042, guid: 30bea0060d22b5f48a568172d5f5b348, type: 3}
   m_PrefabInstance: {fileID: 1936930738}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1944183516 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9211567671518652803, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+  m_PrefabInstance: {fileID: 8564755374373227566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0790ed0a5f2d36542bf0c12af3ae8fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1957115505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11710,6 +11742,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1376988010}
+    - target: {fileID: 1160497608929014930, guid: db577d133103bcd468e497e76396de0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AtrasOpciones
+      objectReference: {fileID: 0}
     - target: {fileID: 1160497609050139667, guid: db577d133103bcd468e497e76396de0c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -11962,10 +11998,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1376988009}
     m_Modifications:
+    - target: {fileID: 1797053053591759690, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+      propertyPath: comandosMenupausa
+      value: 
+      objectReference: {fileID: 1376988010}
+    - target: {fileID: 3223333616163436460, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+      propertyPath: comandosMenupausa
+      value: 
+      objectReference: {fileID: 1376988010}
+    - target: {fileID: 5337307622746062672, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+      propertyPath: comandosMenupausa
+      value: 
+      objectReference: {fileID: 1376988010}
     - target: {fileID: 8564755375061105443, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1376988010}
+      objectReference: {fileID: 1944183516}
+    - target: {fileID: 8564755375061105443, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Opciones
+      objectReference: {fileID: 0}
     - target: {fileID: 8564755375065172582, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12061,13 +12113,29 @@ PrefabInstance:
     - target: {fileID: 8564755375196957067, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1376988010}
+      objectReference: {fileID: 1116941789}
+    - target: {fileID: 8564755375196957067, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reanudar
+      objectReference: {fileID: 0}
     - target: {fileID: 8564755375751657822, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1376988010}
+      objectReference: {fileID: 541800526}
+    - target: {fileID: 8564755375751657822, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reiniciar
+      objectReference: {fileID: 0}
     - target: {fileID: 8564755376271793324, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1759407520}
+    - target: {fileID: 8564755376271793324, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VolverMenuInicial
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211567671518652803, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
+      propertyPath: comandosMenupausa
       value: 
       objectReference: {fileID: 1376988010}
     m_RemovedComponents:

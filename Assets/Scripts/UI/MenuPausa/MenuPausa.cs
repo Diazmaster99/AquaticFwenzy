@@ -13,7 +13,7 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private GameObject panelOpciones;
 
-    public AudioSource sonidoBoton;
+    //public AudioSource sonidoBoton;
     public bool juegoPausado = false;
 
     public void Update()
@@ -94,7 +94,7 @@ public class MenuPausa : MonoBehaviour
     public void SiguienteNivel()
     {
         Time.timeScale = 1f;
-        sonidoBoton.Play();
+        //sonidoBoton.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

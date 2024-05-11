@@ -799,7 +799,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1376988009}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1182,11 +1182,6 @@ MonoBehaviour:
   panelOpciones: {fileID: 0}
   sonidoBoton: {fileID: 1376988014}
   juegoPausado: 0
-  btnReaundar: {fileID: 0}
-  btnOpciones: {fileID: 0}
-  btnReiniciar: {fileID: 0}
-  btnMenuPrincipal: {fileID: 0}
-  jugador: {fileID: 0}
 --- !u!114 &326967054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1328,7 +1323,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1376988009}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -2476,7 +2471,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1376988009}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -5035,7 +5030,7 @@ RectTransform:
   m_Children:
   - {fileID: 1158222842}
   m_Father: {fileID: 1376988009}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5344,7 +5339,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1376988009}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -6075,7 +6070,7 @@ RectTransform:
   - {fileID: 579910144}
   - {fileID: 390958614}
   m_Father: {fileID: 1376988009}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6504,7 +6499,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 326967052}
-  - {fileID: 994231880}
   - {fileID: 1052302377}
   - {fileID: 1271425954}
   - {fileID: 269726054}
@@ -6512,6 +6506,7 @@ RectTransform:
   - {fileID: 1063587972}
   - {fileID: 1725498449}
   - {fileID: 333183184}
+  - {fileID: 994231880}
   - {fileID: 1096758349139694723}
   - {fileID: 695938382}
   - {fileID: 1717323173}
@@ -6541,11 +6536,6 @@ MonoBehaviour:
   panelOpciones: {fileID: 0}
   sonidoBoton: {fileID: 1376988014}
   juegoPausado: 0
-  btnReaundar: {fileID: 0}
-  btnOpciones: {fileID: 0}
-  btnReiniciar: {fileID: 0}
-  btnMenuPrincipal: {fileID: 0}
-  jugador: {fileID: 0}
 --- !u!114 &1376988011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7735,7 +7725,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1376988009}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -14246,6 +14236,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1160497608929014930, guid: db577d133103bcd468e497e76396de0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1376988010}
+    - target: {fileID: 1160497608929014930, guid: db577d133103bcd468e497e76396de0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AtrasOpciones
+      objectReference: {fileID: 0}
     - target: {fileID: 1160497609050139667, guid: db577d133103bcd468e497e76396de0c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -14416,7 +14414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8564755375065172582, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8564755375065172582, guid: 4ce184b441c1efa47be682e90c037b79, type: 3}
       propertyPath: m_AnchorMax.x
