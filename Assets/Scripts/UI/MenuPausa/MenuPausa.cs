@@ -13,7 +13,7 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField] private GameObject panelOpciones;
 
-    //public AudioSource sonidoBoton;
+    public AudioSource sonidoBoton;
     public bool juegoPausado = false;
 
     public void Update()
@@ -33,7 +33,6 @@ public class MenuPausa : MonoBehaviour
 
     public void Reanudar()
     {
-        //sonidoBoton.Play();
         juegoPausado = false;
         Time.timeScale = 1f;
         botonPausa.SetActive(true);
@@ -42,12 +41,11 @@ public class MenuPausa : MonoBehaviour
 
     public void Pausa()
     {
-        //sonidoBoton.Play();
         juegoPausado = true;
         Time.timeScale = 0f;
         botonPausa.SetActive(false);
         menuPausa.SetActive(true);
-
+        sonidoBoton.Play();
     }
 
     public void Opciones()
