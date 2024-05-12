@@ -204,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8738362728504612353, guid: ca269311b0f53b248aec0a4d8808b16f, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8738362728504612353, guid: ca269311b0f53b248aec0a4d8808b16f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2284,7 +2284,7 @@ Transform:
   - {fileID: 1697461187}
   - {fileID: 592485391}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &1058907437
 PrefabInstance:
@@ -3333,12 +3333,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525190501}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0099998, y: 2.85, z: 0.2}
+  m_LocalPosition: {x: 0.009999797, y: 0.86, z: 0.2}
   m_LocalScale: {x: 0.9472813, y: 0.9248778, z: 0.38600147}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &1525190507
 ParticleSystem:
@@ -4610,7 +4610,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7853982
+      scalar: 1.0894345
       minScalar: 0.7853982
       maxCurve:
         serializedVersion: 2
@@ -4839,8 +4839,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 4
-    tilesY: 2
+    tilesX: 2
+    tilesY: 1
     animationType: 0
     rowIndex: 0
     cycles: 10000
@@ -6750,10 +6750,10 @@ ParticleSystem:
     range: {x: 0, y: 1}
     separateAxes: 0
   RotationBySpeedModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -6806,7 +6806,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -6859,9 +6859,9 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.7853982
-      minScalar: 0.7853982
+      minMaxState: 3
+      scalar: 0.87266463
+      minScalar: 0.43633232
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -8129,7 +8129,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 219e55a26a8bce841bb0736059bca67c, type: 2}
+  - {fileID: 2100000, guid: 221c0e0dd1ae3b54b98941d49c3ead36, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8193,10 +8193,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023310453, y: 1.6980822}
+  m_Offset: {x: -0.023310453, y: 3.06}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5011187, y: 0.031143095}
     oldSize: {x: 5.68, y: 5.57}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -8810,7 +8810,7 @@ Transform:
   - {fileID: 150024664}
   - {fileID: 1197637351}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1001 &1814098149
 PrefabInstance:
