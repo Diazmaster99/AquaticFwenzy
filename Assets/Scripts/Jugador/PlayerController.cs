@@ -18,10 +18,7 @@ public class PlayerController : MonoBehaviour
     public PowerUps powerUps;
     [SerializeField] private GameObject botonGameOver;
     [SerializeField] private GameObject botonPausa;
-    [SerializeField] private GameObject botonOpciones;
-    [SerializeField] private GameObject MenuWin;
     [SerializeField] private AudioSource shieldDown, killPlayerSoundEffect,recibirdmg;
-    [SerializeField] private GameObject efecto;
     public int  vidas;
     public GameObject[] imagenVidas = new GameObject[3];
     [SerializeField] private TextMeshProUGUI puntosDisplay;
@@ -55,6 +52,8 @@ public class PlayerController : MonoBehaviour
     private Coroutine sizeTransitionCoroutine;
 
     TextoFluido textoFluido;
+
+    public AudioSource sonidoGameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -124,9 +123,9 @@ public class PlayerController : MonoBehaviour
                         imagenVidas[0].SetActive(false);
                         botonPausa.SetActive(false);
                         killPlayerSoundEffect.Play();
+                        sonidoGameOver.Play();
                         botonGameOver.SetActive(true);
                         Time.timeScale = 0f;
-                        //Destroy(gameObject);
                         DesactivarJugador();
                     }
                 }
