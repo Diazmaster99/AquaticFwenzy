@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8738362728504612354, guid: ca269311b0f53b248aec0a4d8808b16f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5025114331282548689, guid: 04d13e57621bc1f40ac13127baa712a4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca269311b0f53b248aec0a4d8808b16f, type: 3}
 --- !u!1 &164379258
@@ -1157,7 +1161,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3229711073074129500, guid: 04d13e57621bc1f40ac13127baa712a4, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b37f348d879f9cf4bb7742410de098ac, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d3da446cb88bb5448825363dad84323c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.182
   m_Pitch: 1
