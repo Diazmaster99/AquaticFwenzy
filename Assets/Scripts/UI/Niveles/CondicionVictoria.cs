@@ -6,15 +6,13 @@ public class CondicionVictoria : MonoBehaviour
 {
     public GameObject menuwin;
     public float moveSpeed;
-    //public float decelerationRate = 1;
-    private Rigidbody2D rb;
     private bool final = false;
+    private AudioSource sonidoVictoria;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        sonidoVictoria = GetComponent<AudioSource>();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +32,7 @@ public class CondicionVictoria : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-
+            sonidoVictoria.Play();
             menuwin.SetActive(true);
             Time.timeScale = 0f;
         }
