@@ -1078,7 +1078,6 @@ GameObject:
   - component: {fileID: 326967056}
   - component: {fileID: 326967055}
   - component: {fileID: 326967054}
-  - component: {fileID: 326967053}
   m_Layer: 0
   m_Name: BotonPausa
   m_TagString: Untagged
@@ -1106,23 +1105,6 @@ RectTransform:
   m_AnchoredPosition: {x: -10.100098, y: -14.900024}
   m_SizeDelta: {x: 1051, y: 993}
   m_Pivot: {x: 1, y: 1}
---- !u!114 &326967053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326967051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111b5e4ceebbca446a7765339bc17051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  botonPausa: {fileID: 326967051}
-  menuPausa: {fileID: 994231879}
-  menuOpciones: {fileID: 0}
-  panelOpciones: {fileID: 0}
-  juegoPausado: 0
 --- !u!114 &326967054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10688,6 +10670,7 @@ MonoBehaviour:
   menuPausa: {fileID: 994231879}
   menuOpciones: {fileID: 603568156}
   panelOpciones: {fileID: 596427004}
+  sonidoBoton: {fileID: 1376988014}
   juegoPausado: 0
 --- !u!114 &1376988011
 MonoBehaviour:
@@ -10759,8 +10742,8 @@ AudioSource:
   m_GameObject: {fileID: 1376988008}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bce3ecc8eccb23c44bdd806e30ebf9e2, type: 3}
+  OutputAudioMixerGroup: {fileID: -5025114331282548689, guid: 04d13e57621bc1f40ac13127baa712a4, type: 2}
+  m_audioClip: {fileID: 8300000, guid: b9eeffbbf34c4fa40bb7d4882f1aa5d5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
