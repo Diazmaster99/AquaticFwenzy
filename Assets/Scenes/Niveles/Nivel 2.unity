@@ -1924,7 +1924,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3229711073074129500, guid: 04d13e57621bc1f40ac13127baa712a4, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8355b8e7a04ad494cbe7240eead8b9d0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.578
+  m_Volume: 0.338
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5852,6 +5852,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1376988009}
     m_Modifications:
+    - target: {fileID: 2094505995927226446, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1376988010}
+    - target: {fileID: 2094505995927226446, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SiguienteNivel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094505995927226447, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cc22a1387db886646b36829a85a970f4, type: 3}
     - target: {fileID: 2094505995992499337, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5944,6 +5956,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2094505996383147304, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1376988010}
+    - target: {fileID: 2094505996383147304, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reiniciar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094505996383147305, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cc22a1387db886646b36829a85a970f4, type: 3}
+    - target: {fileID: 2094505997141467442, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1376988010}
+    - target: {fileID: 2094505997141467442, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: VolverMenuInicial
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094505997141467443, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cc22a1387db886646b36829a85a970f4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5471778c3dc52e4bb4d08a2da006e8a, type: 3}
 --- !u!1 &1768231782 stripped
