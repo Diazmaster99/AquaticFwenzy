@@ -25,6 +25,10 @@ public class MenuOpciones : MonoBehaviour
     [SerializeField]
     public GameObject panelOpciones;
 
+    public Slider sliderMaster;
+    public Slider sliderMusica;
+    public Slider sliderSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,6 +102,12 @@ public class MenuOpciones : MonoBehaviour
 
     public void ocultarMenuOpciones()
     {
+
+        PlayerPrefs.SetFloat("Master", sliderMaster.value);
+        PlayerPrefs.SetFloat("Musica", sliderMusica.value);
+        PlayerPrefs.SetFloat("SFX", sliderSFX.value);
+        PlayerPrefs.Save();
+
         menuOpciones.SetActive(false);
         panelOpciones.SetActive(false);
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
@@ -9,6 +10,22 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
 
     public float timeTransition;
+
+    public Slider sliderMaster;
+    public Slider sliderMusica;
+    public Slider sliderSFX;
+
+
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("Master") || PlayerPrefs.HasKey("Musica") || PlayerPrefs.HasKey("SFX"))
+        {
+            sliderMaster.value = PlayerPrefs.GetFloat("Master");
+            sliderMusica.value = PlayerPrefs.GetFloat("Musica");
+            sliderSFX.value = PlayerPrefs.GetFloat("SFX");
+        }
+    }
 
     public void LoadNextLevel()
     {

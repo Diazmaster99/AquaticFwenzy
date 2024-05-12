@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &289054170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1160497608791525986, guid: db577d133103bcd468e497e76396de0c, type: 3}
+  m_PrefabInstance: {fileID: 1056425890}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &294110581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,13 +2004,33 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1160497608644381761, guid: db577d133103bcd468e497e76396de0c, type: 3}
+      propertyPath: sliderSFX
+      value: 
+      objectReference: {fileID: 1415978678}
+    - target: {fileID: 1160497608644381761, guid: db577d133103bcd468e497e76396de0c, type: 3}
+      propertyPath: menuOpciones
+      value: 
+      objectReference: {fileID: 1056425892}
+    - target: {fileID: 1160497608644381761, guid: db577d133103bcd468e497e76396de0c, type: 3}
+      propertyPath: sliderMaster
+      value: 
+      objectReference: {fileID: 1955053359}
+    - target: {fileID: 1160497608644381761, guid: db577d133103bcd468e497e76396de0c, type: 3}
+      propertyPath: sliderMusica
+      value: 
+      objectReference: {fileID: 1572403373}
+    - target: {fileID: 1160497608644381761, guid: db577d133103bcd468e497e76396de0c, type: 3}
+      propertyPath: panelOpciones
+      value: 
+      objectReference: {fileID: 289054170}
     - target: {fileID: 1160497608644381764, guid: db577d133103bcd468e497e76396de0c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1160497608644381765, guid: db577d133103bcd468e497e76396de0c, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1160497608644381765, guid: db577d133103bcd468e497e76396de0c, type: 3}
       propertyPath: m_LocalScale.x
@@ -2518,6 +2543,9 @@ MonoBehaviour:
   sonidoBoton: {fileID: 0}
   menuOpciones: {fileID: 1056425892}
   panelOpciones: {fileID: 1254673359}
+  sliderMaster: {fileID: 1955053359}
+  sliderMusica: {fileID: 1572403373}
+  sliderSFX: {fileID: 1415978678}
 --- !u!82 &1315502025
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2614,6 +2642,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1415978678 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1160497608890615596, guid: db577d133103bcd468e497e76396de0c, type: 3}
+  m_PrefabInstance: {fileID: 1056425890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1456534971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2698,6 +2737,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1572403373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1160497608084750914, guid: db577d133103bcd468e497e76396de0c, type: 3}
+  m_PrefabInstance: {fileID: 1056425890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1626795655
 GameObject:
   m_ObjectHideFlags: 0
@@ -2950,6 +3000,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1955053359 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1160497609499511788, guid: db577d133103bcd468e497e76396de0c, type: 3}
+  m_PrefabInstance: {fileID: 1056425890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2000501868
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,6 +3818,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 362227289420903298, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
+      propertyPath: sliderSFX
+      value: 
+      objectReference: {fileID: 1415978678}
+    - target: {fileID: 362227289420903298, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
+      propertyPath: sliderMaster
+      value: 
+      objectReference: {fileID: 1955053359}
+    - target: {fileID: 362227289420903298, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
+      propertyPath: sliderMusica
+      value: 
+      objectReference: {fileID: 1572403373}
     - target: {fileID: 362227289420903298, guid: 7070ed7f44f95cf4d963c3dcea421dd7, type: 3}
       propertyPath: timeTransition
       value: 2
