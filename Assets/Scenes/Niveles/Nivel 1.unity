@@ -3908,6 +3908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuwin: {fileID: 1271425953}
   moveSpeed: 5
+  botonpausa: {fileID: 326967051}
 --- !u!212 &1671129657
 SpriteRenderer:
   m_ObjectHideFlags: 0

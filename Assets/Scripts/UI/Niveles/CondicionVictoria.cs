@@ -8,6 +8,7 @@ public class CondicionVictoria : MonoBehaviour
     public float moveSpeed;
     private bool final = false;
     private AudioSource sonidoVictoria;
+    public GameObject botonpausa;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class CondicionVictoria : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+            botonpausa.SetActive(false);
             sonidoVictoria.Play();
             menuwin.SetActive(true);
             Time.timeScale = 0f;
