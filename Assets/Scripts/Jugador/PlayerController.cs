@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public bool grenadeLauncher = false;
     public GameObject shieldPrefab;
     public PowerUps powerUps;
-    [SerializeField] private GameObject botonGameOver;
+    public GameObject menuGameOver;
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private AudioSource shieldDown, killPlayerSoundEffect,recibirdmg;
     public int  vidas;
@@ -120,11 +120,11 @@ public class PlayerController : MonoBehaviour
                 {
                     if (imagenVidas[0])
                     {
+                        menuGameOver.SetActive(true);
                         imagenVidas[0].SetActive(false);
                         botonPausa.SetActive(false);
                         killPlayerSoundEffect.Play();
                         sonidoGameOver.Play();
-                        botonGameOver.SetActive(true);
                         Time.timeScale = 0f;
                         DesactivarJugador();
                     }

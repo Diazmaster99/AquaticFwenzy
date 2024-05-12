@@ -356,7 +356,7 @@ MonoBehaviour:
   grenadeLauncher: 0
   shieldPrefab: {fileID: 5201422403501165218}
   powerUps: {fileID: 0}
-  botonGameOver: {fileID: 0}
+  menuGameOver: {fileID: 213700674258094045, guid: 94a406274b8479b408bbd8961c848d4b, type: 3}
   botonPausa: {fileID: 0}
   shieldDown: {fileID: 1414710947375474318}
   killPlayerSoundEffect: {fileID: 6109340379451412605}

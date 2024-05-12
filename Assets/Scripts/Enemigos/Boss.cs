@@ -184,13 +184,6 @@ public class Boss : MonoBehaviour
 
         if (col.gameObject.tag == "Player" && PlayerController.shieldActive == false)
         {
-            ////botonMenu.SetActive(false);
-            ////botonGameOver.SetActive(true);
-            //SoundEffect.clip = AudioClipMuerteJugador;
-            //SoundEffect.Play();
-            //PowerUps.gunPowerUpOn = false;
-            //Time.timeScale = 0f;
-            //Destroy(col.gameObject);
             jugador.StartInvincibility();
         }
     }
