@@ -18,11 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Niveles/Nivel 2.unity
     guid: 9ef679ee2e013c94c81f391c1eb4bfdc
   - enabled: 1
+    path: Assets/Scenes/Niveles/Nivel Bombas.unity
+    guid: 817e1d908e0ec844b918866dc7431f6f
+  - enabled: 1
     path: Assets/Scenes/Niveles/Boss.unity
     guid: 9d23e94bd0987c94cbbc965587d25007
-  - enabled: 1
-    path: Assets/Scenes/Niveles/Nivel Bombas.unity
-    guid: dcd045e432fe4064588265a8857ecf6a
   - enabled: 1
     path: Assets/Scenes/Creditos.unity
     guid: 5285ccfda47f5ea41b43e948a2ef0b14
