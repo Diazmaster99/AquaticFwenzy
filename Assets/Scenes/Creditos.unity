@@ -1622,7 +1622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1Tocame!"
+  m_text: "\xA1T\xF3came!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 318ad9bbfb03bd745a9e35c3391a713e, type: 2}
   m_sharedMaterial: {fileID: -3111535751032858290, guid: 318ad9bbfb03bd745a9e35c3391a713e, type: 2}
